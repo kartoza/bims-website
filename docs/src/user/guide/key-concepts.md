@@ -28,6 +28,8 @@ license: This program is free software; you can redistribute it and/or modify it
 
 ![Key Concepts 2](./img/key-concepts-2.png)
 
+>**place holder for update to wetland site code**
+
 **River**: This is currently derived from the 1:500 000 DWS rivers layer. If the river does not have a name on this layer, then the nearest river name is taken. For this reason it is important for a user to add the Original river name on the Site form if the river is unnamed (e.g. a small tributary). (See section 11.1 Create a site).
 
 **Occurrence record**: One collection record for a taxon at a given site. This record may optionally include abundance data.
