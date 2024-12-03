@@ -1,8 +1,7 @@
 ---
 title: BIMS Documentation
 summary: Central documentation site for BIMS projects
-    - Tim Sutton
-    - Jeremy Prior
+    - Ketan Bamniya
 date: 26-09-2023
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
@@ -13,9 +12,9 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # BIMS: Upload Spatial Layers
 
->Note: Only admin/super user can upload spatial layers.
+>Note: Only admin/super users can upload spatial layers.
 
-Click on [here](https://bims.site.com/upload-spatial-layer/) to access the upload spatial layers page.
+Click [here](https://bims.site.com/upload-spatial-layer/) to access the upload spatial layers page.
 
 This is how it looks.
 
@@ -23,28 +22,28 @@ This is how it looks.
 
 * **Name:** Enter the name of the layer.
 
-* **Choose files:** Select the shape file to upload.
+* **Choose files:** Select the shape file and auxiliary files to upload.
 
-* **Submit:** Uploads the shape file.
+* **Submit:** Uploads the files.
 
 * **❎:** Close the form.
 
 
 ## Upload Layers
 
-Click on the `Choose files` button to select the shape file to upload.
+Click on the `Choose files` button to select the shape file and auxiliary files to upload.
 
 ![Upload Layers UI](./img/upload-spacial-layer-4.png)
 
-This will open the file explorer from where user can select the shape files.
+This will open the file explorer from where user can select the necessary files for their layer.
 
-> Note: User can select multiple files at the same to upload.
+> Note: Users should select multiple files at the same to upload.
 
 ![File Explorer](./img/upload-spacial-layer-2.png)
 
 * **Cancel:** Cancel the process.
 
-* **Open:** After selecting the files, click on the `Open` button to upload the file.
+* **Open:** After selecting the files, click on the `Open` button to upload the files.
 
 * **✅ Open files read only:** Open the files in read only mode.
 
@@ -54,7 +53,7 @@ This process will take some time to complete.
 
 ## 413 Request Entity Too Large
 
-This error appears when the uploaded file exceeds the maximum size limit.
+This error appears when the uploaded files exceeds the maximum size limit.
 
 ![Error](./img/upload-spacial-layer-3.png)
 
@@ -79,7 +78,7 @@ Indicates that the files have been uploaded successfully.
 
 ![Success Status](./img/upload-spacial-layer-8.png)
 
-* User will receives a success message.
+* Users will receive a success message.
 
     ![Success Status Message](./img/upload-spacial-layer-10.png)
 
@@ -119,7 +118,7 @@ This is the UI of the `Editor` page.
 
     ![Cloud Native Layers Section](./img/upload-spacial-layer-16.png)
 
-    1. **Layer uploads:** By clicking on this user will be able to see all the uploaded layers.
+    1. **Layer uploads:** By clicking on this, users will be able to see all the uploaded layers.
 
         ![Layer Uploads](./img/upload-spacial-layer-17.png)
 
@@ -129,7 +128,7 @@ This is the UI of the `Editor` page.
 
         **3. Add layer upload:** This button is used to upload a new layer.
 
-        **4. Filter:** By using this user can filter the data. After clicking on this a dropdown menu will appear.
+        **4. Filter:** By using this, users can filter the data. After clicking on this a dropdown menu will appear.
 
         ![Filter](./img/upload-spacial-layer-18.png)
 
@@ -155,7 +154,7 @@ This is the UI of the `Editor` page.
 
         **1. total:** Total number of layers.
 
-        **2. Data:** This is the list of layers with their details such as id, status and created_by etc.
+        **2. Data:** This is the list of layers with their details such as id, status, created_by, etc.
 
         **3. Add layer:** This button allows users to upload a new layer from the admin panel.
 
