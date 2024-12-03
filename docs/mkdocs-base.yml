@@ -98,6 +98,11 @@ nav:
                       - Publishing layers in GeoServer: administrator/geoserver/publishing-layers-in-geoserver.md
                       - Styling layers in GeoServer: administrator/geoserver/styling-layers-in-geoserver.md
                       - Visualising GeoServer layers in QGIS: administrator/geoserver/visualising-geoserver-layers-in-qgis.md
+              - Layer Upload and Styling:
+                      - administrator/layer-upload/index.md
+              - Park Layers:
+                      - administrator/park-layer/index.md
+                      - Adding a Park layer: administrator/park-layer/add-park-layer.md
               - GIS Data in BIMS:
                       - administrator/geocontext/index.md
                       - GeoContext Overview: administrator/geocontext/overview.md
