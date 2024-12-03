@@ -103,7 +103,8 @@ nav:
               - Park Layers:
                       - administrator/park-layer/index.md
                       - Adding a Park layer: administrator/park-layer/add-park-layer.md
-              - GIS Data in BIMS:
+              - Upload Spatial Layer: administrator/upload-spatial-layers.md
+            - GIS Data in BIMS:
                       - administrator/geocontext/index.md
                       - GeoContext Overview: administrator/geocontext/overview.md
                       - GeoContext and Visualisation Layers: administrator/geocontext/layers.md
