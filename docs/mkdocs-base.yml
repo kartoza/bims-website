@@ -98,6 +98,7 @@ nav:
                   - Publishing layers in GeoServer: administrator/geoserver/publishing-layers-in-geoserver.md
                   - Styling layers in GeoServer: administrator/geoserver/styling-layers-in-geoserver.md
                   - Visualising GeoServer layers in QGIS: administrator/geoserver/visualising-geoserver-layers-in-qgis.md
+            - Upload Spatial Layer: administrator/upload-spatial-layers.md
             - GIS Data in BIMS:
                   - administrator/geocontext/index.md
                   - GeoContext Overview: administrator/geocontext/overview.md
