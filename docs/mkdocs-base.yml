@@ -100,7 +100,8 @@ nav:
                             - Visualising GeoServer layers in QGIS: administrator/geoserver/visualising-geoserver-layers-in-qgis.md
                   - Layer Upload and Styling:
                             - administrator/layer-upload/index.md
-                            - Upload Spatial Layer: administrator/upload-spatial-layers.md
+                            - Upload Spatial Layer: administrator/layer-upload/upload-spatial-layers.md
+                            - Style Spatial Layer: administrator/layer-upload/style-editor.md
                   - Park Layers:
                             - administrator/park-layer/index.md
                             - Adding a Park layer: administrator/park-layer/add-park-layer.md
