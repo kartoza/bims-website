@@ -17,3 +17,19 @@ This section of the documentation describes every page in the application and
 what the various components of that page do. The manual is intended to function
 as a reference for the application. For narrative / workflow based tutorials,
 you may prefer to work through our [user guide](../guide/index.md).
+
+**[SignUp](./sign-up.md):** This provides a walkthrough of the sign-up process.
+
+**[Login](./login.md):** This provides a walkthrough of the login process.
+
+**[LogOut](./logout.md):** This provides a walkthrough of the sign-out process.
+
+**[Password Reset](./password-reset.md):** This provides a walkthrough of the password reset process.
+
+**[About](./about.md):** This provides a walkthrough of the about page.
+
+**[Contact](./contact.md):** This provides a walkthrough of the contact page.
+
+**[Help](./help.md):** This provides a walkthrough of the help page.
+
+**[Citation](./citation.md):** This provides a walkthrough of the citation page.
