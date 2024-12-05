@@ -110,6 +110,7 @@ nav:
                             - administrator/layer-upload/index.md
                             - Upload Spatial Layer: administrator/layer-upload/upload-spatial-layers.md
                             - Style Spatial Layer: administrator/layer-upload/style-editor.md
+                            - Publish Spatial Layer: administrator/layer-upload/publish-spatial-layer.md
                   - Park Layers:
                             - administrator/park-layer/index.md
                             - Adding a Park layer: administrator/park-layer/add-park-layer.md
