@@ -16,7 +16,6 @@ license: This program is free software; you can redistribute it and/or modify it
 
 [![Home Page](./img/help-img-3.png)](./img/help-img-3.png)
 
-
 ## Getting help using the FBIS platform
 
 We are so pleased that users are using FBIS! The site offers a broad range of features, which are documented in the user [guide](../guide/index.md) and [manual](./index.md). For a quick start, users can explore the walk-through video of the platform. Lastly, although we strive to provide a seamless experience, users may occasionally encounter issues with the site. If such an issue arises, users are encouraged to report it on our issue tracker, and we will do our best to resolve it promptly!
@@ -35,48 +34,48 @@ We have also created a series of instructional videos to help users get started 
 
 * **Introduction to key FBIS components:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=aex5tzLNWAo)
+    ![type:video](https://www.youtube.com/embed/aex5tzLNWAo)
 
 * **Filtering data:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=ygVj7yVYyQE)
+    ![type:video](https://www.youtube.com/embed/ygVj7yVYyQE)
 
 * **Overview of spatial layers:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=_AtjWcbYLWc)
+    ![type:video](https://www.youtube.com/embed/_AtjWcbYLWc)
 
 * **Single and multi-site dashboards:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=NTGyonmYO9Y)
+    ![type:video](https://www.youtube.com/embed/NTGyonmYO9Y)
 
 * **Single and multi-site SASS dashboards:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=wPSNDMAyCY4)
+    ![type:video](https://www.youtube.com/embed/wPSNDMAyCY4)
 
 * **Taxon dashboard:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=mT152Z-Dc4s&feature=youtu.be)
+    ![type:video](https://www.youtube.com/embed/mT152Z-Dc4s)
 
 *  **Exporting graphs and CSV files:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=xxyER7wa1ts)
+    ![type:video](https://www.youtube.com/embed/xxyER7wa1ts)
 
 * **Adding a site:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=RzfL8P7prag)
+    ![type:video](https://www.youtube.com/embed/RzfL8P7prag)
 
 * **Adding biodiversity data:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=1rZByIjWZF0)
+    ![type:video](https://www.youtube.com/embed/1rZByIjWZF0)
 
 * **Adding SASS data:**
 
-    [![ Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=9JI2D1c-1Jk)
+    ![type:video](https://www.youtube.com/embed/9JI2D1c-1Jk)
 
 *  **Preparing and adding water temperature time series data:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=9JI2D1c-1Jk)
+    ![type:video](https://www.youtube.com/embed/E0FG2h--4Ew)
 
 * **Preparing an occurrence data upload file:**
 
-    [![Dummy Image](./img/help-img-2.png)](https://www.youtube.com/watch?v=hWoFoPBdWI4)
+    ![type:video](https://www.youtube.com/embed/hWoFoPBdWI4)
