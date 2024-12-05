@@ -17,7 +17,7 @@ license: This program is free software; you can redistribute it and/or modify it
 There are two methods to access the styling `Editor` page.
 
 * [Access Method 1](#access-method-1-from-the-layer-upload-page): From the `Layer Upload` Page.
-* [Access Method 2](#access-method-2-from-the-administration-site): From the `Administration` Page.
+* [Access Method 2](#access-method-2-from-the-administration-page): From the `Administration` Page.
 
 ## Access Method 1: From the Layer Upload Page
 
