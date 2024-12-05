@@ -12,7 +12,7 @@ license: This program is free software; you can redistribute it and/or modify it
 #context_id: 1234
 ---
 
-# SignUp
+# Sign Up
 
 [![Home Page](./img/signup-img-1.png)](./img/signup-img-1.png)
 
