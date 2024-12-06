@@ -22,33 +22,33 @@ Several backend tables can be updated and managed by administrators, including t
 **Managing BIMS Admin tables**
 
 - [Managing BIMS Admin tables](#managing-bims-admin-tables)
-  - [BIMS - Biotopes](#bims---biotopes)
-  - [BIMS - Chemistry units](#bims---chemistry-units)
-  - [BIMS - Download request purposes](#bims---download-request-purposes)
-  - [BIMS - Download requests](#bims---download-requests)
-  - [BIMS - Endemism](#bims---endemism)
-  - [BIMS - FBIS UUIDs](#bims---fbis-uuids)
-  - [BIMS - IUCN Conservation status](#bims---iucn-conservation-status)
-  - [BIMS - Location context filter group orders](#bims---location-context-filter-group-orders)
-  - [BIMS - Location context filter order](#bims---location-context-filter-order)
-  - [BIMS - Location context groups](#bims---location-context-groups)
-  - [BIMS - Location context filters](#bims---location-context-filters)
-  - [BIMS - Location sites](#bims---location-sites)
-  - [BIMS - Non-biodiversity layers](#bims---non-biodiversity-layers)
-  - [BIMS - Notifications](#bims---notifications)
-  - [BIMS - Sampling methods](#bims---sampling-methods)
-  - [BIMS - Site settings](#bims---site-settings)
-  - [BIMS - Source references](#bims---source-references)
-  - [BIMS - Taxa](#bims---taxa)
-  - [BIMS - Taxon groups](#bims---taxon-groups)
+  - [BIMS: Biotopes](#bims-biotopes)
+  - [BIMS: Chemistry units](#bims-chemistry-units)
+  - [BIMS: Download request purposes](#bims-download-request-purposes)
+  - [BIMS: Download requests](#bims-download-requests)
+  - [BIMS: Endemism](#bims-endemism)
+  - [BIMS: FBIS UUIDs](#bims-fbis-uuids)
+  - [BIMS: IUCN Conservation status](#bims-iucn-conservation-status)
+  - [BIMS: Location context filter group orders](#bims-location-context-filter-group-orders)
+  - [BIMS: Location context filter order](#bims-location-context-filter-order)
+  - [BIMS: Location context groups](#bims-location-context-groups)
+  - [BIMS: Location context filters](#bims-location-context-filters)
+  - [BIMS: Location sites](#bims-location-sites)
+  - [BIMS: Non-biodiversity layers](#bims-non-biodiversity-layers)
+  - [BIMS: Notifications](#bims-notifications)
+  - [BIMS: Sampling methods](#bims-sampling-methods)
+  - [BIMS: Site settings](#bims-site-settings)
+  - [BIMS: Source references](#bims-source-references)
+  - [BIMS: Taxa](#bims-taxa)
+  - [BIMS: Taxon groups](#bims-taxon-groups)
   - [Flat pages](#flat-pages)
-    - [Flat pages - about us](#flat-pages---about-us)
-    - [Flat pages - citation guidelines](#flat-pages---citation-guidelines)
-    - [Flat pages - Help (FBIS only)](#flat-pages---help-fbis-only)
+    - [Flat pages: about us](#flat-pages-about-us)
+    - [Flat pages: citation guidelines](#flat-pages-citation-guidelines)
+    - [Flat pages: Help (FBIS only)](#flat-pages-help-fbis-only)
   - [People](#people)
-    - [People - Users](#people---users)
+    - [People: Users](#people-users)
 
-## BIMS - Biotopes
+## BIMS: Biotopes
 
 Here you manage the broad biotope categories, description and order; the specific biotope categories, description and order; and the substratum.  These biotopes are initially populated by the biodiversity data upload files, where each biotope is specified in the dropdowns. Details are provided below. Certain biotopes and substrata may be associated with one or more modules.  As more biodiversity modules are added, it may be necessary for the administrator to update biotopes.
 
@@ -92,7 +92,7 @@ Here you manage the broad biotope categories, description and order; the specifi
 
 If these have not been included in the data occurrence upload files, then they are blank. New biotopes can be added by clicking the “+ Add biotope”.
 
-## BIMS - Chemistry units
+## BIMS: Chemistry units
 
 Here you manage the physico-chemical data including the Chem Code (NB this needs to match the column in the physico-chemical data upload template), chem description, chem unit, whether the variable needs to be shown in abiotic form (abiotic list), minimum and maximum values. New chemistry units can be added by clicking the “+ Add chemistry unit”.
 
@@ -102,13 +102,13 @@ Changes can be made to each variable by clicking on the relevant Chem code and e
 
 ![Chemistry units 2](img/chemistry-units-2.png)
 
-## BIMS - Download request purposes
+## BIMS: Download request purposes
 
 Here you manage the download request purposes that a user chooses when requesting a download of a graph or csv file. New purposes can be added by selecting “Add download request purpose” and the sort order can be updated.
 
 ![Download request purposes 1](img/download-request-purposes-1.png)
 
-## BIMS - Download requests
+## BIMS: Download requests
 
 Here you can see all download requests from users, including details of the requester, resource type (csv, table, chart), resource name and purpose (as specified in the download request purposes). One can find out further details of the request by clicking on the Request date link, which opens up a second form. This is useful to track the progress of the large request downloads.
 
@@ -116,7 +116,7 @@ Here you can see all download requests from users, including details of the requ
 
 ![Download requests 2](img/download-requests-2.png)
 
-## BIMS - Endemism
+## BIMS: Endemism
 
 Here you manage the endemism categories including the Name (what is shown on the dashboard), description and display order.  The endemism categories are added during the uploading of the taxonomic master lists. Note that if the description is used in the master list, then this will be shown on the side panel and / or dashboard. It is important to always upload the Name only.  
 
@@ -126,13 +126,13 @@ Each endemism category can be edited by clicking on the Name
 
 ![Endemism 2](img/endemism-2.png)
 
-## BIMS - FBIS UUIDs
+## BIMS: FBIS UUIDs
 
 Here you can view all the uuids - this is a unique id for each occurrence record. It also allows the administrator to delete a specific record based on it uuid.
 
 ![FBIS UUIDs 1](img/fbis-uuids-1.png)
 
-## BIMS - IUCN Conservation status
+## BIMS: IUCN Conservation status
 
 Here you can manage the Conservation status categories for global and national. Global is pulled down from the IUCN, while national is from SANBI. Status’s only applicable to national need to be opened and national checked. To change a status click on category.
 
@@ -140,7 +140,7 @@ Here you can manage the Conservation status categories for global and national. 
 
 ![IUCN Conservation status 2](img/iucn-conservation-status-2.png)
 
-## BIMS - Location context filter group orders
+## BIMS: Location context filter group orders
 
 Here you can manage the spatial layers shown in the side panel and dashboards, as well as the display and filter orders. This is done by clicking on the ID link, which opens up a separate form for each spatial layer.
 
@@ -148,19 +148,19 @@ Here you can manage the spatial layers shown in the side panel and dashboards, a
 
 ![Location context filter group orders 2](img/location-context-filter-group-orders-2.png)
 
-## BIMS - Location context filter order
+## BIMS: Location context filter order
 
 Here you can change the display order of the spatial filters.
 
 ![Location context filter order 1](img/location-context-filter-order-1.png)
 
-## BIMS - Location context groups
+## BIMS: Location context groups
 
 Here you can manage the spatial layers and groups, which relate to geocontext. Each layer can be opened to view detail.
 
 ![Location context groups 1](img/location-context-groups-1.png)
 
-## BIMS - Location context filters
+## BIMS: Location context filters
 
 Here you manage what is seen on the Side panel and Dashboard for a single site. Information included in the dashboards is indicated with a green tick.
 
@@ -170,7 +170,7 @@ To change what is displayed click the ID Number and check or uncheck the box for
 
 ![Location context filters 2](img/location-context-filters-2.png)
 
-## BIMS - Location sites
+## BIMS: Location sites
 
 Here you can view sites, filter for specific site and update site codes.
 
@@ -180,7 +180,7 @@ Here we are also able to update the geocontext data for each site or selection o
 
 ![Location sites 2](img/location-sites-2.png)
 
-## BIMS - Non-biodiversity layers
+## BIMS: Non-biodiversity layers
 
 Here you manage the order that spatial layers are shown. This includes viewing and/or editing the order, name, wms url and Wms layer name. By clicking on the order, the details of the layer can be viewed and edited. Only administrators experienced in geocontext and GGIS should edit this as it links directly to these components.
 
@@ -188,11 +188,11 @@ Here you manage the order that spatial layers are shown. This includes viewing a
 
 ![Non-biodiversity layers 2](img/non-biodiversity-layers-2.png)
 
-## BIMS - Notifications
+## BIMS: Notifications
 
 `***To Be Updated***`
 
-## BIMS - Sampling methods
+## BIMS: Sampling methods
 
 Here you manage the sampling methods used for collection of biodiversity occurrence data. These sampling methods are initially populated by the biodiversity data upload files, where each sampling method is specified in the dropdowns.  Details are provided below.
 
@@ -238,7 +238,7 @@ Then you use the select “Merge sampling methods” and click go.
 
 ![Sampling methods 4](img/sampling-methods-4.png)
 
-## BIMS - Site settings
+## BIMS: Site settings
 
 Here you manage several components related to the setting of the site (i.e. webpage, url for the information systems, e.g. FBIS, RBIS, ORBIS etc.). Details of the sections that an administrator can change are provided below.
 
@@ -296,7 +296,7 @@ You can view and/or edit the copyright text that is visible at the bottom of the
 
 ![Site settings 15](img/site-settings-15.png)
 
-## BIMS - Source references
+## BIMS: Source references
 
 Generally it is easiest to manage source references (i.e. the metadata associated with each occurrence record).
 
@@ -308,7 +308,7 @@ However, on occasions, issues arise whereby the source reference is duplicated, 
 
 ![Source references 3](img/source-references-3.png)
 
-## BIMS - Taxa
+## BIMS: Taxa
 
 Here you manage all aspects related taxa within the information system. Most of this is done easily within Taxon Management, but there are some actions that can only be done within this table, including deleting a taxon (this cannot be done if occurrence data are associated with it), merging taxa and updating taxa (when one taxon is a synonym of another).
 
@@ -338,7 +338,7 @@ Sometimes errors are picked up in the taxa, for example there are two taxa that 
 
 Updating is used when one wants to update a synonym with the accepted name. Prior to updating, the accepted taxon needs to be checked and the verified button checked. Then to update the synonym, click the check box of both taxa, and select Update taxa, and click GO. This functionality is currently being refined.
 
-## BIMS - Taxon groups
+## BIMS: Taxon groups
 
 Here you manage the taxon groups added to the information systems. To note is the need to add the singular name so that it is correct in the Add XXXX data form.
 
@@ -354,19 +354,19 @@ This is access outside of the BIMS section, in Flat Pages. From here you can upd
 
 ![Flat Pages 1](img/flat-pages-1.png)
 
-### Flat pages - about us
+### Flat pages: about us
 
 Text for the About Us on the menu bar can be modified here:
 https://freshwaterbiodiversity.org/admin/flatpages/flatpage/3/change/
 
-### Flat pages - citation guidelines
+### Flat pages: citation guidelines
 
 ![Flat Pages 2](img/flat-pages-2.png)
 
 Text for the Citation on the landing page can be modified here:
 https://freshwaterbiodiversity.org/admin/flatpages/flatpage/3/change/
 
-### Flat pages - Help (FBIS only)
+### Flat pages: Help (FBIS only)
 
 Text for the Help on the menu bar can be modified here:
 https://freshwaterbiodiversity.org/admin/flatpages/flatpage/2/change/
@@ -384,7 +384,7 @@ Get the url for the FBIS Manual by opening Source References and right clicking 
 
 ## People
 
-### People - Users
+### People: Users
 
 ![People 1](img/people-1.png)
 
