@@ -85,6 +85,7 @@ nav:
                   - Help: user/manual/help.md
                   - Citation: user/manual/citation.md
                   - Source Reference: user/manual/source-reference-page.md
+                  - User Profile: user/manual/user-profile.md
       - Administrators:
             - administrator/index.md
             - Biodiversity Data:
