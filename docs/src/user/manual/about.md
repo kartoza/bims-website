@@ -24,7 +24,7 @@ This `About` section provides detailed information about the BIMS project. It of
 
 South Africa’s unique freshwater biodiversity is under enormous pressure from human activities, habitat transformation, climate change and invasive species impacts. River health is deteriorating faster than it can be measured, and existing data suggest that human impacts have, and continue to, severely compromise biodiversity and aquatic ecosystem function. This can also have serious adverse consequences for ecosystem services, such as the provision of food and safe, clean drinking water.
 
-## The what?
+## The What?
 
 Managing our freshwater systems and biota requires reliable information on ecosystem change, as well as a backdrop of sound baseline data against which to gauge current trends. Rising to this challenge, the Freshwater Biodiversity Information System (FBIS) is a platform for hosting, visualising and sharing freshwater biodiversity information for South African rivers. Through consultations with data users and contributors, and through collaborations with key partners and stakeholders, the FBIS aims to provide South Africa’s first platform for rapid and reliable assessments of change in freshwater biodiversity and associated ecosystem condition. The project seeks to mobilize and import to the system baseline biodiversity data, identify strategic long-term monitoring sites, and train key organizations on how to use the information system. Through the use of map-based visualisations, user-friendly dashboards and rapid data extraction capabilities, the system will improve knowledge of freshwater biodiversity and long-term river health trends, thereby supporting better-informed river management decisions and conservation planning projects.
 
