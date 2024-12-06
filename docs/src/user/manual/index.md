@@ -18,6 +18,8 @@ what the various components of that page do. The manual is intended to function
 as a reference for the application. For narrative / workflow based tutorials,
 you may prefer to work through our [user guide](../guide/index.md).
 
+**[Landing Page](./landing-page.md):** This page provides the walkthrough of the landing page.
+
 **[Sign Up](./sign-up.md):** This provides a walkthrough of the sign-up process.
 
 **[Login](./login.md):** This provides a walkthrough of the login process.
@@ -33,3 +35,5 @@ you may prefer to work through our [user guide](../guide/index.md).
 **[Help](./help.md):** This provides a walkthrough of the help page.
 
 **[Citation](./citation.md):** This provides a walkthrough of the citation page.
+
+**[Source Reference](./source-reference-page.md):** This provides a walkthrough of the source reference page.
