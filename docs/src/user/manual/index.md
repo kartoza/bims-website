@@ -30,6 +30,8 @@ you may prefer to work through our [user guide](../guide/index.md).
 
 **[About](./about.md):** This provides a walkthrough of the about page.
 
+**[Map](./map.md):** This provides a walkthrough of the map page.
+
 **[Contact](./contact.md):** This provides a walkthrough of the contact page.
 
 **[Help](./help.md):** This provides a walkthrough of the help page.
