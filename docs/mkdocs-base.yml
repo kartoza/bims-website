@@ -81,6 +81,7 @@ nav:
                   - Log Out: user/manual/logout.md
                   - Password Reset: user/manual/password-reset.md
                   - About: user/manual/about.md
+                  - Dashboard: user/manual/dashboard.md
                   - Contact: user/manual/contact.md
                   - Help: user/manual/help.md
                   - Citation: user/manual/citation.md
