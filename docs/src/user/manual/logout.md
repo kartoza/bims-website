@@ -24,4 +24,3 @@ license: This program is free software; you can redistribute it and/or modify it
 This will redirects the users to the home page.
 
 [![Home Page](./img/logout-img-3.png)](./img/logout-img-3.png)
-
