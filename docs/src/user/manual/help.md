@@ -79,3 +79,7 @@ We have also created a series of instructional videos to help users get started 
 * **Preparing an occurrence data upload file:**
 
     ![type:video](https://www.youtube.com/embed/hWoFoPBdWI4)
+
+## FBIS testing site
+
+For practicing the workflows for capturing data on FBIS, please use the FBIS [testing site](https://fbis.sta.do.kartoza.com/). Here you can add "dummy" data as the data are overwritten with a mirror image of the FBIS Live (production) site every week. The same login works of both FBIS Live and FBIS Testing.
