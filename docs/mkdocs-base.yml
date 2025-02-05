@@ -81,6 +81,8 @@ nav:
                   - Log Out: user/manual/logout.md
                   - Password Reset: user/manual/password-reset.md
                   - About: user/manual/about.md
+                  - Map: user/manual/map.md
+                  - Add Biodiversity Data: user/manual/add-biodiversity-data.md
                   - Contact: user/manual/contact.md
                   - Help: user/manual/help.md
                   - Citation: user/manual/citation.md
