@@ -90,15 +90,15 @@ Indicates that the files failed to upload.
 
 After successfully completing the process, the user will gain access to the editor page.
 
-Click on the `Editor` button to access the editor page
+Click on the `Style Editor` button to access the editor page
 
 ![Editor Button](./img/upload-spacial-layer-9.png)
 
-This is the UI of the `Editor` page.
+This is the UI of the `Style Editor` page.
 
 ![Editor UI](./img/upload-spacial-layer-11.png)
 
-To learn more about using the `Editor` page, click [here](./style-editor.md).
+To learn more about using the `Style Editor` page, click [here](./style-editor.md).
 
 ## Admin page
 
