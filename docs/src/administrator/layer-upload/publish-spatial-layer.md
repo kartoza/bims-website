@@ -15,42 +15,35 @@ license: This program is free software; you can redistribute it and/or modify it
 
 Once you have uploaded and styled a spatial layer, you need to publish it on the BIMS instance so that it will display on the map.
 
-As an admin/super user, access the `Administration` page by clicking on 1️⃣ your user name in the top right corner of any page and then click on 2️⃣ `Admin Page` on the dropdown menu.
-> Note: If your BIMS instance has been customised, you may be able to hover your mouse pointer over `Administration` drop down menu from the top navigation bar.
+As an admin/super user, access the `Visualization Layers` page by clicking on 1️⃣ your user name in the top right corner of any page and then click on 2️⃣ `Visualization Layers` on the dropdown menu.
 
 ![Publish Spatial Layer 1](./img/publish-spatial-layer-1.png)
 
-On the `Admin` page, scroll down to the `Bims` section and then scroll down and click on 1️⃣ `Non biodiversity layers`.
+On the `Visualization layers` page, click on 1️⃣ the `Add visualization layer` button.
 
 ![Publish Spatial Layer 2](./img/publish-spatial-layer-2.png)
 
-On the `Non biodiversity layers` page, click on 1️⃣ the `Add non biodiversity layer` button.
+On the `Visualization Layer` form, complete the following fields:
+
+1. `Name`: The name that will appear in the layer selector on the map.
+2. Choose the desired layer from the `Layer` dropdown list.
+3. Select the appropriate style from the `Layer style` dropdown list
+4. `Abstract`: A brief description displayed when clicking the `i` icon in the layer selector.
 
 ![Publish Spatial Layer 3](./img/publish-spatial-layer-3.png)
 
-On the `Add non biodiversity layer` page, you only have to fill in a few necessary fields.
-
-1. `Name`: This will be the name on the `Admin` page.
-2. `Layer name`: This will be the name displayed on the legend on the map.
-3. Select your desired layer from the `Native layer` dropdown list.
-4. Select your created style from the `Native layer style` dropdown list.
-
->Note: It is good practice for all 4 sections to be named the same thing so that there is no confusion as to whether the layer and the style are matched correctly.
+Once you have filled in the necessary fields, click on 1️⃣ the `Add` button.
 
 ![Publish Spatial Layer 4](./img/publish-spatial-layer-4.png)
 
-Once you have filled in the necessary fields, click on 1️⃣ the `Save` button.
+Your layer will then be added to the bottom of the list of on the `Layers Visualization` page.
 
 ![Publish Spatial Layer 5](./img/publish-spatial-layer-5.png)
 
-Your layer will then be added to the bottom of the list of on the `Non biodiversity layers` page.
+If you then navigate back to the map on the BIMS instance, click on 1️⃣ the `Layer Selector` button, and scroll to the bottom, you will see 2️⃣ the layer that was just published. You can then activate the layer to display it.
 
 ![Publish Spatial Layer 6](./img/publish-spatial-layer-6.png)
 
-If you then navigate back to the map on the BIMS instance, click on 1️⃣ the `Layer Selector` button, and scroll to the bottom, you will see 2️⃣ the layer that was just published. You can then activate the layer to display it.
+If you need to change the position of your layer in the list, go to the `Layers Visualization` page. Click and hold the drag icon, then move the layer to your desired position.
 
-![Publish Spatial Layer 7](./img/publish-spatial-layer-7.png)
-
-If your layer needs to be displayed in a different position in the layers list, on the `Non biodiversity layers` page, click on 1️⃣ the `Move up` or `Move down` arrows.
-
-![Publish Spatial Layer 8](./img/publish-spatial-layer-8.png)
+![Publish Spatial Layer 7](./img/publish-spatial-layer-7.mov)
