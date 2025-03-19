@@ -14,7 +14,7 @@ license: This program is free software; you can redistribute it and/or modify it
 
 >Note: Only admin/super users can upload spatial layers.
 
-Click [here](https://bims.site.com/upload-spatial-layer/) to access the upload spatial layers page.
+Visit `https://[your-bims.site.com]/upload-spatial-layer/` (replace the URL in square brackets with your BIMS instances URL) to access the upload spatial layers page.
 
 This is how it looks.
 
@@ -86,7 +86,7 @@ Indicates that the files have been uploaded successfully.
 
 Indicates that the files failed to upload.
 
-## Access Editor
+## Access the Editor
 
 After successfully completing the process, the user will gain access to the editor page.
 
@@ -98,7 +98,9 @@ This is the UI of the `Editor` page.
 
 ![Editor UI](./img/upload-spacial-layer-11.png)
 
-## Admin page 
+To learn more about using the `Editor` page, click [here](./style-editor.md).
+
+## Admin page
 
 * To access the admin page, hover on the `Administration` drop down menu from the top navigation bar.
 

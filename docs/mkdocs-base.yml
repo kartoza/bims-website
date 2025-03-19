@@ -9,152 +9,155 @@ edit_uri: "https://github.com/kartoza/bims-website/blob/main/docs/"
 copyright: Kartoza and FRC
 
 markdown_extensions:
-      - attr_list # lets us resize images see https://github.com/mkdocs/mkdocs/issues/1678#issuecomment-455500757
-      - pymdownx.highlight:
-            anchor_linenums: true
-      - pymdownx.inlinehilite
-      #- mdx_truly_sane_lists
-      - toc:
-            permalink: true
-            #slugify: !!python/name:pymdownx.slugs.slugify
-      - pymdownx.snippets:
-            base_path: .
-      - admonition
-      - tables
-      - pymdownx.details
-      - pymdownx.caret
-      - pymdownx.keys
-      - pymdownx.mark
-      - pymdownx.tilde
-      - pymdownx.superfences:
-            custom_fences:
-                  - name: mermaid
-                    class: mermaid
-                    format: !!python/name:pymdownx.superfences.fence_code_format
-      - pymdownx.emoji:
-            emoji_generator: !!python/name:materialx.emoji.to_svg
-            emoji_index: !!python/name:materialx.emoji.twemoji
+        - attr_list # lets us resize images see https://github.com/mkdocs/mkdocs/issues/1678#issuecomment-455500757
+        - pymdownx.highlight:
+                  anchor_linenums: true
+        - pymdownx.inlinehilite
+        #- mdx_truly_sane_lists
+        - toc:
+                  permalink: true
+                  #slugify: !!python/name:pymdownx.slugs.slugify
+        - pymdownx.snippets:
+                  base_path: .
+        - admonition
+        - tables
+        - pymdownx.details
+        - pymdownx.caret
+        - pymdownx.keys
+        - pymdownx.mark
+        - pymdownx.tilde
+        - pymdownx.superfences:
+                  custom_fences:
+                          - name: mermaid
+                            class: mermaid
+                            format: !!python/name:pymdownx.superfences.fence_code_format
+        - pymdownx.emoji:
+                  emoji_index: !!python/name:material.extensions.emoji.twemoji
+                  emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-      - Home:
-            - index.md
-            - Code of Conduct: about/code-of-conduct.md
-            - Licence: about/licence.md
-            - Running Instances:
-                  - about/running-instances/index.md
-                  - FreshWaterBiodiversity.org: about/running-instances/fbis.md
-                  - Rwanda Biodiversity Information System: about/running-instances/rbis.md
-                  - Okavango Biodiversity Information System: about/running-instances/orbis.md
-      - Users:
-            - user/index.md
-            - Quickstart:
-                  - user/quickstart/index.md
-            - Guide:
-                  - user/guide/index.md
-                  - Key Concepts: user/guide/key-concepts.md
-                  - Registering: user/guide/registering.md
-                  - Map Interface Overview: user/guide/map-interface.md
-                  - Search: user/guide/search.md
-                  - Filtering: user/guide/filtering.md
-                  - Mapping: user/guide/mapping.md
-                  - Biodiversity Data: user/guide/biodiversity.md
-                  - Overview Panels: user/guide/panels.md
-                  - Dashboards: 
-                        - user/guide/dashboards/index.md
-                        - Key Dashboard Components: user/guide/dashboards/key-components.md
-                        - SASS Dashboard components: user/guide/dashboards/sass-components.md
-                        - Taxon dashboard: user/guide/dashboards/taxon.md
-                        - Single-site biodiversity dashboards: user/guide/dashboards/single-site-biodiversity.md
-                        - Multi-site biodiversity dashboards: user/guide/dashboards/multi-site-biodiversity.md
-                        - Single-site SASS dashboard: user/guide/dashboards/single-site-sass.md
-                        - Multi-site SASS dashboard: user/guide/dashboards/multi-site-sass.md
-                        - Water temperature dashboard: user/guide/dashboards/water-temperature.md
-                        - Physico-chemical dashboard: user/guide/dashboards/physico-chemical.md
-                  - Data Upload: user/guide/data-upload.md
-                  - References: user/guide/references.md
-                  - Mobile Application Tutorials: user/guide/mobile-app-videos.md
-            - Manual:
-                  - user/manual/index.md
-                  - Landing Page: user/manual/landing-page.md
-                  - Sign Up: user/manual/sign-up.md
-                  - Login: user/manual/login.md
-                  - Log Out: user/manual/logout.md
-                  - Password Reset: user/manual/password-reset.md
-                  - About: user/manual/about.md
-                  - Dashboard: user/manual/dashboard.md
-                  - Pasticide Dashboard: user/manual/pasticide-dashboard.md
-                  - Map: user/manual/map.md
-                  - Add Biodiversity Data: user/manual/add-biodiversity-data.md
-                  - Contact: user/manual/contact.md
-                  - Help: user/manual/help.md
-                  - Citation: user/manual/citation.md
-                  - Source Reference: user/manual/source-reference-page.md
-                  - User Profile: user/manual/user-profile.md
-                  - Feedback Form: user/manual/feedback-form.md
-      - Administrators:
-            - administrator/index.md
-            - Biodiversity Data:
-                  - administrator/biodiversity-data/index.md
-                  - FBIS Data Management Guidelines: administrator/biodiversity-data/data-management.md
-                  - Preparing and checking a Master List of Taxa before uploading: administrator/biodiversity-data/master-list-preparation.md
-                  - Uploading a new Taxon Group (Module) and adding a Master List: administrator/biodiversity-data/taxon-group-uploading.md
-                  - Harvesting GBIF Data: administrator/biodiversity-data/harvesting-gbif-data.md
-                  - Managing taxa in Taxon Management: administrator/biodiversity-data/taxa-management.md
-                  - Preparing and checking an Occurrence Data File before uploading: administrator/biodiversity-data/occurrence-data-preparation.md
-                  - Uploading Occurrence Data: administrator/biodiversity-data/occurrence-data-uploading.md
-                  - Managing Source references: administrator/biodiversity-data/managing-source-references.md
-                  - Adding a site and biodiversity data: administrator/biodiversity-data/site-biodiversity-data.md
-                  - Adding physico-chemical data: administrator/biodiversity-data/physico-chemical-data.md
-                  - Managing BIMS Admin tables: administrator/biodiversity-data/manage-admin-tables.md
-                  - Validating records (occurrence data) and new taxa: administrator/biodiversity-data/validate-records.md
-            - Working with GeoServer:
-                  - administrator/geoserver/index.md
-                  - GeoServer Overview: administrator/geoserver/overview.md
-                  - Loading layers into a PostgreSQL database: administrator/geoserver/loading-postgis-layers.md
-                  - Publishing layers in GeoServer: administrator/geoserver/publishing-layers-in-geoserver.md
-                  - Styling layers in GeoServer: administrator/geoserver/styling-layers-in-geoserver.md
-                  - Visualising GeoServer layers in QGIS: administrator/geoserver/visualising-geoserver-layers-in-qgis.md
-            - Upload Spatial Layer: administrator/upload-spatial-layers.md
-            - GIS Data in BIMS:
-                  - administrator/geocontext/index.md
-                  - GeoContext Overview: administrator/geocontext/overview.md
-                  - GeoContext and Visualisation Layers: administrator/geocontext/layers.md
-                  - Working with GeoContext Data: administrator/geocontext/data.md
-                  - Harvesting GeoContext Data: administrator/geocontext/harvesting.md
-            - Customisation:
-                  - administrator/customisation/index.md
-                  - Adding a Landing Page Section: administrator/customisation/adding-landing-page-section.md
-                  - Embedding Video on the Landing Page: administrator/customisation/embed-video-on-landing-page.md
-                  - Adding Inline Images on the Landing Page: administrator/customisation/add-inline-images.md
-      - Developers:
-            - developer/index.md
-            - Guide:
-                  - developer/guide/index.md
-                  - Architecture: developer/guide/architecture.md
-                  - Prerequisites: developer/guide/prerequisites.md
-                  - Cloning: developer/guide/cloning.md
-                  - IDE Setup: developer/guide/ide-setup.md
-                  - Building: developer/guide/building.md
-                  - Workflows: developer/guide/workflows.md
-                  - "": developer/guide/key-development.md #unsure where this needs to fit in
-            - Documentation: 
-                  - developer/documentation/index.md
-                  - "Simple Workflow": developer/documentation/easy-workflow.md
-                  - "Advanced Workflow": developer/documentation/overview.md
-                  - "Context Help": developer/documentation/context-help.md
-            - API:
-                  - developer/api/index.md
-                  - Reference: developer/api/manual/index.md
-                  - Guide: developer/api/guide/index.md
-            - License: about/licence.md
-      - DevOps:
-            - devops/index.md
-            - Guide: 
-                  - devops/guide/index.md
-                  - Deploying to Production: devops/guide/deploying-production.md
-            - Manual:
-                  - devops/manual/index.md
-      - About:
-            - Contributing: about/contributing.md
-            - Citations: about/citations.md
-            - License: about/licence.md
+        - Home:
+                  - index.md
+                  - Code of Conduct: about/code-of-conduct.md
+                  - Licence: about/licence.md
+                  - Running Instances:
+                            - about/running-instances/index.md
+                            - FreshWaterBiodiversity.org: about/running-instances/fbis.md
+                            - Rwanda Biodiversity Information System: about/running-instances/rbis.md
+                            - Okavango Biodiversity Information System: about/running-instances/orbis.md
+        - Users:
+                  - user/index.md
+                  - Quickstart:
+                            - user/quickstart/index.md
+                  - Guide:
+                            - user/guide/index.md
+                            - Key Concepts: user/guide/key-concepts.md
+                            - Registering: user/guide/registering.md
+                            - Map Interface Overview: user/guide/map-interface.md
+                            - Search: user/guide/search.md
+                            - Filtering: user/guide/filtering.md
+                            - Mapping: user/guide/mapping.md
+                            - Biodiversity Data: user/guide/biodiversity.md
+                            - Overview Panels: user/guide/panels.md
+                            - Dashboards:
+                                      - user/guide/dashboards/index.md
+                                      - Key Dashboard Components: user/guide/dashboards/key-components.md
+                                      - SASS Dashboard components: user/guide/dashboards/sass-components.md
+                                      - Taxon dashboard: user/guide/dashboards/taxon.md
+                                      - Single-site biodiversity dashboards: user/guide/dashboards/single-site-biodiversity.md
+                                      - Multi-site biodiversity dashboards: user/guide/dashboards/multi-site-biodiversity.md
+                                      - Single-site SASS dashboard: user/guide/dashboards/single-site-sass.md
+                                      - Multi-site SASS dashboard: user/guide/dashboards/multi-site-sass.md
+                                      - Water temperature dashboard: user/guide/dashboards/water-temperature.md
+                                      - Physico-chemical dashboard: user/guide/dashboards/physico-chemical.md
+                            - Data Upload: user/guide/data-upload.md
+                            - References: user/guide/references.md
+                            - Mobile Application Tutorials: user/guide/mobile-app-videos.md
+                  - Manual:
+                            - user/manual/index.md
+                            - Landing Page: user/manual/landing-page.md
+                            - Sign Up: user/manual/sign-up.md
+                            - Login: user/manual/login.md
+                            - Log Out: user/manual/logout.md
+                            - Password Reset: user/manual/password-reset.md
+                            - About: user/manual/about.md
+                            - Contact: user/manual/contact.md
+                            - Help: user/manual/help.md
+                            - Citation: user/manual/citation.md
+                            - Source Reference: user/manual/source-reference-page.md
+                            - User Profile: user/manual/user-profile.md
+                            - Feedback Form: user/manual/feedback-form.md
+        - Administrators:
+                  - administrator/index.md
+                  - Biodiversity Data:
+                            - administrator/biodiversity-data/index.md
+                            - FBIS Data Management Guidelines: administrator/biodiversity-data/data-management.md
+                            - Preparing and checking a Master List of Taxa before uploading: administrator/biodiversity-data/master-list-preparation.md
+                            - Uploading a new Taxon Group (Module) and adding a Master List: administrator/biodiversity-data/taxon-group-uploading.md
+                            - Harvesting GBIF Data: administrator/biodiversity-data/harvesting-gbif-data.md
+                            - Managing taxa in Taxon Management: administrator/biodiversity-data/taxa-management.md
+                            - Preparing and checking an Occurrence Data File before uploading: administrator/biodiversity-data/occurrence-data-preparation.md
+                            - Uploading Occurrence Data: administrator/biodiversity-data/occurrence-data-uploading.md
+                            - Managing Source references: administrator/biodiversity-data/managing-source-references.md
+                            - Adding a site and biodiversity data: administrator/biodiversity-data/site-biodiversity-data.md
+                            - Adding physico-chemical data: administrator/biodiversity-data/physico-chemical-data.md
+                            - Managing BIMS Admin tables: administrator/biodiversity-data/manage-admin-tables.md
+                            - Validating records (occurrence data) and new taxa: administrator/biodiversity-data/validate-records.md
+                  - Working with GeoServer:
+                            - administrator/geoserver/index.md
+                            - GeoServer Overview: administrator/geoserver/overview.md
+                            - Loading layers into a PostgreSQL database: administrator/geoserver/loading-postgis-layers.md
+                            - Publishing layers in GeoServer: administrator/geoserver/publishing-layers-in-geoserver.md
+                            - Styling layers in GeoServer: administrator/geoserver/styling-layers-in-geoserver.md
+                            - Visualising GeoServer layers in QGIS: administrator/geoserver/visualising-geoserver-layers-in-qgis.md
+                  - Layer Upload and Styling:
+                            - administrator/layer-upload/index.md
+                            - Upload Spatial Layer: administrator/layer-upload/upload-spatial-layers.md
+                            - Style Spatial Layer: administrator/layer-upload/style-editor.md
+                            - Publish Spatial Layer: administrator/layer-upload/publish-spatial-layer.md
+                  - Park Layers:
+                            - administrator/park-layer/index.md
+                            - Adding a Park layer: administrator/park-layer/add-park-layer.md
+                  - GIS Data in BIMS:
+                            - administrator/geocontext/index.md
+                            - GeoContext Overview: administrator/geocontext/overview.md
+                            - GeoContext and Visualisation Layers: administrator/geocontext/layers.md
+                            - Working with GeoContext Data: administrator/geocontext/data.md
+                            - Harvesting GeoContext Data: administrator/geocontext/harvesting.md
+                  - Customisation:
+                            - administrator/customisation/index.md
+                            - Adding a Landing Page Section: administrator/customisation/adding-landing-page-section.md
+                            - Embedding Video on the Landing Page: administrator/customisation/embed-video-on-landing-page.md
+                            - Adding Inline Images on the Landing Page: administrator/customisation/add-inline-images.md
+        - Developers:
+                  - developer/index.md
+                  - Guide:
+                            - developer/guide/index.md
+                            - Architecture: developer/guide/architecture.md
+                            - Prerequisites: developer/guide/prerequisites.md
+                            - Cloning: developer/guide/cloning.md
+                            - IDE Setup: developer/guide/ide-setup.md
+                            - Building: developer/guide/building.md
+                            - Workflows: developer/guide/workflows.md
+                            - "": developer/guide/key-development.md #unsure where this needs to fit in
+                  - Documentation:
+                            - developer/documentation/index.md
+                            - "Simple Workflow": developer/documentation/easy-workflow.md
+                            - "Advanced Workflow": developer/documentation/overview.md
+                            - "Context Help": developer/documentation/context-help.md
+                  - API:
+                            - developer/api/index.md
+                            - Reference: developer/api/manual/index.md
+                            - Guide: developer/api/guide/index.md
+                  - License: about/licence.md
+        - DevOps:
+                  - devops/index.md
+                  - Guide:
+                            - devops/guide/index.md
+                            - Deploying to Production: devops/guide/deploying-production.md
+                  - Manual:
+                            - devops/manual/index.md
+        - About:
+                  - Contributing: about/contributing.md
+                  - Citations: about/citations.md
+                  - License: about/licence.md
