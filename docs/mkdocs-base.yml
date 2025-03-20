@@ -110,11 +110,12 @@ nav:
                             - Publishing layers in GeoServer: administrator/geoserver/publishing-layers-in-geoserver.md
                             - Styling layers in GeoServer: administrator/geoserver/styling-layers-in-geoserver.md
                             - Visualising GeoServer layers in QGIS: administrator/geoserver/visualising-geoserver-layers-in-qgis.md
-                  - Layer Upload and Styling:
+                  - Layer Upload, Styling, and Spatial Filter:
                             - administrator/layer-upload/index.md
                             - Upload Spatial Layer: administrator/layer-upload/upload-spatial-layers.md
                             - Style Spatial Layer: administrator/layer-upload/style-editor.md
                             - Publish Spatial Layer: administrator/layer-upload/publish-spatial-layer.md
+                            - Add Spatial Filter: administrator/layer-upload/add-spatial-filter.md
                   - Park Layers:
                             - administrator/park-layer/index.md
                             - Adding a Park layer: administrator/park-layer/add-park-layer.md
