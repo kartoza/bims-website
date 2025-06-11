@@ -60,7 +60,7 @@ To start styling a layer, zoom in on the area of the map where your layer should
 
 If you would like to just change the colour of the layer, click on 1️⃣ the default style layer and then click on 2️⃣ the `Color` textbox that has a colour hexcode in it.
 
-![Style Editor 7](./img/style-editor-7.png)
+![Style Editor 7](./img/style-editor-7_labels.PNG)
 
 This will open a modal where you can either use 1️⃣ the various sliders and 2️⃣ colour box to select a colour, or you can paste the hexcode of the colour you would like in 3️⃣ the textbox (ensure there is a # before the six characters).
 
