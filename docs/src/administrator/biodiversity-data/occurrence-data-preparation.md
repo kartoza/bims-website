@@ -5,7 +5,8 @@ summary: Central documentation site for BIMS projects
     - Helen Dallas
     - Jeremy Shelton
     - Jeremy Prior
-date: 01-08-2022
+    - Nazley Liddle
+date: 22-07-2025
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -15,58 +16,62 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # Preparing and checking an Occurrence Data File before uploading
 
-## Extracting data and preparing bulk data for uploading into FBIS
+## Extracting data and preparing bulk data for uploading
 
-FBIS includes data capture forms for adding sites, fish, invertebrate and algae data, as well as associated abiotic data. However, these forms are intended for the capture of individual site visits, and at times, especially during the development phase of an information system, it is useful to be able to upload large amounts of data at a time. To ensure that bulk data are readily uploaded into FBIS, a standardised **Data Upload Template** needs to be produced for each group. This will ensure that data are cleaned and provided in a standardised manner so that the data uploading process runs smoothly and so that the resultant FBIS platform serves quality data.
+The online platform includes data capture forms for adding sites, biodiversity data for the biodiversity modules added to the platform (e.g. fish, invertebrate and algae data), as well as associated abiotic data. However, these forms are intended for the capture of individual site visits, and at times, especially during the development phase of an information system, it is useful to be able to upload large amounts of data at a time. To ensure that bulk data are readily uploaded into FBIS, a standardised **Data Upload Template** needs to be produced for each group. This will ensure that data are cleaned and provided in a standardised manner so that the data uploading process runs smoothly and so that the resultant platform serves quality data.
 
 ## Data Upload Templates
 
-Standardised data upload templates in excel have been generated for four biodiversity groups, namely anurans, fish, invertebrates and algae. Additional upload templates may be added as new biodiversity modules are added. These templates include a number of dropdown attributes.  It is critical that all taxa in the Data Upload file for a particular biodiversity group are present in the Master List of Taxa for that group. If not, the upload process will not work. For this reason, it is recommended that where possible dropdown lists are used in the Data Upload files to ensure that all data entered in the sheet are valid. As an example, the Master List of fish species in South Africa has been included as dropdown list for the FBIS Fish Data Upload Template.
+A standardised generic data upload template in excel has been generated to serve all data platforms. This templates include a number of dropdown attributes.  It is critical that all taxa in the Data Upload file for a particular biodiversity group are present in the Master List of Taxa for that group. If not, the upload process will not work. For this reason, it is recommended that where possible dropdown lists are used in the Data Upload files to ensure that all data entered in the sheet are valid. In addition, functionality has been added to allow for customisation of the occurrence upload template for each module, if desired. The generic data upload template is provided and described below. It is recommended that the data management team review this template and remove any columns that are not needed.
 
-The following data upload templates are provided:
+The following data upload template is provided:
+* <span style="color: #70ad47;">Generic Data Upload Template.xlsx</span>
 
-* <span style="color: #70ad47;">FBIS Fish Data Upload Template.xlsx</span>
-* <span style="color: #70ad47;">FBIS Algae Data Upload Template.xlsx</span>
-* <span style="color: #70ad47;">FBIS Invertebrate Data Upload Template.xlsx</span>
-* <span style="color: #70ad47;">FBIS Anuran Data Upload Template.xlsx</span>
+Many of the columns are the same for each group, although some additional columns are included for algae, and the dropdown options (e.g. biotopes) sometimes vary amongst groups. The common columns used in each group are given in Table 1. Relevant dropdown lists are provided in each template and additional group-specific columns are included in the relevant templates. <span style="color: red;">Those column headers in red have to be filled in the occurrence upload file.</span> These are provided first in the excel file. See section on **Check the Source Reference** for details of which columns are relevant for different reference categories. Those column headers <span style="background-color:#c1ebaa;">shaded green</span> use dropdown lists in the excel file. These can be modified in the Admin page (BIMS).
 
-Many of the columns are the same for each group, although some additional columns are included for algae, and the dropdown options (e.g. biotopes) sometimes vary amongst groups. The common columns used in each group are given in Table 1. Relevant dropdown lists are provided in each template and additional group-specific columns are included in the relevant templates. <span style="color: red;">Those column headers in red have to be filled in the occurrence upload file. See section on **Check the Source Reference** for details of which columns are relevant for different reference categories.</span> Those column headers <span style="background-color:#c1ebaa;">shaded green</span> use dropdown lists in the excel file. These can be modified in the Admin page (BIMS).
+It is recommended that once a dataset has been prepared, it is first uploaded to the staging site (i.e. testing site), so that issues can be picked up before the dataset is then uploaded to the production site. The production site is the site that contains the live data.
 
 **Table 1. Column headers with details used in data upload templates**
 
 | Column Header | Details |
 | -- | -- |
-| <span style="color: red;">UUID</span> | A unique identifier for each record. Drag and copy the formula down. |
-| Original River or Wetland Name | Name given in study reference |
-| Original Site Code | Site Code given in study reference |
+| <span style="color: red;">UUID</span> | <span style="color: red;">A unique identifier for each record. Drag and copy the formula down.</span> |
+| <span style="color: red;">Latitude | <span style="color: red;">Decimal degrees with "-" in front & "," for decimal point |
+| <span style="color: red;">Longitude | <span style="color: red;">Decimal degrees with "," for decimal point |
+| <span style="color: red;">Sampling Date | <span style="color: red;">yyyy/mm/dd |
+| <span style="color: red;">Taxon |  |
+| <span style="color: red;background-color:#c1ebaa;">Taxon rank | <span style="color: red;background-color: #c1ebaa;">Select from dropdown options |
+| <span style="color: red;">Present |<span style="color: red;"> Fill in with "1" |
+| <span style="color: red;">Collector/Owner | <span style="color: red;">Full name |
+| <span style="color: red;">Collector/Owner Institute | <span style="color: red;">Institute of collector/owner |
+| <span style="color: red;">Author(s) | <span style="color: red;">Surname + Initials |
+| <span style="color: red;">Year | <span style="color: red;">Year of study |
+| <span style="color: red;">Source | <span style="color: red;">Source of data if from thesis or database |
+| <span style="color: red;">Title | <span style="color: red;">Title of data source if thesis, published article or published report |
+| <span style="color: red; background-color:#c1ebaa;">Reference category | <span style="color: red;background-color: #c1ebaa">Select from dropdown options |
+| <span style="color: red;">URL | <span style="color: red;">Thesis handle, or article link if no DOI available |
+| <span style="color: red;">DOI | <span style="color: red;">DOI for reference ( e.g. 10.2989/16085914.2018.1491385) |
+| <span style="color: red;">Document Upload Link | <span style="color: red;">Link to "Documents" page after uploading PDF of published report |
+| Ecosystem type | River, wetland or open waterbody |
+| User River or Wetland Name | Name given in study reference |
+| User Site Code | Site Code given in study reference |
 | Site Code | Leave blank (autogenerated) |
 | Site description | Description given in study reference |
-| <span style="background-color:#c1ebaa;">Refined Geomorphological Zone| As given in study reference (if available) - Select from dropdown options |
-| <span style="color: red;">Latitude | Decimal degrees with "-" in front & "," for decimal point |
-| <span style="color: red;">Longitude | Decimal degrees with "," for decimal point |
-| <span style="color: red;">Sampling Date | yyyy/mm/dd |
-| Kingdom | Not necessary to fill in as they are derived from the Master Lists |
-| Phylum | Not necessary to fill in as they are derived from the Master Lists |
-| Class | Not necessary to fill in as they are derived from the Master Lists |
-| Order | Not necessary to fill in as they are derived from the Master Lists |
-| Family | Not necessary to fill in as they are derived from the Master Lists |
-| Genus | Not necessary to fill in as they are derived from the Master Lists |
-| Species | Not necessary to fill in as they are derived from the Master Lists |
-| <span style="color: red;">Taxon |  |
-| <span style="background-color:#c1ebaa;">Taxon rank | Select from dropdown options |
-| <span style="color: red;">Present | Fill in with "1" |
-| <span style="background-color:#c1ebaa;">Sampling method | Select from dropdown options |
-| <span style="background-color:#c1ebaa;">Sampling effort measure | Select from dropdown options |
+| <span style="background-color:#c1ebaa;">User Geomorphological Zone|  <span style="background-color:#c1ebaa;">Specified by user or listed in study - Select from dropdown options |
+|  <span style="background-color:#c1ebaa;">User Hydrogeomorphic Type |  <span style="background-color:#c1ebaa;">Specified by user or listed in study - Select from dropdown options | 
+| <span style="background-color:#c1ebaa;">Sampling method | <span style="background-color:#c1ebaa;">Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Sampling effort measure | <span style="background-color:#c1ebaa;">Select from dropdown options |
 | Sampling effort value |  |
-| <span style="background-color:#c1ebaa;">Abundance measure | Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Abundance measure | <span style="background-color:#c1ebaa;">Select from dropdown options |
 | Abundance value | Leave blank if only presence data |
-| <span style="background-color:#c1ebaa;">Record type | Select from dropdown options |
-| <span style="background-color:#c1ebaa;">Broad biotope | Select from dropdown options |
-| <span style="background-color:#c1ebaa;">Specific biotope | Select from dropdown options |
-| <span style="background-color:#c1ebaa;">Substratum | Select from dropdown options |
-| <span style="background-color:#c1ebaa;">Water Level | Select from dropdown options |
-| <span style="background-color:#c1ebaa;">Water Turbidity | Select from dropdown options |
-| <span style="background-color:#c1ebaa;">Embeddedness | Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Record type | <span style="background-color:#c1ebaa;">Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Broad biotope | <span style="background-color:#c1ebaa;">Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Specific biotope | <span style="background-color:#c1ebaa;">Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Substratum | <span style="background-color:#c1ebaa;">Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Water Level | <span style="background-color:#c1ebaa;">Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Hydroperiod | <span style="background-color:#c1ebaa;">Select from dropdown options | 
+| <span style="background-color:#c1ebaa;">Water Turbidity | <span style="background-color:#c1ebaa;">Select from dropdown options |
+| <span style="background-color:#c1ebaa;">Embeddedness | <span style="background-color:#c1ebaa;">Select from dropdown options |
 | Depth | Depth (m) |
 | Near Bed Velocity | Near Bed Velocity (m/s) |
 | COND | Conductivity (mS/cm) |
@@ -75,17 +80,10 @@ Many of the columns are the same for each group, although some additional column
 | DO | Dissolved Oxygen (mg/L) |
 | TEMP | Temperature (deg C) |
 | TURB | Turbidity (NTU) |
-| <span style="color: red;">Collector/Owner | Full name |
-| <span style="color: red;">Collector/Owner Institute | Institute of collector/owner |
-| <span style="color: red;">Author(s) | Surname + Initials |
-| <span style="color: red;">Year | Year of study |
-| <span style="color: red;">Source | Source of data if from thesis or database |
-| <span style="color: red;">Title | Title of data source if thesis or published report |
-| <span style="color: red; background-color:#c1ebaa;">Reference category | Select from dropdown options |
-| <span style="color: red;">URL | Thesis handle, or article link if no DOI available |
-| <span style="color: red;">DOI | DOI for reference ( e.g. 10.2989/16085914.2018.1491385) |
-| <span style="color: red;">Document Upload Link | Link to "Documents" page on FIBbio after uploading PDF of published report |
 | Notes | Any details related to sampling, species, life form etc. |
+
+
+>**Note**: There are additional columns specific to algal data
 
 It is recommended that separate data upload files be created for each Source Reference, with each linked to a GitHub ticket. This ensures accurate management of data preparation and management.
 
@@ -108,14 +106,16 @@ DEC2HEX(RANDBETWEEN(0,POWER(16,3)),3),"-",DEC2HEX(RANDBETWEEN(8,11)),DEC2HEX(RAN
 
 Systematically check each column using the dropdown arrows, and look for inconsistencies. Some common issues include, #num in UUID column instead of the UUID, incorrect spelling in the **Site description** column (e.g. Gakiriro wetland, Gakirirowetland), latitude with missing “-“  (e.g. 2.60059 as latitude is incorrect – should be -2.60059), longitude.
 
-Also check that all sites fall within the country boundary so that Site Codes may be generated correctly and geocontext data harvested for each site.
+**Latitude and Longitude**: Also check that all sites fall within the country boundary so that Site Codes may be generated correctly and geocontext data harvested for each site.
 
 ![Occurrence Data Preparation 2](./img/occurence-data-preparation-2.png)
 ![Occurrence Data Preparation 3](./img/occurence-data-preparation-3.png)
 
 **Check that the sampling date** is in the correct format: yyyy/mm/dd. If the format is not correct then the upload will not work.
 
-**Check that all taxa are correct and are present in the Master List.** If the dropdown of master taxa list was used then this should not be an issue.  Check that the Taxon rank is correct. It is important that the correct Taxon Rank is always used to ensure correct uploading of the data files. Taxon Rank is case sensitive so Species will upload but species will fail. Always ensure the correct Taxon Rank is applied by using the dropdown list. There should be no spaces in SubClass, SubOrder, SubFamily, SubSpecies.
+**Check that all taxa are correct and are present in the Master List.** If the dropdown of master taxa list was used then this should not be an issue.  
+
+Check that the **Taxon rank** is correct. It is important that the correct Taxon Rank is always used to ensure correct uploading of the data files. Taxon Rank is case sensitive so 'Species' will upload but 'species' will fail. Always ensure the correct Taxon Rank is applied by using the dropdown list. There should be no spaces in SubClass, SubOrder, SubFamily, SubSpecies.
 
 ![Occurrence Data Preparation 4](./img/occurence-data-preparation-4.png)
 
@@ -127,14 +127,6 @@ Also check that all sites fall within the country boundary so that Site Codes ma
 **Check Collector/Owner and Collector/Owner Institute.** Ideally CAPITALS should not be used, First name Surname if known. Do not use middle initial and punctuation.
 
 ![Occurrence Data Preparation 7](./img/occurence-data-preparation-7.png)
-
-**Check the Source Reference** (Author(s), Year, Source, Title, Reference category, URL, DOI, Document Upload Link). For each study reference type, you need to populate the following columns:
-
-* Peer-reviewed scientific article (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source; Title; DOI or URL (if DOI is not available)). For Peer-reviewed scientific article the Source is the Journal, For Peer-reviewed scientific article the Title is the title of the article.
-* Published report (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source; Title; URL or Document Upload Link). Note the Document Upload Link is obtained after the report is added.
-* Thesis (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source; Title; URL or Document Upload Link)
-* Database (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source)
-* Unpublished data (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source)
 
 **Check format of Author(s).** It needs to be: Surname + Initials, no punctuation.  (e.g. Tumushimire L, Mindje M,  Sinsch U & Dehling JM not Lambert Tumushimire, Mapendo MINDJE,  Prof. Ulrich Sinsch & Julian Maxmillian Dehling). It is important to get the authors correct (e.g. Sinsch Ulrich and Dehling, J. Maximilian, Lümkemann Katrin, Rosar Katharina, Christiane Schwarz should be Sinsch U, Lümkemann K, Rosar K, Schwarz C & Dehling M as per the doi).
 
@@ -156,8 +148,9 @@ Also check that all sites fall within the country boundary so that Site Codes ma
 
 ![Occurrence Data Preparation 11](./img/occurence-data-preparation-11.png)
 
-**Check all Reference Categories** are correct: options include:
+**Check all Reference Categories** are correct: 
 
+Options include:
 * Database
 * Peer-reviewed scientific article
 * Published report
@@ -165,6 +158,14 @@ Also check that all sites fall within the country boundary so that Site Codes ma
 * Unpublished data
 
 ![Occurrence Data Preparation 12](./img/occurence-data-preparation-12.png)
+
+**Check the Source Reference** (Author(s), Year, Source, Title, Reference category, URL, DOI, Document Upload Link). For each study reference type, you need to populate the following columns:
+
+* Peer-reviewed scientific article (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source; Title; DOI or URL (if DOI is not available)). For Peer-reviewed scientific article the Source is the Journal, For Peer-reviewed scientific article the Title is the title of the article.
+* Published report (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source; Title; URL or Document Upload Link). Note the Document Upload Link is obtained after the report is added.
+* Thesis (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source; Title; URL or Document Upload Link)
+* Database (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source)
+* Unpublished data (Collector/Owner; Collector/Owner Institute; Author(s); Year; Source)
 
 **Check URL and DOI.** Use a DOI if it is available, URL – only needed for Peer-reviewed scientific article if there is no DOI. For the DOI you only need to include the number part, so 10.1080/15627020.2012.11407524, not https://doi.org/10.1080/15627020.2012.11407524.  
 
@@ -175,9 +176,17 @@ Also check that all sites fall within the country boundary so that Site Codes ma
 
 **Checking for duplicate occurrence records.** Use this formula for checking for duplicates. This is a combination of Site description, latitude, longitude, sampling date, Taxon, sampling method, author, year, source and title.  Copy and paste the formula below into a new column at the end and name it “Duplicate check”.
 
+For a basic check where user site codes are not given and no biotopes are used, this formula can be used.
+
 ```
-=CONCATENATE(E2,G2,H2,I2,Q2,T2,W2,X2,Y2,Z2)
+=CONCATENATE(B1,C1,D1,E1)
 ```
+For data where User site code has been provides, and biotope/habitat level data is included, then a more complex concatenate formula is needed:
+
+```
+=CONCATENATE(B1,C1,D1,E1,T1,AE1,AF1,AG1)
+```
+This formula can be revised as needed so that potential duplicates may be picked up.
 
 Then copy and paste the formula down to the end of the data rows. Then Highlight the column, and from the Home menu, select **Conditional Formatting, Highlight Cells Rules, Duplicate Values**.
 
