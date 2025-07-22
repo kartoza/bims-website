@@ -5,7 +5,8 @@ summary: Central documentation site for BIMS projects
     - Helen Dallas
     - Jeremy Shelton
     - Jeremy Prior
-date: 01-08-2022
+    - Nazley Liddle
+date: 22-07-2025
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -13,9 +14,9 @@ license: This program is free software; you can redistribute it and/or modify it
 #context_id: 1234
 ---
 
-# Occurrence data uploading
+# Uploading Occurrence Data
 
-## Steps
+## Steps:
 
 Click on your profile and select **Upload Occurrence Data**
 
@@ -24,8 +25,6 @@ Click on your profile and select **Upload Occurrence Data**
 Select the Taxon Group using the dropdown and browse to the file containing the occurrence data for the taxon group, click upload
 
 ![Occurrence Data Uploading 2](./img/occurrence-data-uploading-2.png)
-
-> **Note:** The Excel file needs to be saved as a csv using the following option:
 
 ![Occurrence Data Uploading 3](./img/occurrence-data-uploading-3.png)
 
