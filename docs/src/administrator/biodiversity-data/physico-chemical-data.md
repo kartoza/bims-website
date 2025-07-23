@@ -5,7 +5,8 @@ summary: Central documentation site for BIMS projects
     - Helen Dallas
     - Jeremy Shelton
     - Jeremy Prior
-date: 01-08-2022
+    - Nazley Liddle
+date: 23-07-2025
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -15,7 +16,9 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # Adding physico-chemical data
 
-This section explains how an administrator or user adds physico-chemical data to a site or prepares an excel template for bulk uploading of physico-chemical data for multiple sites and or sampling dates.  In either case it is important to note that physico-chemical data can only be added for a specific variable, if that variable already exists in the Admin/Bims/Chemistry units table. If the variable is missing from this table, it will not show in the list and the upload will fail. This is described in detail in a separate document: [11. Managing BIMS Admin tables](./manage-admin-tables.md)
+This section explains how an administrator or user adds physico-chemical data to a site or prepares an excel template for bulk uploading of physico-chemical data for multiple sites and or sampling dates.  In either case it is important to note that physico-chemical data can only be added for a specific variable, if that variable already exists in the Admin/Bims/Chemistry units table. If the variable is missing from this table, it will not show in the list and the upload will fail. 
+
+It is possible for Admin to add a new variable to the Chemistry unit table in BIMS, and then to add it to the data upload template. This is described in detail in a separate document: [11. Managing BIMS Admin tables](./manage-admin-tables.md)
 
 ## Adding physico-chemical data to a single site
 
@@ -24,8 +27,8 @@ A data capture form has been added for uploading physico-chemical data to a sing
 * Select the Date
 * Select the Owner
 * Select Source Reference by using search filter and selecting.
-* Add specific variables by checking the **Measured** box and adding the value of each variable. Note all units have been standardised and users need to convert to these standard unit before capturing the data. Minimum and maximum values have also been included for data integrity checks.
-* Click “I agree to these data being shared via the RBIS platform for visualisation and download by registered FBIS/RBIS users” and Submit.
+* Add specific variables by checking the **Measured** box and adding the value of each variable. <span style="color: red;"Note all units have been standardised and users need to convert to these standard unit before capturing the data.</span> Minimum and maximum values have also been included for data integrity checks.
+* Click “I agree to these data being shared via the BIMS platform for visualisation and download by registered BIMS users” and Submit.
 
 **Adding physico-chemical data.**
 
@@ -33,16 +36,12 @@ A data capture form has been added for uploading physico-chemical data to a sing
 
 ## Preparing and checking a physico-chemical data file before uploading
 
-A physico-chemical template has been created for uploading physico-chemical records for multiple sites and sampling dates. Each line represents a unique Site-Sampling date. The template provided includes the full list of variables currently in the FBIS system, however these can be modified for the needs of the RBIS.
+A physico-chemical template has been created for uploading physico-chemical records for multiple sites and sampling dates. Each line represents a unique Site-Sampling date. The template provided includes the full list of variables currently in the BIMS system, however these can be modified for the needs of the specific platform. Not all BIMS platforms include physico-chemical variables. 
 
-Here is the full list of columns included in the physico-chemical template. It resembles the occurrence data upload template for the more generic column headers.
+This is the full list of columns included in the physico-chemical template. It resembles the occurrence data upload template for the more generic column headers.
 
 | UUID |
 | -- |
-| Original Wetland Name |
-| Original Site Code |
-| Site Code |
-| Site description |
 | Latitude |
 | Longitude |
 | Sampling Date |
@@ -56,9 +55,16 @@ Here is the full list of columns included in the physico-chemical template. It r
 | URL |
 | DOI |
 | Document Upload Link |
+| Ecosystem type |
+| User River or Wetland Name |
+| User Site Code |
+| Site Code |
+| Site description |
+| User Geomorphological Zone |
+| User Hydrogeomorphic Type | 
 | Notes |
 
-Proceeding this is each variable (with the header as the **Chem code**), each in a separate column.  Here is the master list of physico-chemical variables currently in FBIS, giving the Chem code, description and unit of measurement.
+Proceeding this is each variable (with the header as the **Chem code**), each in a separate column.  Here is the master list of physico-chemical variables currently in BIMS (FBIS), giving the Chem code, description and unit of measurement.
 
 | Chem code | Chem description | Unit |
 | -- | -- | -- |
@@ -157,11 +163,9 @@ Also check that all sites fall within the country boundary so that Site Codes ma
 
 **Check Sampling date is in the correct format** : yyyy/mm/dd
 
-**Check that all Chem codes** are correct and are present in the Chemistry units table.  New variables can be added. See Managing BIMS Admin tables – Chemistry tables.
+**Check that all Chem codes** are correct and are present in the Chemistry units table.  New variables can be added. See Managing BIMS Admin tables – Chemistry tables. **Check** that all variables have been converted to their correct **unit of measurement**.
 
 ![Physico-chemical Data 5](./img/physico-chemical-data-5.png)
-
-**Check** that all variables have been converted to their correct **unit of measurement**.
 
 **Check Collector/Owner and Collector/Owner Institute**. Ideally CAPITALS should not be used, First name Surname if known. Do not use middle initial and punctuation.
 
@@ -212,7 +216,7 @@ Also check that all sites fall within the country boundary so that Site Codes ma
 
 **Check the document upload link is correct**. Note the Document Upload Link is obtained after the report is added. Reports are only uploaded when there is no DOI or URL to link the data to.
 
-[Checking for duplicate occurrence records](https://docs.rbis.kartoza.com/batch-importing-taxon-occurrence-data-bims/dealing-unique-identifiers/). Use this formula for checking for duplicates. This is a combination of Site description, latitude, longitude, sampling date, Chem code, author, year, source and title.  Copy and paste the formula below into a new column at the end and name it “Duplicate check”.
+**Checking for duplicate occurrence records** Use this formula for checking for duplicates. This is a combination of Site description, latitude, longitude, sampling date, Chem code, author, year, source and title.  Copy and paste the formula below into a new column at the end and name it “Duplicate check”.
 
 ```
 =CONCATENATE(E2,G2,H2,I2,Q2,T2,W2,X2,Y2,Z2)
@@ -225,10 +229,6 @@ Then copy and paste the formula down to the end of the data rows. Then Highlight
 Any duplicates will be highlighted. Check and delete duplicate occurrence records. Then delete the Duplicate Check column.
 
 **Delete blank rows and columns**. Lastly, ensure that there are no extra blank rows or columns, by deleting them.
-
-![Physico-chemical Data 15](./img/physico-chemical-data-15.png)
-
-![Physico-chemical Data 16](./img/physico-chemical-data-16.png)
 
 Remove the data filter, save the file in excel, and save the file as csv file.
 
