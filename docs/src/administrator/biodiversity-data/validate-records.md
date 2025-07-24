@@ -5,7 +5,8 @@ summary: Central documentation site for BIMS projects
     - Helen Dallas
     - Jeremy Shelton
     - Jeremy Prior
-date: 01-08-2022
+    - Nazley Liddle
+date: 24-07-2025
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -13,15 +14,15 @@ license: This program is free software; you can redistribute it and/or modify it
 #context_id: 1234
 ---
 
-# Validating records (occurrence data) and new taxa
+# Validating a record (occurrence data) or taxon
 
-This section explains the process when a user adds data to RBIS, and how the administrator views, checks and validates the occurrence record or new taxon.
+This section explains the process when a user adds data to a platform, and how the administrator views, checks and validates the occurrence record or new taxon.
 
 Data served on the platform includes both validated and unvalidated data, where validated implies some degree of checking that the record is accurate.  The user is able to select one or the other using the filter:
 
 ![Validate Records 1](./img/validate-records-1.png)
 
-All data added to platform by administrators using the Upload Occurrence data template, is given the status of validated on the assumption that the administrator has checked the data prior to uploading.
+All data added to the platform by administrators using the Upload Occurrence data template, is given the status of validated on the assumption that the administrator has checked the data prior to uploading.
 
 However, when a user adds data directly to the platform, this data remains unvalidated until the administrator checks the data.
 
@@ -35,11 +36,13 @@ This unvalidated record is also added to the Validate Records form, which the ad
 
 ![Validate Records 3](./img/validate-records-3.png)
 
-This form includes functionality to **See Unvalidated data**, and filter by Owner, Site Code, Source Collection or Module. The administrator can then undertake the following actions, using these buttons
-
-![Validate Records 4](./img/validate-records-4.png)
+This form includes functionality to **See Unvalidated data**, and filter by Owner, Site Code, or Module. The administrator can then undertake the following actions, using these buttons
 
 ![Validate Records 5](./img/validate-records-5.png)
+
+The administrator can then undertake the following actions, using these buttons. 
+
+![Validate Records 4](./img/validate-records-4.png)
 
 ## In summary
 
@@ -53,19 +56,17 @@ This form includes functionality to **See Unvalidated data**, and filter by Owne
 
 ## Validating a new taxon
 
-Generally a user should not need to add a new taxon often as the master lists for each biodiversity module are updated and represent the full expected checklist of species for a country. However, in the event that the user records a new taxon not currently in the master list, they are able to add this taxon to the information system. This new taxon then goes through a validation process by the administrator, and the new taxon is either accepted or rejected (with reasons).
-
-The administrator receives a message alerting them to a new taxon that has been added. They then follow the link and validate the taxon, then accepting or rejecting it with reasons, which are provided by email to the user who uploaded the new taxon.
+Generally a user should not need to add a new taxon often as the master lists for each biodiversity module are updated and represent the full expected checklist of species for a country. However, in the event that the user records a new taxon not currently in the master list, they are able to add this taxon to the information system. The administrator then receives a message alerting them to a new taxon that has been added. This new taxon then goes through a validation process by the administrator, and the new taxon is either accepted or rejected (with reasons).
 
 ![Validate Records 6](./img/validate-records-6.png)
 
-Follow the link to Taxon Management:
+Once the Administrator receives the email, they follow the link to Taxon Management:
 
 ![Validate Records 7](./img/validate-records-7.png)
 
-Check the taxon, and if it is acceptable to add to the Master List, then click Validate. Note the administrators may need to seek expert taxonomic input. The user receives an email indicating that the data has been approved.
+The Admin checks the taxon, and if it is acceptable to add to the Master List, then click Validate. Note the administrators may need to seek expert taxonomic input. The user receives an email indicating that the data has been approved.
 
-If it is not acceptable, the Reject the taxon. An email will be sent to the user who uploaded the records, with reasons for the rejection.
+If it is not acceptable, then Reject the taxon. An email will be sent to the user who uploaded the records, with reasons for the rejection.
 
 **Note**: A new occurrence record (site visit) cannot be validated if the new taxon has not been validated. On Validate records it is shown as an **Unvalidated taxon**. First the administrator must validate the taxon by following the link in the email, or by clicking on the **Validate Taxon** button below. The taxon is then either validated or rejected. Once the new taxon has been validated, then the record can be validated.  
 Before the taxon is validated:
