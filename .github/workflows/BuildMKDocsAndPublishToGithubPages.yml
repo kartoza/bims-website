@@ -1,4 +1,4 @@
-name: 📖 BuildMKDocsAndPublishToGithubPages.yml
+name: BuildMKDocsAndPublishToGithubPages.yml
 on:
   push:
     branches:
