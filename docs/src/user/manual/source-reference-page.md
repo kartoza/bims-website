@@ -140,7 +140,7 @@ The arrows indicate that the results include the applied filter.
 
 9. **Add new author:** Users can add a new author by clicking on the Add New Author button. Upon clicking, a new input field will appear where users can enter the author's name. Simply type the name and press Enter to add the author.
 
-* When adding a new author, users must follow this format for the author's name: [First Name] [Space] [Last Name] (e.g., John Smith).
+* When adding a new author, users must follow this format for the author's name: [First Name] `"Space"` [Last Name] (e.g., John Smith).
 
     [![Add New Author](./img/source-ref-img-17.png)](./img/source-ref-img-17.png)
 
