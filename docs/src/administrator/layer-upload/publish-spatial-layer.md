@@ -28,7 +28,7 @@ On the `Visualization Layer` form, complete the following fields:
 1. `Name`: The name that will appear in the layer selector on the map.
 2. Choose the desired layer from the `Layer` dropdown list.
 3. Select the appropriate style from the `Layer style` dropdown list
-4. `Abstract`: A brief description displayed when clicking the `i` icon in the layer selector.
+4. `Abstract`: A brief description displayed when clicking the `i` icon in the layer selector. Abstracts should also include links to download spatial data, copyrights, full citations and any other attribution information required.
 
 ![Publish Spatial Layer 3](./img/publish-spatial-layer-3.png)
 

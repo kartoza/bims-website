@@ -5,7 +5,8 @@ summary: Central documentation site for BIMS projects
     - Helen Dallas
     - Jeremy Shelton
     - Jeremy Prior
-date: 01-08-2022
+    - Nazley Liddle
+date: 22-07-2025
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -15,11 +16,20 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # Managing Source references
 
-A specific administration module has been developed to allow administrators to manage metadata and citations associated with each biological occurrence record.
+A specific administration module has been developed to allow administrators to manage metadata and citations associated with each biological occurrence record, as well as physico-chemical and water temperature data.
+
+All **users** can access Source References via **Data – Source References**. Users are able to use the search and filter functionality to find specific source references. Users are not able to edit source references, other than the one(s) they have added. The number of occurrence records, physico-chemical data and water temperature data are visible for each source reference.
 
 ![Managing Source References 1](./img/managing-source-references-1.png)
 
-Only registered users with super user status are able to access **Source References**, typically the administrators.
+Users are also able to upload pdf reports prior to uploading occurrence data, so that the source reference is available when data are added using the forms (see section below on **[Adding a source reference using data capture forms](#adding-a-source-reference-using-data-capture-forms))**.
+
+![Upload PDF](<img/managing-source-references-add a source.png>)
+![Choose source reference](<img/managing-source-references-add a source2.png>)
+
+**Administrators** are able to edit all source references, delete records associated with a source reference, and delete a source reference. This may be necessary if incorrect occurrence data are uploaded to the platform, although this is not common. **NB. Never delete a Source Reference without first deleting the Records.**
+
+![Edit source references](<img/managing-source-references-edit a source.png>)
 
 All biodiversity data served need to have associated Metadata, which is visible in the metadata table in the dashboards. This metadata allows the users to establish exactly where the data originated from and to navigate to the study reference if desired.
 
@@ -65,49 +75,57 @@ Source reference system can store either an electronic document (e.g. by attachi
 
 ## Adding source references to occurrence data
 
-Source references are either added when data are added using the data capture forms on FBIS, or when uploading occurrence data using the data upload excel file. (See **Preparing and checking an Occurrence Data File before uploading**).
+Source references are either added when data are added using the data capture forms (users and administrators), or when uploading occurrence data (administrators or trained data providers) using the data upload excel file. (See **[Preparing and checking an Occurrence Data File before uploading](https://kartoza.github.io/bims-website/administrator/biodiversity-data/occurrence-data-preparation/)**).
 
 ### Adding a source reference using data capture forms
 
-When adding data, three data capture forms are shown in sequence, namely 1) an occurrence record form, where you capture which taxa were present; 2) an abiotic data form where you capture physico-chemical and other abiotic data; and 3) a source reference for records form, where you capture the source reference or metadata for the biological record.
+When adding data, two data capture forms are shown in sequence, namely 1) an occurrence record form, where you capture which taxa were present and the source reference; 2) an abiotic data form where you capture physico-chemical and other abiotic data.
+
+The correct source reference can be searched for by reference type, name or author if it already exists or it can be added by clicking “**Add Source Reference**” and selecting the type. See details for each in the sections below.
 
 ![Managing Source References 3](./img/managing-source-references-3.png)
 
 ### Peer-reviewed scientific articles
 
-Select the reference category and insert the DOI or URL and click the search button. The citation is then retrieved via an online citation management system and inserted. Click Submit to save.
+If the article already exists, select Peer-reviewed scientific article as the reference type, and insert the author and click Apply.  Then select the correct source reference.
+
+![Choose source reference](<img/managing-source-references-choose reference.png>)
+
+To add a new Peer-reviewed scientific article, click **+ Add Source Reference**. Then select the reference category type and insert the DOI and click the **search by DOI** button. The citation is then retrieved via an online citation management system and inserted. Click Submit to save.
 
 ![Managing Source References 4](./img/managing-source-references-4.png)
 
 ### Published reports and theses
 
-Select the reference category and select from the dropdown list of titles, if the published report or thesis is already uploaded, or select “Upload new” to add a new published report or thesis.
+If the book, report or thesis already exists, select Published book, report or thesis as the reference type, and insert the author and click Apply.  Then select the correct source reference. 
 
-![Managing Source References 5](./img/managing-source-references-5.png)
+![Reports and theses](<img/managing-source-references-report or thesis.png>)
 
-When uploading a new published report or thesis, complete the fields using the format indicated including Author(s), Year, Source, Title, Description (if desired) and Url or upload file. Confirm that you are owner of the document being added and Upload. This is then submitted.
+To add a new Published book, report or thesis, click **+ Add Source Reference**, select the reference type and add the relevant details as shown below.
 
-![Managing Source References 6](./img/managing-source-references-6.png)
-
-![Managing Source References 7](./img/managing-source-references-7.png)
+![Adding report, theses](<img/managing-source-references-add report,theses.png>)
 
 ### Databases
 
-Select the reference category and select from the dropdown list of databases, if the database is already created, or select “Add new” to add a new database.
+If the database already exists, select Database as the reference type, and insert text in the Search filter to retrieve the relevant database.  Then select the correct source reference. 
 
 ![Managing Source References 8](./img/managing-source-references-8.png)
 
-When adding a new database, complete the name and provide a description. Add the url if it exists and click create. Add notes if desired.
+To add a new Database, click **+ Add Source Reference**, select the reference type and add the relevant details as shown below.
 
 ![Managing Source References 9](./img/managing-source-references-9.png)
 
 ### Unpublished data
 
-Select the reference category and select from the dropdown list under notes. If the unpublished dataset exists, select the unpublished dataset name, or if the unpublished dataset needs to be created, select “Add new” to add a new unpublished dataset. In the notes, add the name of the person, details of the study and date if possible or applicable.
+If the Unpublished dataset already exists, select Unpublished as the reference type, and insert text in the Search filter to retrieve the relevant unpublished dataset.  Then select the correct source reference. 
 
 ![Managing Source References 10](./img/managing-source-references-10.png)
 
-## Adding a source reference using occurrence upload excel files
+To add a new Unpublished dataset, click **+ Add Source Reference**, select the reference type and add the relevant details as shown below.
+
+![Add unpublished reference](<img/managing-source-references-add unpublished.png>)
+
+## Administrators: Adding a source reference using occurrence upload excel files
 
 Where data are uploaded using the Data Upload Templates, the data capturer needs to specify the following:
 
@@ -120,21 +138,26 @@ Where data are uploaded using the Data Upload Templates, the data capturer needs
 * **DOI**: DOI for reference ( e.g. 10.2989/16085914.2018.1491385) – the citation for articles with DOIs is done automatically.
 * **Document Upload Link**: Link to "Source Reference" page after uploading PDF or URL of published report or thesis.
 
-When adding occurrence data using the upload excel files, the following columns are populated for each reference category:
+Since metadata are compulsory, the occurrence data will not upload unless either a DOI, URL or Document Upload Link is included.
 
 ### Using Source References as an administrator
 
 Errors can arise when source references are added to the information system by users. These can be picked up and fixed by undertaking various filters, checking and edits, including those listed below.
 
 * Search for a reference type or category
-        ![Managing Source References 11](./img/managing-source-references-11.png)
+
+ ![Managing Source References 11](./img/managing-source-references-11.png)
+
 * Search by author(s)
-        ![Managing Source References 12](./img/managing-source-references-12.png)
+ 
+ ![Managing Source References 12](./img/managing-source-references-12.png)
+ 
 * Search using free text
-        ![Managing Source References 13](./img/managing-source-references-13.png)
+ 
+ ![Managing Source References 13](./img/managing-source-references-13.png)
 
-Once the source reference has been found, it can be updated, deleted (only if there are not records associated with it), and the Document ID can be copied. This is needed when uploading occurrence records using the excel template.
-
-![Managing Source References 14](./img/managing-source-references-14.png)
+Once the source reference has been found, it can be updated or deleted (only if there are not records associated with it), and the Document ID can be copied. This is needed when uploading occurrence records using the excel template.
 
 By clicking on the records button you can check exactly which sites and data are linked to the source reference.
+
+![Managing Source References 14](./img/managing-source-references-14.png)
