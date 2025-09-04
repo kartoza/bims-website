@@ -5,10 +5,11 @@ mkdocs-video==1.5.0
 mkdocs-redirects==1.2.1
 mkdocs-enumerate-headings-plugin==0.6.1
 mkdocs-git-revision-date-localized-plugin==1.2.5
-mkdocstrings-python==1.10.5
+mkdocstrings==0.30.0
+mkdocstrings-python==1.18.2
+griffe>=1.10,<2
 shortuuid==1.0.13
 black==24.8.0
 
-# Choose ONE of the following lines (uncomment ONE only):
 mkdocs-with-pdf==0.9.3
 # mkdocs-pdf-export-plugin==0.5.10
