@@ -1,0 +1,2679 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Biodiversity Information Management System is an open source platform for curating biodiversity data." name="description"/>
+<meta content="Kartoza and FRC" name="author"/>
+<link href="../physico-chemical-data/" rel="prev"/>
+<link href="../validate-records/" rel="next"/>
+<link href="../../../assets/logo.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.6.10" name="generator"/>
+<title>BIMS Documentation - BIMS</title>
+<link href="../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../css/print.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#managing-bims-admin-tables">58. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="BIMS" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="BIMS">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            BIMS
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              BIMS Documentation
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18V6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/kartoza/bims-website" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    BIMS Website
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../user/">
+          
+  
+  
+    
+  
+  Users
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../">
+          
+  
+  
+    
+  
+  Administrators
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../developer/">
+          
+  
+  
+    
+  
+  Developers
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../devops/">
+          
+  
+  
+    
+  
+  DevOps
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../about/contributing/">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="BIMS" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="BIMS">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"></path></svg>
+</a>
+    BIMS
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/kartoza/bims-website" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    BIMS Website
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/code-of-conduct/">
+<span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/licence/">
+<span class="md-ellipsis">
+    Licence
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../about/running-instances/">
+<span class="md-ellipsis">
+    Running Instances
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+            Running Instances
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/running-instances/fbis/">
+<span class="md-ellipsis">
+    FreshWaterBiodiversity.org
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/running-instances/rbis/">
+<span class="md-ellipsis">
+    Rwanda Biodiversity Information System
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/running-instances/orbis/">
+<span class="md-ellipsis">
+    Okavango Biodiversity Information System
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/">
+<span class="md-ellipsis">
+    Users
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Users
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/quickstart/">
+<span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Quickstart
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/key-concepts/">
+<span class="md-ellipsis">
+    Key Concepts
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/registering/">
+<span class="md-ellipsis">
+    Registering
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/map-interface/">
+<span class="md-ellipsis">
+    Map Interface Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/search/">
+<span class="md-ellipsis">
+    Search
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/filtering/">
+<span class="md-ellipsis">
+    Filtering
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/mapping/">
+<span class="md-ellipsis">
+    Mapping
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/biodiversity/">
+<span class="md-ellipsis">
+    Biodiversity Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/panels/">
+<span class="md-ellipsis">
+    Overview Panels
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_10" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/guide/dashboards/">
+<span class="md-ellipsis">
+    Dashboards
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3_10" id="__nav_2_3_10_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_10_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_10">
+<span class="md-nav__icon md-icon"></span>
+            Dashboards
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/key-components/">
+<span class="md-ellipsis">
+    Key Dashboard Components
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/sass-components/">
+<span class="md-ellipsis">
+    SASS Dashboard components
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/taxon/">
+<span class="md-ellipsis">
+    Taxon dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/single-site-biodiversity/">
+<span class="md-ellipsis">
+    Single-site biodiversity dashboards
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/multi-site-biodiversity/">
+<span class="md-ellipsis">
+    Multi-site biodiversity dashboards
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/single-site-sass/">
+<span class="md-ellipsis">
+    Single-site SASS dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/multi-site-sass/">
+<span class="md-ellipsis">
+    Multi-site SASS dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/water-temperature/">
+<span class="md-ellipsis">
+    Water temperature dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/physico-chemical/">
+<span class="md-ellipsis">
+    Physico-chemical dashboard
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/data-upload/">
+<span class="md-ellipsis">
+    Data Upload
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/references/">
+<span class="md-ellipsis">
+    References
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/mobile-app-videos/">
+<span class="md-ellipsis">
+    Mobile Application Tutorials
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/manual/">
+<span class="md-ellipsis">
+    Manual
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/landing-page/">
+<span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/sign-up/">
+<span class="md-ellipsis">
+    Sign Up
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/login/">
+<span class="md-ellipsis">
+    Login
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/logout/">
+<span class="md-ellipsis">
+    Log Out
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/password-reset/">
+<span class="md-ellipsis">
+    Password Reset
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/about/">
+<span class="md-ellipsis">
+    About
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/contact/">
+<span class="md-ellipsis">
+    Contact
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/help/">
+<span class="md-ellipsis">
+    Help
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/citation/">
+<span class="md-ellipsis">
+    Citation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/source-reference-page/">
+<span class="md-ellipsis">
+    Source Reference
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/user-profile/">
+<span class="md-ellipsis">
+    User Profile
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/feedback-form/">
+<span class="md-ellipsis">
+    Feedback Form
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/add-biodiversity-data/">
+<span class="md-ellipsis">
+    Add Biodiversity Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/biodiversity-dashboard/">
+<span class="md-ellipsis">
+    Biodiversity Dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/pesticide-dashboard/">
+<span class="md-ellipsis">
+    Pesticide Dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/map/">
+<span class="md-ellipsis">
+    Map Interface
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    Administrators
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Administrators
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Biodiversity Data
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Biodiversity Data
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data-management/">
+<span class="md-ellipsis">
+    FBIS Data Management Guidelines
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../master-list-preparation/">
+<span class="md-ellipsis">
+    Preparing and checking a Master List of Taxa before uploading
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../taxon-group-uploading/">
+<span class="md-ellipsis">
+    Uploading a new Taxon Group (Module) and adding a Master List
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../harvesting-gbif-data/">
+<span class="md-ellipsis">
+    Harvesting GBIF Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../taxa-management/">
+<span class="md-ellipsis">
+    Managing taxa in Taxon Management
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../occurrence-data-preparation/">
+<span class="md-ellipsis">
+    Preparing and checking an Occurrence Data File before uploading
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../occurrence-data-uploading/">
+<span class="md-ellipsis">
+    Uploading Occurrence Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../managing-source-references/">
+<span class="md-ellipsis">
+    Managing Source references
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../site-biodiversity-data/">
+<span class="md-ellipsis">
+    Adding a site and biodiversity data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../physico-chemical-data/">
+<span class="md-ellipsis">
+    Adding physico-chemical data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Managing BIMS Admin tables
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Managing BIMS Admin tables
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-abundance-types">58.1 
+<span class="md-ellipsis">
+      BIMS: Abundance types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-base-map-layers">58.2 
+<span class="md-ellipsis">
+      BIMS: Base map layers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-biological-collection-records">58.3 
+<span class="md-ellipsis">
+      BIMS: Biological collection records
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-biotopes">58.4 
+<span class="md-ellipsis">
+      BIMS: Biotopes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-chemistry-records">58.5 
+<span class="md-ellipsis">
+      BIMS: Chemistry records
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-chemistry-units">58.6 
+<span class="md-ellipsis">
+      BIMS: Chemistry units
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-datasets">58.7 
+<span class="md-ellipsis">
+      BIMS: Datasets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-decision-support-tool-names-and-descision-support-tools">58.8 
+<span class="md-ellipsis">
+      BIMS: Decision Support Tool Names and Descision Support Tools
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-download-request-purposes">58.9 
+<span class="md-ellipsis">
+      BIMS: Download request purposes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-download-requests">58.10 
+<span class="md-ellipsis">
+      BIMS: Download requests
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-endemism">58.11 
+<span class="md-ellipsis">
+      BIMS: Endemism
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-hydroperiods">58.12 
+<span class="md-ellipsis">
+      BIMS: Hydroperiods
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-iucn-status">58.13 
+<span class="md-ellipsis">
+      BIMS: IUCN status
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-context-filter-group-orders">58.14 
+<span class="md-ellipsis">
+      BIMS: Location context filter group orders
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-context-filter">58.15 
+<span class="md-ellipsis">
+      BIMS: Location context filter
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-context-groups">58.16 
+<span class="md-ellipsis">
+      BIMS: Location context groups
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-sites">58.17 
+<span class="md-ellipsis">
+      BIMS: Location sites
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-non-biodiversity-layers">58.18 
+<span class="md-ellipsis">
+      BIMS: Non-biodiversity layers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-notifications">58.19 
+<span class="md-ellipsis">
+      BIMS: Notifications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-record-types">58.20 
+<span class="md-ellipsis">
+      BIMS: Record types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-roles">58.21 
+<span class="md-ellipsis">
+      BIMS: Roles
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-sampling-effort-measure">58.22 
+<span class="md-ellipsis">
+      BIMS: Sampling effort measure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-sampling-methods">58.23 
+<span class="md-ellipsis">
+      BIMS: Sampling methods
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-site-settings">58.24 
+<span class="md-ellipsis">
+      BIMS: Site settings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-source-references">58.25 
+<span class="md-ellipsis">
+      BIMS: Source references
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-taxa">58.26 
+<span class="md-ellipsis">
+      BIMS: Taxa
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-taxon-groups">58.27 
+<span class="md-ellipsis">
+      BIMS: Taxon groups
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-wetland-indicator-status">58.28 
+<span class="md-ellipsis">
+      BIMS: Wetland indicator status
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages">58.29 
+<span class="md-ellipsis">
+      Flat pages
+    </span>
+</a>
+<nav aria-label="Flat pages" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages-about-us">58.29.1 
+<span class="md-ellipsis">
+      Flat pages: about us
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages-citation-guidelines">58.29.2 
+<span class="md-ellipsis">
+      Flat pages: citation guidelines
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages-help">58.29.3 
+<span class="md-ellipsis">
+      Flat pages: Help
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#people">58.30 
+<span class="md-ellipsis">
+      People
+    </span>
+</a>
+<nav aria-label="People" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#people-users">58.30.1 
+<span class="md-ellipsis">
+      People: Users
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fbis-user-sign-up-procedure">58.30.2 
+<span class="md-ellipsis">
+      FBIS user sign up procedure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managing-users">58.30.3 
+<span class="md-ellipsis">
+      Managing users
+    </span>
+</a>
+<nav aria-label="Managing users" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#restricting-access-of-certain-data-to-specific-users">
+<span class="md-ellipsis">
+      Restricting access of certain data to specific users
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../validate-records/">
+<span class="md-ellipsis">
+    Validating records (occurrence data) and new taxa
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../geoserver/">
+<span class="md-ellipsis">
+    Working with GeoServer
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Working with GeoServer
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/overview/">
+<span class="md-ellipsis">
+    GeoServer Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/loading-postgis-layers/">
+<span class="md-ellipsis">
+    Loading layers into a PostgreSQL database
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/publishing-layers-in-geoserver/">
+<span class="md-ellipsis">
+    Publishing layers in GeoServer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/styling-layers-in-geoserver/">
+<span class="md-ellipsis">
+    Styling layers in GeoServer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/visualising-geoserver-layers-in-qgis/">
+<span class="md-ellipsis">
+    Visualising GeoServer layers in QGIS
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../layer-upload/">
+<span class="md-ellipsis">
+    Layer Upload, Styling, and Spatial Filter
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+            Layer Upload, Styling, and Spatial Filter
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/upload-spatial-layers/">
+<span class="md-ellipsis">
+    Upload Spatial Layer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/style-editor/">
+<span class="md-ellipsis">
+    Style Spatial Layer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/publish-spatial-layer/">
+<span class="md-ellipsis">
+    Publish Spatial Layer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/add-spatial-filter/">
+<span class="md-ellipsis">
+    Add Spatial Filter
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../park-layer/">
+<span class="md-ellipsis">
+    Park Layers
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            Park Layers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../park-layer/add-park-layer/">
+<span class="md-ellipsis">
+    Adding a Park layer
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../geocontext/">
+<span class="md-ellipsis">
+    GIS Data in BIMS
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            GIS Data in BIMS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/overview/">
+<span class="md-ellipsis">
+    GeoContext Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/layers/">
+<span class="md-ellipsis">
+    GeoContext and Visualisation Layers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/data/">
+<span class="md-ellipsis">
+    Working with GeoContext Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/harvesting/">
+<span class="md-ellipsis">
+    Harvesting GeoContext Data
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../customisation/">
+<span class="md-ellipsis">
+    Customisation
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            Customisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../customisation/adding-landing-page-section/">
+<span class="md-ellipsis">
+    Adding a Landing Page Section
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../customisation/embed-video-on-landing-page/">
+<span class="md-ellipsis">
+    Embedding Video on the Landing Page
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../customisation/add-inline-images/">
+<span class="md-ellipsis">
+    Adding Inline Images on the Landing Page
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/">
+<span class="md-ellipsis">
+    Developers
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/architecture/">
+<span class="md-ellipsis">
+    Architecture
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/prerequisites/">
+<span class="md-ellipsis">
+    Prerequisites
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/cloning/">
+<span class="md-ellipsis">
+    Cloning
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/ide-setup/">
+<span class="md-ellipsis">
+    IDE Setup
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/building/">
+<span class="md-ellipsis">
+    Building
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/workflows/">
+<span class="md-ellipsis">
+    Workflows
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/key-development/">
+<span class="md-ellipsis">
+</span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/documentation/">
+<span class="md-ellipsis">
+    Documentation
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/documentation/easy-workflow/">
+<span class="md-ellipsis">
+    Simple Workflow
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/documentation/overview/">
+<span class="md-ellipsis">
+    Advanced Workflow
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/documentation/context-help/">
+<span class="md-ellipsis">
+    Context Help
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/api/">
+<span class="md-ellipsis">
+    API
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/api/manual/">
+<span class="md-ellipsis">
+    Reference
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/api/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/licence/">
+<span class="md-ellipsis">
+    Licence
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../devops/">
+<span class="md-ellipsis">
+    DevOps
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../devops/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../devops/guide/deploying-production/">
+<span class="md-ellipsis">
+    Deploying to Production
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../devops/manual/">
+<span class="md-ellipsis">
+    Manual
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    About
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/contributing/">
+<span class="md-ellipsis">
+    Contributing
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/citations/">
+<span class="md-ellipsis">
+    Citations
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/licence/">
+<span class="md-ellipsis">
+    Licence
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-abundance-types">58.1 
+<span class="md-ellipsis">
+      BIMS: Abundance types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-base-map-layers">58.2 
+<span class="md-ellipsis">
+      BIMS: Base map layers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-biological-collection-records">58.3 
+<span class="md-ellipsis">
+      BIMS: Biological collection records
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-biotopes">58.4 
+<span class="md-ellipsis">
+      BIMS: Biotopes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-chemistry-records">58.5 
+<span class="md-ellipsis">
+      BIMS: Chemistry records
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-chemistry-units">58.6 
+<span class="md-ellipsis">
+      BIMS: Chemistry units
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-datasets">58.7 
+<span class="md-ellipsis">
+      BIMS: Datasets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-decision-support-tool-names-and-descision-support-tools">58.8 
+<span class="md-ellipsis">
+      BIMS: Decision Support Tool Names and Descision Support Tools
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-download-request-purposes">58.9 
+<span class="md-ellipsis">
+      BIMS: Download request purposes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-download-requests">58.10 
+<span class="md-ellipsis">
+      BIMS: Download requests
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-endemism">58.11 
+<span class="md-ellipsis">
+      BIMS: Endemism
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-hydroperiods">58.12 
+<span class="md-ellipsis">
+      BIMS: Hydroperiods
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-iucn-status">58.13 
+<span class="md-ellipsis">
+      BIMS: IUCN status
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-context-filter-group-orders">58.14 
+<span class="md-ellipsis">
+      BIMS: Location context filter group orders
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-context-filter">58.15 
+<span class="md-ellipsis">
+      BIMS: Location context filter
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-context-groups">58.16 
+<span class="md-ellipsis">
+      BIMS: Location context groups
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-location-sites">58.17 
+<span class="md-ellipsis">
+      BIMS: Location sites
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-non-biodiversity-layers">58.18 
+<span class="md-ellipsis">
+      BIMS: Non-biodiversity layers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-notifications">58.19 
+<span class="md-ellipsis">
+      BIMS: Notifications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-record-types">58.20 
+<span class="md-ellipsis">
+      BIMS: Record types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-roles">58.21 
+<span class="md-ellipsis">
+      BIMS: Roles
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-sampling-effort-measure">58.22 
+<span class="md-ellipsis">
+      BIMS: Sampling effort measure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-sampling-methods">58.23 
+<span class="md-ellipsis">
+      BIMS: Sampling methods
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-site-settings">58.24 
+<span class="md-ellipsis">
+      BIMS: Site settings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-source-references">58.25 
+<span class="md-ellipsis">
+      BIMS: Source references
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-taxa">58.26 
+<span class="md-ellipsis">
+      BIMS: Taxa
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-taxon-groups">58.27 
+<span class="md-ellipsis">
+      BIMS: Taxon groups
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bims-wetland-indicator-status">58.28 
+<span class="md-ellipsis">
+      BIMS: Wetland indicator status
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages">58.29 
+<span class="md-ellipsis">
+      Flat pages
+    </span>
+</a>
+<nav aria-label="Flat pages" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages-about-us">58.29.1 
+<span class="md-ellipsis">
+      Flat pages: about us
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages-citation-guidelines">58.29.2 
+<span class="md-ellipsis">
+      Flat pages: citation guidelines
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flat-pages-help">58.29.3 
+<span class="md-ellipsis">
+      Flat pages: Help
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#people">58.30 
+<span class="md-ellipsis">
+      People
+    </span>
+</a>
+<nav aria-label="People" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#people-users">58.30.1 
+<span class="md-ellipsis">
+      People: Users
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fbis-user-sign-up-procedure">58.30.2 
+<span class="md-ellipsis">
+      FBIS user sign up procedure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managing-users">58.30.3 
+<span class="md-ellipsis">
+      Managing users
+    </span>
+</a>
+<nav aria-label="Managing users" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#restricting-access-of-certain-data-to-specific-users">
+<span class="md-ellipsis">
+      Restricting access of certain data to specific users
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<div><h1 id="managing-bims-admin-tables"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.</span> Managing BIMS Admin tables<a class="headerlink" href="#managing-bims-admin-tables" title="Permanent link">¶</a></h1>
+<p>Several backend tables can be updated and managed by administrators, including the Biodiversity Information Management System (BIMS), and are accessible via the Admin Page. Here we provide a list of actions related to the Site Administration including the BIMS table management that an administrator (super user status) may need to edit or check. Only the tables that the administrator needs to be able to revise have been described, and not all the tables in the Site Administration and BIMS. They are described chronologically as they appear in Site Administration. This document will continually need to be updated as new administration functions are added.</p>
+<p><strong>Link to specific sub-sections in BIMS as well as other admin tasks:</strong></p>
+<p><strong>Managing BIMS Admin tables</strong></p>
+<ul>
+<li><a href="#managing-bims-admin-tables">58. Managing BIMS Admin tables</a></li>
+<li><a href="#bims-abundance-types">58.1 BIMS: Abundance types</a></li>
+<li><a href="#bims-base-map-layers">58.2 BIMS: Base map layers</a></li>
+<li><a href="#bims-biological-collection-records">58.3 BIMS: Biological collection records</a></li>
+<li><a href="#bims-biotopes">58.4 BIMS: Biotopes</a></li>
+<li><a href="#bims-chemistry-records">58.5 BIMS: Chemistry records</a></li>
+<li><a href="#bims-chemistry-units">58.6 BIMS: Chemistry units</a></li>
+<li><a href="#bims-datasets">58.7 BIMS: Datasets</a></li>
+<li><a href="#bims-decision-support-tool-names-and-descision-support-tools">58.8 BIMS: Decision Support Tool Names and Decision Support Tools</a></li>
+<li><a href="#bims-download-request-purposes">58.9 BIMS: Download request purposes</a></li>
+<li><a href="#bims-download-requests">58.10 BIMS: Download requests</a></li>
+<li><a href="#bims-endemism">58.11 BIMS: Endemism</a></li>
+<li><a href="#bims-hydroperiods">58.12 BIMS: Hydroperiods</a></li>
+<li><a href="#bims-iucn-status">58.13 BIMS: IUCN status</a></li>
+<li><a href="#bims-location-context-filter-group-orders">58.14 BIMS: Location context filter group orders</a></li>
+<li><a href="#bims-location-context-filter">58.15 BIMS: Location context filter</a></li>
+<li><a href="#bims-location-context-groups">58.16 BIMS: Location context groups</a></li>
+<li><a href="#bims-location-sites">58.17 BIMS: Location sites</a></li>
+<li><a href="#bims-non-biodiversity-layers">58.18 BIMS: Non-biodiversity layers</a></li>
+<li><a href="#bims-notifications">58.19 BIMS: Notifications</a></li>
+<li><a href="#bims-record-types">58.20 BIMS: Record types</a></li>
+<li><a href="#bims-roles">58.21 BIMS: Roles</a></li>
+<li><a href="#bims-sampling-effort-measure">58.22 BIMS: Sampling effort measure</a></li>
+<li><a href="#bims-sampling-methods">58.23 BIMS: Sampling methods</a></li>
+<li><a href="#bims-site-settings">58.24 BIMS: Site settings</a></li>
+<li><a href="#bims-source-references">58.25 BIMS: Source references</a></li>
+<li><a href="#bims-taxa">58.26 BIMS: Taxa</a></li>
+<li><a href="#bims-taxon-groups">58.27 BIMS: Taxon groups</a></li>
+<li><a href="#bims-wetland-indicator-status">58.28 BIMS: Wetland indicator status</a></li>
+<li><a href="#flat-pages">58.29 Flat pages</a></li>
+<li><a href="#flat-pages-about-us">58.29.1 Flat pages: about us</a></li>
+<li><a href="#flat-pages-citation-guidelines">58.29.2 Flat pages: citation guidelines</a></li>
+<li><a href="#flat-pages-help">58.29.3 Flat pages: Help</a></li>
+<li><a href="#people">58.30 People</a></li>
+<li><a href="#people-users">58.30.1 People: Users</a></li>
+<li><a href="#fbis-user-sign-up-procedure">58.30.2 FBIS user sign up procedure</a></li>
+<li><a href="#managing-users">58.30.3 Managing users</a></li>
+</ul>
+<h2 id="bims-abundance-types"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.1</span> BIMS: Abundance types<a class="headerlink" href="#bims-abundance-types" title="Permanent link">¶</a></h2>
+<p>Here you manage the abundance measure (type) such as number, percentage etc. New abundance measures (type) can be added.</p>
+<p><img alt="abundance types" src="../img/abundance-types.png"/></p>
+<h2 id="bims-base-map-layers"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.2</span> BIMS: Base map layers<a class="headerlink" href="#bims-base-map-layers" title="Permanent link">¶</a></h2>
+<p>Here you can see and manage the base maps visible on the platform. The defaults base map can be selected. </p>
+<p><img alt="base map layers" src="../img/base-map-layers.png"/></p>
+<h2 id="bims-biological-collection-records"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.3</span> BIMS: Biological collection records<a class="headerlink" href="#bims-biological-collection-records" title="Permanent link">¶</a></h2>
+<p>Here you can see all biological collection records. Individual sites can be searched for and filters applied. </p>
+<p><img alt="biological collection records" src="../img/biological-collection-records.png"/></p>
+<h2 id="bims-biotopes"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.4</span> BIMS: Biotopes<a class="headerlink" href="#bims-biotopes" title="Permanent link">¶</a></h2>
+<p>Here you manage the broad biotope categories, description and order; the specific biotope categories, description and order; and the substratum.  These biotopes are initially populated by the biodiversity data upload files, where each biotope is specified in the dropdowns. Details are provided below. Certain biotopes and substrata may be associated with one or more modules.  As more biodiversity modules are added, it may be necessary for the administrator to update biotopes.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Broad Biotope</th>
+<th>Specific Biotope</th>
+<th>Substratum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All</td>
+<td>Unspecified</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td>Mixed</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Algae, invertebrates, anurans</td>
+<td>Stones In Current</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Algae, invertebrates, anurans</td>
+<td>Stones Out Of Current</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Algae, invertebrates, anurans</td>
+<td>Marginal Vegetation</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Algae, invertebrates, anurans</td>
+<td>Aquatic Vegetation</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Algae, invertebrates, anurans</td>
+<td>Gravel/Sand/Mud</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Algae, invertebrates</td>
+<td>Artificial substrate</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Slow-Shallow</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Slow-Deep</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Fast-Shallow</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Fast-Deep</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Backwater</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Bedrock</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Cascade</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Chute</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Detritus</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Mixed</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Pool</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Rapid</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Riffle</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Run</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Slackwater</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Unspecified</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td>Waterfall</td>
+<td> </td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Unspecified</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Mixed</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Bedrock</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Boulder</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Cobble</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Detritus</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Gravel</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Pebble</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Sand</td>
+</tr>
+<tr>
+<td>All</td>
+<td> </td>
+<td> </td>
+<td>Silt/Mud/Clay</td>
+</tr>
+</tbody>
+</table>
+<p>If these have not been included in the data occurrence upload files, then they are blank. New biotopes can be added by clicking the “+ Add biotope”.</p>
+<h2 id="bims-chemistry-records"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.5</span> BIMS: Chemistry records<a class="headerlink" href="#bims-chemistry-records" title="Permanent link">¶</a></h2>
+<p>Here you can see all chemical records. Individual sites can be searched for and filters applied. </p>
+<p><img alt="chemistry records" src="../img/chemistry-records.png"/></p>
+<h2 id="bims-chemistry-units"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.6</span> BIMS: Chemistry units<a class="headerlink" href="#bims-chemistry-units" title="Permanent link">¶</a></h2>
+<p>Here you manage the physico-chemical data including the Chem Code (<strong>NB this needs to match the column in the physico-chemical data upload template</strong>), chem description, chem unit, whether the variable needs to be shown in abiotic form (abiotic list), minimum and maximum values. New chemistry units can be added by clicking the “+ Add chemistry unit”.</p>
+<p><img alt="Chemistry units 1" src="../img/chemistry-units-1.png"/></p>
+<p>Changes can be made to each variable by clicking on the relevant <strong>Chem code</strong> and editing the appropriate field. Here one can also specify the number of decimal places.</p>
+<p><img alt="Chemistry units 2" src="../img/chemistry-units-2.png"/></p>
+<h2 id="bims-datasets"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.7</span> BIMS: Datasets<a class="headerlink" href="#bims-datasets" title="Permanent link">¶</a></h2>
+<p>When occurrence data are harvested from GBIF, the datasets that comprise the data are stored in the Datasets table. When the system is harvesting occurrences data from GBIF, it will automatically update the dataset table. To manually update the dataset table, click <code>Fetch Datasets</code>. Here you can add an abbreviation for the dataset so that when the citation is pulled down in the checklist, the abbreviation is provided. </p>
+<p><img alt="Datasets" src="../img/datasets-1.png"/></p>
+<p>Details for each dataset can be viewed by clicking the UUID. The dataset Name, description, citation and URL are provided. </p>
+<p><img alt="Change dataset" src="../img/datasets-2.png"/></p>
+<h2 id="bims-decision-support-tool-names-and-descision-support-tools"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.8</span> BIMS: Decision Support Tool Names and Descision Support Tools<a class="headerlink" href="#bims-decision-support-tool-names-and-descision-support-tools" title="Permanent link">¶</a></h2>
+<p>Here you manage the decision support tools that are added and what they are called. Individual UUIDs are assigned specific decision support name.</p>
+<p><img alt="Decision support tool" src="../img/decision-support-tool.png"/></p>
+<h2 id="bims-download-request-purposes"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.9</span> BIMS: Download request purposes<a class="headerlink" href="#bims-download-request-purposes" title="Permanent link">¶</a></h2>
+<p>Here you manage the download request purposes that a user chooses when requesting a download of a graph or csv file. New purposes can be added by selecting “Add download request purpose” and the sort order can be updated.</p>
+<p>When a system is first set up the administrator needs to add Download request purposes here before users are able to download information or csv files.</p>
+<p><img alt="Download request purposes 1" src="../img/download-request-purposes-1.png"/></p>
+<h2 id="bims-download-requests"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.10</span> BIMS: Download requests<a class="headerlink" href="#bims-download-requests" title="Permanent link">¶</a></h2>
+<p>Here you can see all download requests from users, including details of the requester, resource type (csv, table, chart), resource name and purpose (as specified in the download request purposes). One can find out further details of the request by clicking on the Request date link, which opens up a second form. This is useful to track the progress of the large request downloads.</p>
+<p><img alt="Download requests 1" src="../img/download-requests-1.png"/></p>
+<p><img alt="Download requests 2" src="../img/download-requests-2.png"/></p>
+<h2 id="bims-endemism"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.11</span> BIMS: Endemism<a class="headerlink" href="#bims-endemism" title="Permanent link">¶</a></h2>
+<p>Here you manage the endemism categories including the Name (what is shown on the dashboard), description and display order.  The endemism categories are added during the uploading of the taxonomic master lists. Note that if the description is used in the master list, then this will be shown on the side panel and / or dashboard. It is important to always upload the Name only. Endemism categories can be merged in the event that erroneous uploading of categories occurs. </p>
+<p><img alt="Endemism 1" src="../img/endemism-1.png"/></p>
+<p>Each endemism category can be edited by clicking on the Name</p>
+<p><img alt="Endemism 2" src="../img/endemism-2.png"/></p>
+<h2 id="bims-hydroperiods"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.12</span> BIMS: Hydroperiods<a class="headerlink" href="#bims-hydroperiods" title="Permanent link">¶</a></h2>
+<p>Here you manage the hydroperiods, including display order. New hydroperiods can be added if required. </p>
+<p><img alt="Hydroperiods" src="../img/hydroperiods.png"/></p>
+<h2 id="bims-iucn-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.13</span> BIMS: IUCN status<a class="headerlink" href="#bims-iucn-status" title="Permanent link">¶</a></h2>
+<p>Here you can manage the Conservation status categories for global and national. Global is pulled down from the IUCN, while national is from SANBI. Status’s only applicable to national need to be opened and national checked. To change a status click on category.</p>
+<p><img alt="IUCN Conservation status 1" src="../img/iucn-conservation-status-1.png"/></p>
+<p><img alt="IUCN Conservation status 2" src="../img/iucn-conservation-status-2.png"/></p>
+<p>The colour used can also be changed. For example, the colour template codes for the Global Conservation Status and <span style="color: red;">National Conservation Status (in South Africa as an example)</span> are: </p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Colour code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extinct</td>
+<td>#C9CAC7</td>
+</tr>
+<tr>
+<td>Extinct in the Wild</td>
+<td>#A2A3A0</td>
+</tr>
+<tr>
+<td><span style="color: red;">Regionally Extinct</span></td>
+<td>#797A78</td>
+</tr>
+<tr>
+<td><span style="color:red;">Critically Endangered – Possibly Extinct</span></td>
+<td>#DD456A</td>
+</tr>
+<tr>
+<td>Critically Endangered</td>
+<td>#641F30</td>
+</tr>
+<tr>
+<td>Endangered</td>
+<td>#8D2641</td>
+</tr>
+<tr>
+<td>Vulnerable</td>
+<td>#525351</td>
+</tr>
+<tr>
+<td>Near Threatened</td>
+<td>#3D647D</td>
+</tr>
+<tr>
+<td>Near Threatened – Legacy</td>
+<td>#4D7E9D</td>
+</tr>
+<tr>
+<td><span style="color:red;">Critically Rare</span></td>
+<td>#005904</td>
+</tr>
+<tr>
+<td><span style="color:red;">Rare</span></td>
+<td>#009106</td>
+</tr>
+<tr>
+<td><span style="color:red;">Declining</span></td>
+<td>#91900D</td>
+</tr>
+<tr>
+<td>Data Deficient</td>
+<td>#D7CD47</td>
+</tr>
+<tr>
+<td><span style="color:red;">Data Deficient – Insufficient Information</span></td>
+<td>#D7CD47</td>
+</tr>
+<tr>
+<td><span style="color:red;">Data Deficient – Taxonomically Problematic</span></td>
+<td>#D7CD47</td>
+</tr>
+<tr>
+<td>Least Concern</td>
+<td>#17766B</td>
+</tr>
+<tr>
+<td>Least Concern – Legacy</td>
+<td>#14655C</td>
+</tr>
+<tr>
+<td>Conservation Dependent</td>
+<td>#0F4D46</td>
+</tr>
+<tr>
+<td>Not evaluated</td>
+<td>#39B2A3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bims-location-context-filter-group-orders"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.14</span> BIMS: Location context filter group orders<a class="headerlink" href="#bims-location-context-filter-group-orders" title="Permanent link">¶</a></h2>
+<p>Here you can manage the spatial layers shown in the side panel and dashboards, as well as the display and filter orders. The side panel dashboard is visible on the right hand side of the map. The detailed dashboard is visible once the user has clicked on the dashboard for a specific biodiversity module.  </p>
+<p><img alt="Side panel dashboard" src="../img/side-panel-dashboard.png"/></p>
+<p><img alt="Detailed dashboard" src="../img/detailed-dashboard.png"/></p>
+<p><strong>Overview dashboard</strong> </p>
+<p><img alt="Location context filter group orders 1" src="../img/location-context-filter-group-orders-1.png"/></p>
+<p>Clicking on the ID opens up this form, where one can select the Group and Filter, and change the group display order. One can also add new groups and / or filters. </p>
+<p>By clicking the box “ Show in dashboard” and /or “ show in side panel” the filters and groups are included or excluded in the different dashboards. </p>
+<p><img alt="Location context filter group orders 2" src="../img/location-context-filter-group-orders-2.png"/></p>
+<p>If you do not want the Group visible as a spatial filter, click the "Is hidden in spatial filter" box. </p>
+<p>If the filter is visible, and includes a long list, then it may be easier to click "Use autocomplete in filter", which allows the user to select one or more from a dropdown list. </p>
+<p><img alt="Autocomplete filter" src="../img/autocomplete-filter.png"/></p>
+<h2 id="bims-location-context-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.15</span> BIMS: Location context filter<a class="headerlink" href="#bims-location-context-filter" title="Permanent link">¶</a></h2>
+<p>Here you can change the name and display order of the spatial filters.</p>
+<p><img alt="Location context filter order 1" src="../img/location-context-filter-order-1.png"/></p>
+<h2 id="bims-location-context-groups"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.16</span> BIMS: Location context groups<a class="headerlink" href="#bims-location-context-groups" title="Permanent link">¶</a></h2>
+<p>Here you can manage the spatial layers and groups, which relate to geocontext. Each layer can be opened to view detail.</p>
+<p><img alt="Location context groups 1" src="../img/location-context-groups-1.png"/></p>
+<p>To change what is displayed click the ID Number and check or uncheck the box for each. Note that there are some extra aspects that still need clarifying related to order etc.</p>
+<h2 id="bims-location-sites"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.17</span> BIMS: Location sites<a class="headerlink" href="#bims-location-sites" title="Permanent link">¶</a></h2>
+<p>Here you can view sites, filter for specific site and update site codes.</p>
+<p><img alt="Location sites 1" src="../img/location-sites-1.png"/></p>
+<p>Here we are also able to update the geocontext data for each site or selection of sites.</p>
+<p><img alt="Location sites 2" src="../img/location-sites-2.png"/></p>
+<h2 id="bims-non-biodiversity-layers"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.18</span> BIMS: Non-biodiversity layers<a class="headerlink" href="#bims-non-biodiversity-layers" title="Permanent link">¶</a></h2>
+<p>Here you manage the order that spatial layers are shown. This includes viewing and/or editing the order, name, Wms url and Wms layer name. By clicking on the order, the details of the layer can be viewed and edited. Only administrators experienced in geocontext and GIS should edit this as it links directly to these components.</p>
+<p><img alt="Non-biodiversity layers 1" src="../img/non-biodiversity-layers-1.png"/></p>
+<p><img alt="Non-biodiversity layers 2" src="../img/non-biodiversity-layers-2.png"/></p>
+<h2 id="bims-notifications"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.19</span> BIMS: Notifications<a class="headerlink" href="#bims-notifications" title="Permanent link">¶</a></h2>
+<p>Here you can assign specific administrator(s) to receive the different notifications that are generated when, for example, a new user signs up, or a new taxon is added.  This is changed by clicking on the Name of the notification and revising the list of Chosen users.</p>
+<p>When a system is first set up the administrator has to add the notifications as well as the individuals who should receive each notification.</p>
+<p><img alt="Notifications" src="../img/notifications-1.png"/></p>
+<p><img alt="Change notifications" src="../img/notifications-2.png"/></p>
+<h2 id="bims-record-types"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.20</span> BIMS: Record types<a class="headerlink" href="#bims-record-types" title="Permanent link">¶</a></h2>
+<p>Here you manage the record types used for collection of biodiversity occurrence data. New record types can be added and sort order changed. </p>
+<p><img alt="Record types" src="../img/record-types.png"/></p>
+<h2 id="bims-roles"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.21</span> BIMS: Roles<a class="headerlink" href="#bims-roles" title="Permanent link">¶</a></h2>
+<p>Here you manage the roles for users who sign up to the platform. New roles can be added and sort order changed. </p>
+<p><img alt="Roles" src="../img/roles.png"/></p>
+<h2 id="bims-sampling-effort-measure"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.22</span> BIMS: Sampling effort measure<a class="headerlink" href="#bims-sampling-effort-measure" title="Permanent link">¶</a></h2>
+<p>Here you manage the sampling effort measures used for collection of biodiversity occurrence data. These sampling effort measures are initially populated by the biodiversity data upload files, where each sampling method is specified in the dropdowns.  New measures can be added, existing ones edited, and a measure can be linked to a specific module if required.</p>
+<p><img alt="Sampling effort measure" src="../img/sampling-effort-measure.png"/></p>
+<h2 id="bims-sampling-methods"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.23</span> BIMS: Sampling methods<a class="headerlink" href="#bims-sampling-methods" title="Permanent link">¶</a></h2>
+<p>Here you manage the sampling methods used for collection of biodiversity occurrence data. These sampling methods are initially populated by the biodiversity data upload files, where each sampling method is specified in the dropdowns.  Details are provided below.</p>
+<p>For each sampling method the administrator needs to select the taxon group or groups that the method is associated with and certain sampling methods may be associated with one or more taxon groups / modules. As more biodiversity modules are added, it may be necessary for the administrator to update the sampling methods.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Sampling method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invertebrates only</td>
+<td>Baited Line</td>
+</tr>
+<tr>
+<td>Invertebrates only</td>
+<td>Box/Surber</td>
+</tr>
+<tr>
+<td>Invertebrates only</td>
+<td>Drift Net</td>
+</tr>
+<tr>
+<td>Invertebrates only</td>
+<td>Kick Net</td>
+</tr>
+<tr>
+<td>Invertebrates only</td>
+<td>Light Trap</td>
+</tr>
+<tr>
+<td>Invertebrates only</td>
+<td>Stone</td>
+</tr>
+<tr>
+<td>Invertebrates, fish</td>
+<td>Hand Net</td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Fyke net</td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Gill net</td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Rod and line angling</td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Seine net</td>
+</tr>
+<tr>
+<td>Fish only</td>
+<td>Snorkelling</td>
+</tr>
+<tr>
+<td>Fish, anurans</td>
+<td>Underwater video analysis</td>
+</tr>
+<tr>
+<td>Fish, anurans</td>
+<td>Electro-fishing</td>
+</tr>
+<tr>
+<td>Fish, anurans</td>
+<td>Visual survey</td>
+</tr>
+<tr>
+<td>Anurans</td>
+<td>Active acoustic survey</td>
+</tr>
+<tr>
+<td>Anurans</td>
+<td>Passive acoustic survey</td>
+</tr>
+<tr>
+<td>Anurans</td>
+<td>Baited trapping</td>
+</tr>
+<tr>
+<td>Anurans</td>
+<td>Non-baited survey</td>
+</tr>
+<tr>
+<td>All</td>
+<td>Unspecified</td>
+</tr>
+<tr>
+<td>All</td>
+<td>Multiple</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Sampling methods 1" src="../img/sampling-methods-1.png"/></p>
+<p>Changes can be made to each sampling method by clicking on the <strong>Sampling method</strong> and editing the name, order and Taxon group it is appropriate to.  To select more than one taxon group click Control Select simultaneously. If these have not been included in the data occurrence upload files, then they are blank. New sampling methods can be added by clicking the “+ Add sampling method”.</p>
+<p>We have also added functionality to merge sampling methods, in the event that the same sampling method is added, but with a slight variation. For example:</p>
+<p><img alt="Sampling methods 2" src="../img/sampling-methods-2.png"/></p>
+<p>To merge these two or more sampling methods, first you need to verify the correct one, by opening the method and ticking the verify box.</p>
+<p><img alt="Sampling methods 3" src="../img/sampling-methods-3.png"/></p>
+<p>Then you use the select “Merge sampling methods” and click <code>Go</code>.</p>
+<p><img alt="Sampling methods 4" src="../img/sampling-methods-4.png"/></p>
+<h2 id="bims-site-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.24</span> BIMS: Site settings<a class="headerlink" href="#bims-site-settings" title="Permanent link">¶</a></h2>
+<p>Here you manage several components related to the setting of the site (i.e. webpage, url for the information systems, e.g. FBIS, RBIS, ORBIS etc.). Details of the sections that an administrator can change are provided below.</p>
+<p>Site notice can be changed in the Site settings section.</p>
+<p><img alt="Site settings 1" src="../img/site-settings-1.png"/></p>
+<p>You can specify the <code>readme</code> file that is bundled with the downloaded occurrence data.</p>
+<p><img alt="Site settings 2" src="../img/site-settings-2.png"/></p>
+<p>You can specify the taxonomic upload template for the Master lists. This is then downloadable on the Upload – Taxonomic data.</p>
+<p><img alt="Site settings 3" src="../img/site-settings-3.png"/></p>
+<p>You can specify the generic occurrence upload template for the occurrence data. This is then downloadable on the Upload – Occurrence data. If different biodiversity groups have customised master and occurrence upload templates then these are added in Taxon Management. <a href="../taxa-management/">See notes on Taxon Management</a></p>
+<p><img alt="Site settings 4" src="../img/site-settings-4.png"/></p>
+<p>You can view and/or edit the disclaimer form text and disclaimer doc text.</p>
+<p><img alt="Site settings 5" src="../img/site-settings-5.png"/></p>
+<p>You can enable or disable the third party layer as not all information systems have links to third party data</p>
+<p><img alt="Site settings 6" src="../img/site-settings-6.png"/></p>
+<p><img alt="Site settings 7" src="../img/site-settings-7.png"/></p>
+<p>You can enable or disable sass as not all information systems have sass data</p>
+<p><img alt="Site settings 8" src="../img/site-settings-8.png"/></p>
+<p>You can enable or disable water temperature data as not all information systems have water temperature data</p>
+<p><img alt="Site settings 9" src="../img/site-settings-9.png"/></p>
+<p>You can enable or disable download request approval. If this is disabled then the user can download the data without waiting for approval from the administrator.</p>
+<p><img alt="Site settings 10" src="../img/site-settings-10.png"/></p>
+<p>You can enable or disable the module summary on the landing page dashboard. This is not applicable to FBIS, only RBIS and ORBIS, and future platforms.</p>
+<p><img alt="Site settings 11" src="../img/site-settings-11.png"/></p>
+<p><img alt="Site settings 12" src="../img/site-settings-12.png"/></p>
+<p>You can enable or disable the remove all occurrence tool in Taxon Management. This should never be activated on the live/production site as clicking the Remove all button, will delete all the occurrence data for the module. It can be enabled on the testing site as this allows administrators to practice the creation of new modules, uploading of taxonomic master lists and the uploading of occurrence data.</p>
+<p><img alt="Site settings 13" src="../img/site-settings-13.png"/></p>
+<p><img alt="Site settings 14" src="../img/site-settings-14.png"/></p>
+<p>You can enable or disable allow edit in admin.</p>
+<p><img alt="Edit in Admin" src="../img/allow-edit-in-admin.png"/></p>
+<p>You can view and/or edit the copyright text that is visible at the bottom of the landing page.</p>
+<p><img alt="Site settings 15" src="../img/site-settings-15.png"/></p>
+<p>If occurrence data are uploaded for an area/Park that does not have a latitude and longitude, then it is possible to upload a csv of the Park Names with latitude and longitudes generated. These are then used to upload occurrence data for a Park.</p>
+<p><img alt="Uploading centroids" src="../img/uploading-centroids.png"/></p>
+<h2 id="bims-source-references"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.25</span> BIMS: Source references<a class="headerlink" href="#bims-source-references" title="Permanent link">¶</a></h2>
+<p>Generally it is easiest to manage source references (i.e. the metadata associated with each occurrence record).</p>
+<p><img alt="Source references 1" src="../img/source-references-1.png"/></p>
+<p>However, on occasions, issues arise whereby the source reference is duplicated, possibly because of a small typo during data capture.  In the Admin - Source references – section it is possible to merge two source references. One does this by finding the two relevant source reference, opening the correct one and selecting “Verify”, then checking the box next to the two (or more) references to be merged, and using the Merge from the dropdown lists, then <code>Go</code>. Note that the Source reference needs to be the same type to be able to merge.</p>
+<p><img alt="Source references 2" src="../img/source-references-2.png"/></p>
+<p><img alt="Source references 3" src="../img/source-references-3.png"/></p>
+<h2 id="bims-taxa"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.26</span> BIMS: Taxa<a class="headerlink" href="#bims-taxa" title="Permanent link">¶</a></h2>
+<p>Here you manage all aspects related to taxa within the information system. Most of this is done easily within Taxon Management, but there are some actions that can only be done within this table, including deleting a taxon (this cannot be done if occurrence data are associated with it), merging taxa and updating taxa (when one taxon is a synonym of another).</p>
+<p>The table includes the Canonical Name (also referred to as the "true name”), the Link to GBIF, the Scientific Name, the Taxonomic Rank, the Parent, the Import date, the Taxonomic Status, the Legacy Canonical Name, and whether the taxon has been Verified.  Ultimately all taxa in the information system should be verified.</p>
+<p><img alt="Taxa 1" src="../img/taxa-1.png"/></p>
+<p>Clicking on the canonical name opens up the Change Taxonomy form for the selected species. Note that this is the same as that accessed within Taxon Management.</p>
+<p><img alt="Taxa 2" src="../img/taxa-2.png"/></p>
+<p>A search field and filters are also included to assist you to navigate.</p>
+<p><img alt="Taxa 3" src="../img/taxa-3.png"/></p>
+<p>To delete a taxon, click the check box, and select Delete selected taxon, and click <code>Go</code>.</p>
+<p><img alt="Taxa 5" src="../img/taxa-4.png"/></p>
+<p>There is a check, and if you click, "Yes, I am sure", then the taxon will be deleted.</p>
+<p><img alt="Taxa 6" src="../img/taxa-5.png"/></p>
+<p>Sometimes errors are picked up in the taxa, for example there are two taxa that are the same. One then needs to merge these taxa. Prior to merging, the correct taxon needs to be checked and the verified button checked. Then to merge the two taxa, click the check box, and select Merge taxa, and click <code>Go</code>.</p>
+<p><img alt="Taxa 7" src="../img/taxa-6.png"/></p>
+<p>Updating is used when one wants to update a synonym with the accepted name. Prior to updating, the accepted taxon needs to be checked and the verified button checked. Then to update the synonym, click the check box of both taxa, and select Update taxa, and click <code>Go</code>. This functionality is currently being refined.</p>
+<h2 id="bims-taxon-groups"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.27</span> BIMS: Taxon groups<a class="headerlink" href="#bims-taxon-groups" title="Permanent link">¶</a></h2>
+<p>Here you manage the taxon groups added to the information systems. </p>
+<p><img alt="Taxon groups 1" src="../img/taxon-groups-1.png"/></p>
+<p>To note is the need to add the singular name so that it is correct in the Add XXXX data form.</p>
+<p><img alt="Taxon groups 2" src="../img/taxon-groups-2.png"/></p>
+<p><img alt="Taxon groups 3" src="../img/taxon-groups-3.png"/></p>
+<p>You can also manage the wheel chart type that is viewed on the landing page. Options include: Global Conservation Status, Endemism, Division (Algae only), SASS Ecological Category (Invertebrates only). </p>
+<p><img alt="Biodiversity Wheel Chart" src="../img/biodiversity-wheel-chart.png"/></p>
+<h2 id="bims-wetland-indicator-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.28</span> BIMS: Wetland indicator status<a class="headerlink" href="#bims-wetland-indicator-status" title="Permanent link">¶</a></h2>
+<p>Here you manage wetland indicator status used for collection of biodiversity occurrence data. A new status type can be added and sort order changed. </p>
+<p><img alt="Wetland Indicator Status" src="../img/wetland-indicator-status.png"/></p>
+<h2 id="flat-pages"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.29</span> Flat pages<a class="headerlink" href="#flat-pages" title="Permanent link">¶</a></h2>
+<p>This is access outside of the BIMS section, in Flat Pages. From here you can update the “About us”, Citation guidelines and Help page.</p>
+<p><img alt="Flat Pages 1" src="../img/flat-pages-1.png"/></p>
+<h3 id="flat-pages-about-us"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.29.1</span> Flat pages: about us<a class="headerlink" href="#flat-pages-about-us" title="Permanent link">¶</a></h3>
+<p>Text for the About Us on the menu bar can be modified here by nativigating to the Admin Page - Flat Pages - Flat Pages.</p>
+<h3 id="flat-pages-citation-guidelines"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.29.2</span> Flat pages: citation guidelines<a class="headerlink" href="#flat-pages-citation-guidelines" title="Permanent link">¶</a></h3>
+<p><img alt="Flat Pages 2" src="../img/flat-pages-2.png"/></p>
+<p>Text for the Citation on the landing page can be modified here:
+https://freshwaterbiodiversity.org/admin/flatpages/flatpage/3/change/</p>
+<h3 id="flat-pages-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.29.3</span> Flat pages: Help<a class="headerlink" href="#flat-pages-help" title="Permanent link">¶</a></h3>
+<p>Text for the Help on the menu bar can be modified here:
+https://freshwaterbiodiversity.org/admin/flatpages/flatpage/2/change/</p>
+<p>Here's how to update the link to the FBIS manual:</p>
+<ul>
+<li>Open this page https://freshwaterbiodiversity.org/admin/flatpages/flatpage/2/change/</li>
+<li>Double click the user manual
+        <img alt="Flat Pages 3" src="../img/flat-pages-3.png"/></li>
+<li>Open the Link tab, and change the url
+        <img alt="Flat Pages 4" src="../img/flat-pages-4.png"/></li>
+<li>Click <code>Ok</code>, and then click <code>Save</code></li>
+</ul>
+<p>Get the url for the FBIS Manual by opening Source References and right clicking the green title, and choose 'Copy link address'. Then insert this url into the URL in the Link tab and <code>Save</code>.</p>
+<h2 id="people"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.30</span> People<a class="headerlink" href="#people" title="Permanent link">¶</a></h2>
+<h3 id="people-users"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.30.1</span> People: Users<a class="headerlink" href="#people-users" title="Permanent link">¶</a></h3>
+<p><img alt="People 1" src="../img/people-1.png"/></p>
+<h3 id="fbis-user-sign-up-procedure"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.30.2</span> FBIS user sign up procedure<a class="headerlink" href="#fbis-user-sign-up-procedure" title="Permanent link">¶</a></h3>
+<p>New users will click on the sign up button and enter details including email, First Name, Surname, Organisation, Role, Password. </p>
+<p><img alt="User sign up 1" src="../img/user-sign-up-1.png"/></p>
+<p><img alt="User sign up 2" src="../img/user-sign-up-2.png"/></p>
+<p>A link will then be sent to the administrators for approval.</p>
+<p><img alt="User sign up 3" src="../img/user-sign-up-3.png"/></p>
+<p>The administrator will click on the activation link for their email. </p>
+<p><img alt="User sign up 4" src="../img/user-sign-up-4.png"/></p>
+<p>The activation link will take you to the following page where you will activate the user. Change the username to start with capital letters and check the Active checkbox and click Save. </p>
+<p><img alt="User sign up 5" src="../img/user-sign-up-5.png"/></p>
+<p><img alt="User sign up 6" src="../img/user-sign-up-6.png"/></p>
+<p>The user has now been added successfully. </p>
+<h3 id="managing-users"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.30.3</span> Managing users<a class="headerlink" href="#managing-users" title="Permanent link">¶</a></h3>
+<p>Details of all users are visible here and can be edited as needed. When a user first registers they are activated by clicking the Permission - Active box. </p>
+<p>Several filters have been included to manage and find users. </p>
+<p><img alt="Managing users" src="../img/managing-users.png"/></p>
+<h4 id="restricting-access-of-certain-data-to-specific-users"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.30.3.1</span> Restricting access of certain data to specific users<a class="headerlink" href="#restricting-access-of-certain-data-to-specific-users" title="Permanent link">¶</a></h4>
+<p>Administrators can control which users are able to view different data types by including a column called Data Type in the occurrence upload template. The user roles are then managed in the People – Users table.</p>
+<p><strong>Public or empty data type:</strong> All users will be able to see the data.</p>
+<p><strong>PrivateDataGroup:</strong> All the staff of the tenant site will be able to see the data. For example, Sanparks staff will be able to see Sanparks occurrence data with the data type set to private.</p>
+<p><strong>SensitiveDataGroup:</strong> Only users able to see sensitive data will be able to see the data.</p>
+<p><img alt="Restricting data" src="../img/restricting-data.png"/></p></div>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Kartoza and FRC
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/kartoza" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/r/kartoza/" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/KartozaGeo" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"></path></svg>
+</a>
+<a class="md-social__link" href="https://kartoza.com" rel="noopener" target="_blank" title="kartoza.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m177.8 63.2 10 17.4c2.8 4.8 4.2 10.3 4.2 15.9v41.4c0 3.9 1.6 7.7 4.3 10.4 6.2 6.2 16.5 5.7 22-1.2l13.6-17c4.7-5.9 12.9-7.7 19.6-4.3l15.2 7.6c3.4 1.7 7.2 2.6 11 2.6 6.5 0 12.8-2.6 17.4-7.2l3.9-3.9c2.9-2.9 7.3-3.6 11-1.8l29.2 14.6c7.8 3.9 12.6 11.8 12.6 20.5 0 10.5-7.1 19.6-17.3 22.2l-35.4 8.8c-7.4 1.8-15.1 1.5-22.4-.9l-32-10.7c-3.3-1.1-6.7-1.7-10.2-1.7-7 0-13.8 2.3-19.4 6.5L176 212c-10.1 7.6-16 19.4-16 32v28c0 26.5 21.5 48 48 48h32c8.8 0 16 7.2 16 16v48c0 17.7 14.3 32 32 32 10.1 0 19.6-4.7 25.6-12.8l25.6-34.1c8.3-11.1 12.8-24.6 12.8-38.4v-12.1c0-3.9 2.6-7.3 6.4-8.2l5.3-1.3c11.9-3 20.3-13.7 20.3-26 0-7.1-2.8-13.9-7.8-18.9l-33.5-33.5c-3.7-3.7-3.7-9.7 0-13.4 5.7-5.7 14.1-7.7 21.8-5.1l14.1 4.7c12.3 4.1 25.7-1.5 31.5-13 3.5-7 11.2-10.8 18.9-9.2l27.4 5.5C432 112.4 351.5 48 256 48c-27.7 0-54 5.4-78.2 15.2M0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.frcsa.org.za/" rel="noopener" target="_blank" title="www.frcsa.org.za">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a6 6 0 0 1-6-6c0-4 6-10.75 6-10.75S18 10 18 14a6 6 0 0 1-6 6"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../../../js/tablesort.js"></script>
+</body>
+</html>

@@ -1,0 +1,2205 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Biodiversity Information Management System is an open source platform for curating biodiversity data." name="description"/>
+<meta content="Kartoza and FRC" name="author"/>
+<link href="../" rel="prev"/>
+<link href="../master-list-preparation/" rel="next"/>
+<link href="../../../assets/logo.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.6.10" name="generator"/>
+<title>BIMS Documentation - BIMS</title>
+<link href="../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../css/print.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#bims-data-management-guidelines">48. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="BIMS" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="BIMS">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            BIMS
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              BIMS Documentation
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18V6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/kartoza/bims-website" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    BIMS Website
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../user/">
+          
+  
+  
+    
+  
+  Users
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../">
+          
+  
+  
+    
+  
+  Administrators
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../developer/">
+          
+  
+  
+    
+  
+  Developers
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../devops/">
+          
+  
+  
+    
+  
+  DevOps
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../about/contributing/">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="BIMS" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="BIMS">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"></path></svg>
+</a>
+    BIMS
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/kartoza/bims-website" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    BIMS Website
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/code-of-conduct/">
+<span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/licence/">
+<span class="md-ellipsis">
+    Licence
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../about/running-instances/">
+<span class="md-ellipsis">
+    Running Instances
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+            Running Instances
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/running-instances/fbis/">
+<span class="md-ellipsis">
+    FreshWaterBiodiversity.org
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/running-instances/rbis/">
+<span class="md-ellipsis">
+    Rwanda Biodiversity Information System
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/running-instances/orbis/">
+<span class="md-ellipsis">
+    Okavango Biodiversity Information System
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/">
+<span class="md-ellipsis">
+    Users
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Users
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/quickstart/">
+<span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Quickstart
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/key-concepts/">
+<span class="md-ellipsis">
+    Key Concepts
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/registering/">
+<span class="md-ellipsis">
+    Registering
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/map-interface/">
+<span class="md-ellipsis">
+    Map Interface Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/search/">
+<span class="md-ellipsis">
+    Search
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/filtering/">
+<span class="md-ellipsis">
+    Filtering
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/mapping/">
+<span class="md-ellipsis">
+    Mapping
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/biodiversity/">
+<span class="md-ellipsis">
+    Biodiversity Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/panels/">
+<span class="md-ellipsis">
+    Overview Panels
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_10" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/guide/dashboards/">
+<span class="md-ellipsis">
+    Dashboards
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3_10" id="__nav_2_3_10_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_10_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_10">
+<span class="md-nav__icon md-icon"></span>
+            Dashboards
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/key-components/">
+<span class="md-ellipsis">
+    Key Dashboard Components
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/sass-components/">
+<span class="md-ellipsis">
+    SASS Dashboard components
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/taxon/">
+<span class="md-ellipsis">
+    Taxon dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/single-site-biodiversity/">
+<span class="md-ellipsis">
+    Single-site biodiversity dashboards
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/multi-site-biodiversity/">
+<span class="md-ellipsis">
+    Multi-site biodiversity dashboards
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/single-site-sass/">
+<span class="md-ellipsis">
+    Single-site SASS dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/multi-site-sass/">
+<span class="md-ellipsis">
+    Multi-site SASS dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/water-temperature/">
+<span class="md-ellipsis">
+    Water temperature dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/dashboards/physico-chemical/">
+<span class="md-ellipsis">
+    Physico-chemical dashboard
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/data-upload/">
+<span class="md-ellipsis">
+    Data Upload
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/references/">
+<span class="md-ellipsis">
+    References
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/guide/mobile-app-videos/">
+<span class="md-ellipsis">
+    Mobile Application Tutorials
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/manual/">
+<span class="md-ellipsis">
+    Manual
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/landing-page/">
+<span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/sign-up/">
+<span class="md-ellipsis">
+    Sign Up
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/login/">
+<span class="md-ellipsis">
+    Login
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/logout/">
+<span class="md-ellipsis">
+    Log Out
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/password-reset/">
+<span class="md-ellipsis">
+    Password Reset
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/about/">
+<span class="md-ellipsis">
+    About
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/contact/">
+<span class="md-ellipsis">
+    Contact
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/help/">
+<span class="md-ellipsis">
+    Help
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/citation/">
+<span class="md-ellipsis">
+    Citation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/source-reference-page/">
+<span class="md-ellipsis">
+    Source Reference
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/user-profile/">
+<span class="md-ellipsis">
+    User Profile
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/feedback-form/">
+<span class="md-ellipsis">
+    Feedback Form
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/add-biodiversity-data/">
+<span class="md-ellipsis">
+    Add Biodiversity Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/biodiversity-dashboard/">
+<span class="md-ellipsis">
+    Biodiversity Dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/pesticide-dashboard/">
+<span class="md-ellipsis">
+    Pesticide Dashboard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/manual/map/">
+<span class="md-ellipsis">
+    Map Interface
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    Administrators
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Administrators
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Biodiversity Data
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Biodiversity Data
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    FBIS Data Management Guidelines
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    FBIS Data Management Guidelines
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">48.1 
+<span class="md-ellipsis">
+      Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managing-data-consolidation">48.2 
+<span class="md-ellipsis">
+      Managing data consolidation
+    </span>
+</a>
+<nav aria-label="Managing data consolidation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-a-dataset-tracker">48.2.1 
+<span class="md-ellipsis">
+      Setting up a DataSet Tracker
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-github-for-managing-data-consolidation">48.2.2 
+<span class="md-ellipsis">
+      Using GitHub for managing data consolidation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-data">48.3 
+<span class="md-ellipsis">
+      Types of data
+    </span>
+</a>
+<nav aria-label="Types of data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#biodiversity-data">48.3.1 
+<span class="md-ellipsis">
+      Biodiversity data
+    </span>
+</a>
+<nav aria-label="Biodiversity data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-taxonomic-master-lists">
+<span class="md-ellipsis">
+      Creating Taxonomic Master Lists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sources-of-biodiversity-data">
+<span class="md-ellipsis">
+      Sources of biodiversity data
+    </span>
+</a>
+<nav aria-label="Sources of biodiversity data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peer-reviewed-scientific-article">
+<span class="md-ellipsis">
+      Peer-reviewed scientific article
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#thesis">
+<span class="md-ellipsis">
+      Thesis
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#published-report">
+<span class="md-ellipsis">
+      Published report
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#database">
+<span class="md-ellipsis">
+      Database
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unpublished-data">
+<span class="md-ellipsis">
+      Unpublished data
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abiotic-data">48.3.2 
+<span class="md-ellipsis">
+      Abiotic data
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spatial-data">48.3.3 
+<span class="md-ellipsis">
+      Spatial data
+    </span>
+</a>
+<nav aria-label="Spatial data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selection-of-spatial-filters-and-geocontext-data">
+<span class="md-ellipsis">
+      Selection of spatial filters and geocontext data
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selection-of-spatial-layers">
+<span class="md-ellipsis">
+      Selection of spatial layers
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#third-party-data">48.3.4 
+<span class="md-ellipsis">
+      Third party data
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extracting-data-and-preparing-bulk-data-for-uploading-into-bims">48.4 
+<span class="md-ellipsis">
+      Extracting data and preparing bulk data for uploading into BIMS
+    </span>
+</a>
+<nav aria-label="Extracting data and preparing bulk data for uploading into BIMS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-extraction">48.4.1 
+<span class="md-ellipsis">
+      Data Extraction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-upload-templates">48.4.2 
+<span class="md-ellipsis">
+      Data Upload Templates
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managing-citations-and-documents">48.5 
+<span class="md-ellipsis">
+      Managing citations and documents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">48.6 
+<span class="md-ellipsis">
+      References
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../master-list-preparation/">
+<span class="md-ellipsis">
+    Preparing and checking a Master List of Taxa before uploading
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../taxon-group-uploading/">
+<span class="md-ellipsis">
+    Uploading a new Taxon Group (Module) and adding a Master List
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../harvesting-gbif-data/">
+<span class="md-ellipsis">
+    Harvesting GBIF Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../taxa-management/">
+<span class="md-ellipsis">
+    Managing taxa in Taxon Management
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../occurrence-data-preparation/">
+<span class="md-ellipsis">
+    Preparing and checking an Occurrence Data File before uploading
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../occurrence-data-uploading/">
+<span class="md-ellipsis">
+    Uploading Occurrence Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../managing-source-references/">
+<span class="md-ellipsis">
+    Managing Source references
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../site-biodiversity-data/">
+<span class="md-ellipsis">
+    Adding a site and biodiversity data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../physico-chemical-data/">
+<span class="md-ellipsis">
+    Adding physico-chemical data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../manage-admin-tables/">
+<span class="md-ellipsis">
+    Managing BIMS Admin tables
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../validate-records/">
+<span class="md-ellipsis">
+    Validating records (occurrence data) and new taxa
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../geoserver/">
+<span class="md-ellipsis">
+    Working with GeoServer
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Working with GeoServer
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/overview/">
+<span class="md-ellipsis">
+    GeoServer Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/loading-postgis-layers/">
+<span class="md-ellipsis">
+    Loading layers into a PostgreSQL database
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/publishing-layers-in-geoserver/">
+<span class="md-ellipsis">
+    Publishing layers in GeoServer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/styling-layers-in-geoserver/">
+<span class="md-ellipsis">
+    Styling layers in GeoServer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geoserver/visualising-geoserver-layers-in-qgis/">
+<span class="md-ellipsis">
+    Visualising GeoServer layers in QGIS
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../layer-upload/">
+<span class="md-ellipsis">
+    Layer Upload, Styling, and Spatial Filter
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+            Layer Upload, Styling, and Spatial Filter
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/upload-spatial-layers/">
+<span class="md-ellipsis">
+    Upload Spatial Layer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/style-editor/">
+<span class="md-ellipsis">
+    Style Spatial Layer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/publish-spatial-layer/">
+<span class="md-ellipsis">
+    Publish Spatial Layer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../layer-upload/add-spatial-filter/">
+<span class="md-ellipsis">
+    Add Spatial Filter
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../park-layer/">
+<span class="md-ellipsis">
+    Park Layers
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            Park Layers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../park-layer/add-park-layer/">
+<span class="md-ellipsis">
+    Adding a Park layer
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../geocontext/">
+<span class="md-ellipsis">
+    GIS Data in BIMS
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            GIS Data in BIMS
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/overview/">
+<span class="md-ellipsis">
+    GeoContext Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/layers/">
+<span class="md-ellipsis">
+    GeoContext and Visualisation Layers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/data/">
+<span class="md-ellipsis">
+    Working with GeoContext Data
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../geocontext/harvesting/">
+<span class="md-ellipsis">
+    Harvesting GeoContext Data
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../customisation/">
+<span class="md-ellipsis">
+    Customisation
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            Customisation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../customisation/adding-landing-page-section/">
+<span class="md-ellipsis">
+    Adding a Landing Page Section
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../customisation/embed-video-on-landing-page/">
+<span class="md-ellipsis">
+    Embedding Video on the Landing Page
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../customisation/add-inline-images/">
+<span class="md-ellipsis">
+    Adding Inline Images on the Landing Page
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/">
+<span class="md-ellipsis">
+    Developers
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/architecture/">
+<span class="md-ellipsis">
+    Architecture
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/prerequisites/">
+<span class="md-ellipsis">
+    Prerequisites
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/cloning/">
+<span class="md-ellipsis">
+    Cloning
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/ide-setup/">
+<span class="md-ellipsis">
+    IDE Setup
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/building/">
+<span class="md-ellipsis">
+    Building
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/workflows/">
+<span class="md-ellipsis">
+    Workflows
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/guide/key-development/">
+<span class="md-ellipsis">
+</span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/documentation/">
+<span class="md-ellipsis">
+    Documentation
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/documentation/easy-workflow/">
+<span class="md-ellipsis">
+    Simple Workflow
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/documentation/overview/">
+<span class="md-ellipsis">
+    Advanced Workflow
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/documentation/context-help/">
+<span class="md-ellipsis">
+    Context Help
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developer/api/">
+<span class="md-ellipsis">
+    API
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/api/manual/">
+<span class="md-ellipsis">
+    Reference
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../developer/api/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/licence/">
+<span class="md-ellipsis">
+    Licence
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../devops/">
+<span class="md-ellipsis">
+    DevOps
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../devops/guide/">
+<span class="md-ellipsis">
+    Guide
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../devops/guide/deploying-production/">
+<span class="md-ellipsis">
+    Deploying to Production
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../devops/manual/">
+<span class="md-ellipsis">
+    Manual
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    About
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/contributing/">
+<span class="md-ellipsis">
+    Contributing
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/citations/">
+<span class="md-ellipsis">
+    Citations
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/licence/">
+<span class="md-ellipsis">
+    Licence
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">48.1 
+<span class="md-ellipsis">
+      Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managing-data-consolidation">48.2 
+<span class="md-ellipsis">
+      Managing data consolidation
+    </span>
+</a>
+<nav aria-label="Managing data consolidation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-a-dataset-tracker">48.2.1 
+<span class="md-ellipsis">
+      Setting up a DataSet Tracker
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-github-for-managing-data-consolidation">48.2.2 
+<span class="md-ellipsis">
+      Using GitHub for managing data consolidation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-data">48.3 
+<span class="md-ellipsis">
+      Types of data
+    </span>
+</a>
+<nav aria-label="Types of data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#biodiversity-data">48.3.1 
+<span class="md-ellipsis">
+      Biodiversity data
+    </span>
+</a>
+<nav aria-label="Biodiversity data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-taxonomic-master-lists">
+<span class="md-ellipsis">
+      Creating Taxonomic Master Lists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sources-of-biodiversity-data">
+<span class="md-ellipsis">
+      Sources of biodiversity data
+    </span>
+</a>
+<nav aria-label="Sources of biodiversity data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peer-reviewed-scientific-article">
+<span class="md-ellipsis">
+      Peer-reviewed scientific article
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#thesis">
+<span class="md-ellipsis">
+      Thesis
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#published-report">
+<span class="md-ellipsis">
+      Published report
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#database">
+<span class="md-ellipsis">
+      Database
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unpublished-data">
+<span class="md-ellipsis">
+      Unpublished data
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#abiotic-data">48.3.2 
+<span class="md-ellipsis">
+      Abiotic data
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spatial-data">48.3.3 
+<span class="md-ellipsis">
+      Spatial data
+    </span>
+</a>
+<nav aria-label="Spatial data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selection-of-spatial-filters-and-geocontext-data">
+<span class="md-ellipsis">
+      Selection of spatial filters and geocontext data
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selection-of-spatial-layers">
+<span class="md-ellipsis">
+      Selection of spatial layers
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#third-party-data">48.3.4 
+<span class="md-ellipsis">
+      Third party data
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extracting-data-and-preparing-bulk-data-for-uploading-into-bims">48.4 
+<span class="md-ellipsis">
+      Extracting data and preparing bulk data for uploading into BIMS
+    </span>
+</a>
+<nav aria-label="Extracting data and preparing bulk data for uploading into BIMS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-extraction">48.4.1 
+<span class="md-ellipsis">
+      Data Extraction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-upload-templates">48.4.2 
+<span class="md-ellipsis">
+      Data Upload Templates
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managing-citations-and-documents">48.5 
+<span class="md-ellipsis">
+      Managing citations and documents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">48.6 
+<span class="md-ellipsis">
+      References
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<div><h1 id="bims-data-management-guidelines"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.</span> BIMS data management guidelines<a class="headerlink" href="#bims-data-management-guidelines" title="Permanent link">¶</a></h1>
+<p>Data management guide for the Biodiversity Information Management System (BIMS): a platform for housing and serving biodiversity data.</p>
+<h2 id="introduction"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1</span> Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>These documents serves as a guideline for the management of biodiversity data in the Biodiversity Information Management System (BIMS). It provides an overview of the recommended steps, processes and systems for sourcing, extracting, consolidating, uploading and serving biodiversity data in an information system such as the Freshwater Biodiversity Information System <strong><a href="https://freshwaterbiodiversity.org">(FBIS)</a></strong>. It is based on the experiences gained and systems developed during the development of the FBIS in South Africa and other subsequent information systems. </p>
+<p><img alt="guideline schematic" src="../img/data%20management-1-schematic.png"/></p>
+<p><strong>Figure 1. Overview of BIMS data management</strong></p>
+<h2 id="managing-data-consolidation"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.2</span> Managing data consolidation<a class="headerlink" href="#managing-data-consolidation" title="Permanent link">¶</a></h2>
+<p>Establishing what data are available in a country is the first step in the data process. To assist with the managing of data we recommend developing a DataSet Tracker. If the data team already have a good understanding of the data landscape, then setting up a data set tracker may not be necessary. A flow diagram illustrates the workflows and main components discussed in this document.</p>
+<h3 id="setting-up-a-dataset-tracker"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.2.1</span> Setting up a DataSet Tracker<a class="headerlink" href="#setting-up-a-dataset-tracker" title="Permanent link">¶</a></h3>
+<p>Often the amount of data available for consolidation into an information system, exceeds the amount of data that can actually be consolidated based on time and financial constraints. It is thus critical that the data team prioritise the data. This is best done through consultation with the end-users and stakeholders. To manage the prioritisation of data and keep track of progress, a DataSet Tracker is used. This is an excel spreadsheet that keeps track of the data available for inclusion, and importantly allows for prioritisation of each data set.</p>
+<p>The DataSet Tracker provides a list and details of data sets identified by the data team and stakeholders, which are being considered for inclusion. Data are best divided into four broad categories, namely:</p>
+<ul>
+<li><strong>Biodiversity data</strong> (e.g. wetland birds, wetland plants, fish, invertebrates, algae etc.)</li>
+<li><strong>Abiotic data</strong> (e.g. hydrological data, physico-chemical data, wetland condition data, etc.)</li>
+<li><strong>Spatial data</strong> (used for filters and / or spatial layers; e.g. Rivers and dams, Provinces, Freshwater Ecoregions of the World, Water Management Areas, etc.)</li>
+<li><strong>Third Party data</strong> (existing hydrological or water quality data sites, GBIF, etc.)</li>
+</ul>
+<p>For each category, the data team needs to specify the following:</p>
+<ul>
+<li>Component (specify component)</li>
+<li>Details (provide details of data set, e.g. number of records, type of records etc)</li>
+<li>Accessibility (who has the data, is it freely available, is a MOU required?)</li>
+<li>Data priority ranking (ranking based on user workshop to evaluate the relative importance of different data sets, where 1 = high priority, 2 = medium and 3 = low)</li>
+<li>Spatial scale (specify if the data are regional or national)</li>
+<li>Progress (record progress on obtaining data and inclusion)</li>
+</ul>
+<p>A DataSet Tracker template has been generated for FBIS (<strong><span style="color: #70ad47;">FBIS DataSet Tracker Template.xlsx</span></strong>). For spatial data it is important to indicate if this layer is to be used as a filter, spatial layer, or both (see details in <a href="#spatial-data">48.3.3 Spatial Data</a>).</p>
+<h3 id="using-github-for-managing-data-consolidation"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.2.2</span> Using GitHub for managing data consolidation<a class="headerlink" href="#using-github-for-managing-data-consolidation" title="Permanent link">¶</a></h3>
+<p>Data sourcing, extraction and consolidation requires careful, accurate and concise work to ensure quality data. A robust system for managing the data consolidation process is recommended. <strong><a href="https://github.com">Github</a></strong> is an excellent tool for managing this process as it allows multiple team members to work together in one project, which allows for easy management of workflows for data consolidation. A screenshot of the FBIS Data Management project on GitHub is provided (Figure 2). </p>
+<p>Using GitHub one can:
+* Create a “ticket”/ “issue” for each data set to be consolidated
+* Assign each “ticket” to a team member
+* Label each issue with an appropriate label such as bird data, fish data, algal data, etc.
+* Easily see when a ticket is “In progress”, “Done” and “Checked and Signed off” by a senior staffer.</p>
+<p><img alt="Data Management 1" src="../img/data-management-1.png"/>
+<strong>Figure 2. Example of data management workflow in GitHub</strong></p>
+<h2 id="types-of-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3</span> Types of data<a class="headerlink" href="#types-of-data" title="Permanent link">¶</a></h2>
+<h3 id="biodiversity-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1</span> Biodiversity data<a class="headerlink" href="#biodiversity-data" title="Permanent link">¶</a></h3>
+<p>Biodiversity data is the primary currency of BIMS. The lowest unit is an occurrence record for a <strong>Taxon</strong> taken at a <strong>Site</strong> (identified by a latitude / longitude) on a particular <strong>Sampling Date</strong> (so Taxon, location and date – these are mandatory attributes for each record).   For some taxa extra attributes may be included such as habitat or biotope. Additional data may be associated with each occurrence record, although this is often dependent on the group (birds, fish, invertebrates, wetland plants, algae) being focused on, and may vary somewhat from one group to another. For each occurrence record, <strong>Presence = 1</strong> indicates that the species was recorded at a site on a particular sampling date. In addition, we have included the option to include sampling method, sampling effort, abundance measure, and abundance for each; as well as a number of abiotic parameters associated with each occurrence record (see <a href="#abiotic-data">48.3.2 Abiotic data</a>). Further details are provided in <a href="#data-upload-templates">48.4.2 Data Upload Templates</a>.</p>
+<h4 id="creating-taxonomic-master-lists"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1.1</span> Creating Taxonomic Master Lists<a class="headerlink" href="#creating-taxonomic-master-lists" title="Permanent link">¶</a></h4>
+<p>A taxonomic Master List is a list of all species and/or taxa within a particular group such as birds, fish, invertebrates, wetland plants, algae, etc. For some groups a species list is easy to produce as species level is commonly identified in studies (e.g. birds, fish). For other groups, the taxonomic level (family, genus, species etc) varies considerably from study to study, and thus it is recommended that the lowest taxonomic level is used and that Taxon is used in preference to Species (e.g. invertebrates, algae).</p>
+<p>The purpose of the Master List is threefold:</p>
+<ol>
+<li>To provide a comprehensive and up to date list of species/taxa for a specific group in a specific region.  This needs to be done during the initial development of an information system such as FBIS, but once the system is up and running, then the further updating of the Taxonomic backbone is done using GBIF and user-defined taxonomic uploads.</li>
+<li>To facilitate downloading of data from the Global Biodiversity Information Facility’s (GBIF), thereby ensuring that the correct taxa are included on the information system.</li>
+<li>To provide the taxonomic hierarchy for taxa not yet on GBIF.</li>
+</ol>
+<p>The generation of a Master List requires consultation with available resources, relevant publications and experts. A Master List is intended to be an updatable resource, improved and added to as new data and studies are published, or new taxa are described. If no species lists are available for a country then the GBIF Taxonomic Master List may be generated by extracting data from GBIF. Functionality to harvest all existing taxa from GBIF has been developed, whereby all existing taxa recorded on GBIF for a particular spatial area are harvested from GBIF and used to create a master list for a particular biodiversity group. See further details in the document: <strong><a href="https://kartoza.github.io/bims-website/administrator/biodiversity-data/master-list-preparation/">Preparing and checking a Master List of Taxa before uploading</a></strong>. </p>
+<p>The format of the Master List is important to ensure consistency for ingestion of data into the information system. The following columns are included in the Master Lists, provided as excel file template that will be used for each biodiversity group on FBIS (<strong><span style="color: #70ad47;">Master List Template final for FBIS Generic 2022_08_01.xlsx)</span></strong>. All compulsory columns need to be populated (given in black text), while others are optional (given in blue text).  Explanations are given in parenthesis: </p>
+<ul>
+<li>On GBIF (Yes or No if the taxon is on GBIF)</li>
+<li>GBIF Link (link to GBIF taxon)</li>
+<li>Taxon Rank</li>
+<li>Kingdom</li>
+<li>Phylum</li>
+<li>Class</li>
+<li><span style="color: blue;">SubClass</span></li>
+<li>Order</li>
+<li>Family</li>
+<li><span style="color: blue;">SubFamily</span></li>
+<li>Genus</li>
+<li>Species</li>
+<li><span style="color: blue;">SubSpecies, Variety, Forma</span></li>
+<li>Taxon</li>
+<li>Scientific name and authority</li>
+<li>Taxonomic status (Accepted, Synonym, Doubtful)</li>
+<li>Accepted name</li>
+<li>Origin (Native, Non-native, Unknown)</li>
+<li>Invasion</li>
+<li>Endemism (Endemism categories) - examples below are used in FBIS. These categories can be customised.</li>
+<li>Micro-endemic level 2 (Endemic to a single river or wetland)</li>
+<li>Micro-endemic level 1 (Endemic to less than 5 rivers or wetlands)</li>
+<li>Regional endemic level 2 (Endemic to a single primary catchment)</li>
+<li>Regional endemic level 1 (Endemic to a single Freshwater Ecoregion, more than one primary catchment)</li>
+<li>National endemic (Endemic to South Africa, occurs in more than one Freshwater Ecoregion within Botswana)</li>
+<li>Subregional endemic (Endemic to southern Africa)</li>
+<li>Widespread (Occurs beyond southern Africa)</li>
+<li>Unknown (Endemism is unknown)</li>
+<li><span style="color: blue;">Conservation status (Global) - The IUCN Red List of Threatened Species website (IUCN Red List, 2020) classifies species into nine main categories based on their extinction risk. The IUCN category is derived automatically from the IUCN website.</span></li>
+<li>Extinct</li>
+<li>Extinct in the Wild</li>
+<li>Critically Endangered</li>
+<li>Endangered</li>
+<li>Vulnerable</li>
+<li>Near Threatened</li>
+<li>Least Concern</li>
+<li>Data Deficient</li>
+<li>Not Evaluated </li>
+<li><span style="color: blue;">Common Name (this is derived automatically from GBIF, admin can override if desired)</span></li>
+</ul>
+<p>A separate Master List of Species / Taxa needs to be created for each group for which biodiversity data are served. The Master List is ideally created before the consolidation of data so that the correct GBIF Taxonomic Backbone (<a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c</a>) is used for the data consolidation files. The taxonomy from GBIF should be used when the taxon is on GBIF. The data team can check if the taxon is on GBIF using the following link: <a href="https://www.gbif.org/species/1">https://www.gbif.org/species/1</a> and insert the relevant species, genus, family etc. in the “Select a species” box.</p>
+<p><img alt="Data Management 2" src="../img/data-management-2.png"/></p>
+<p>It is important that the correct <strong>Taxon Rank</strong> should always be used to ensure correct uploading of the data files.</p>
+<p><strong>Note:</strong> It is recommended that significant time and resources are used to generate and refine the master list for each group (birds, fish, invertebrates etc) as much as possible before proceeding with data collation. This is the list around-which all of the occurrence data will pivot: the more accurate it is at the start, the more time you save in the long run when collating the biodiversity data for those taxa. See further details in the document: <strong><a href="https://kartoza.github.io/bims-website/administrator/biodiversity-data/master-list-preparation/">Preparing and checking a Master List of Taxa before uploading</a></strong>.</p>
+<h4 id="sources-of-biodiversity-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1.2</span> Sources of biodiversity data<a class="headerlink" href="#sources-of-biodiversity-data" title="Permanent link">¶</a></h4>
+<p>Multiple sources of taxon occurrence data generally exist, although this is highly dependent on the country. Potential sources of biodiversity data include the following study reference categories:</p>
+<ul>
+<li>Peer-reviewed scientific articles</li>
+<li>Theses</li>
+<li>Published reports</li>
+<li>Databases</li>
+<li>Unpublished data</li>
+</ul>
+<p>The following sections provide details of the recommended processes for sourcing taxon occurrence data from the different sources.</p>
+<h5 id="peer-reviewed-scientific-article"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1.2.1</span> Peer-reviewed scientific article<a class="headerlink" href="#peer-reviewed-scientific-article" title="Permanent link">¶</a></h5>
+<p>Data from peer-reviewed scientific articles are best sourced by undertaking a literature search using Google Scholar. To ensure that relevant papers are identified, appropriate search term combination should be used. For example, for all native freshwater fishes in South Africa: “Genus species” &amp; “South Africa” (where “Genus species” represents the scientific name for each taxon). Relevant articles are identified based on their titles, abstracts and methods section. The first 500 search results returned by Google Scholar should be assessed for relevancy. Each relevant article should be inspected for GPS coordinates – if these are not provided then the article may be catalogued but not included for data extraction (see <a href="#extracting-data-and-preparing-bulk-data-for-uploading-into-bims">48.4 Extracting data and preparing bulk data for uploading into BIMS</a>).</p>
+<p><strong>Note:</strong> It is important that search terms are clearly-defined and consistent, so that the process is repeatable and defensible.</p>
+<h5 id="thesis"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1.2.2</span> Thesis<a class="headerlink" href="#thesis" title="Permanent link">¶</a></h5>
+<p>University theses are easily searched using relevant university search engines. Often local experts also know of relevant theses and can be contacted directly. Where possible, electronic data should be sourced directly from individuals, as this saves significant time that would otherwise be occupied in transcription of paper to digital records during data consolidation.</p>
+<h5 id="published-report"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1.2.3</span> Published report<a class="headerlink" href="#published-report" title="Permanent link">¶</a></h5>
+<p>Technical and consultancy reports are often difficult to source and requires knowledge of local experts who have undertaken relevant studies. Where possible, electronic data should be sourced directly from individuals, as this saves significant time during data consolidation.</p>
+<h5 id="database"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1.2.4</span> Database<a class="headerlink" href="#database" title="Permanent link">¶</a></h5>
+<p>Identify and contact relevant organisations who may have data to share that is already in a database. Data sharing agreements may be needed depending on the organisation.</p>
+<h5 id="unpublished-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.1.2.5</span> Unpublished data<a class="headerlink" href="#unpublished-data" title="Permanent link">¶</a></h5>
+<p>Identify individuals who may have data to share. Where possible, electronic data should be sourced directly from individuals, as this saves significant time during data consolidation.</p>
+<h3 id="abiotic-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.2</span> Abiotic data<a class="headerlink" href="#abiotic-data" title="Permanent link">¶</a></h3>
+<p>Whilst abiotic data are not the main currency for BIMS, it is extremely useful to provide associated abiotic data when these have been collected concurrently with biotic data. For this reason, a number of abiotic spatial layers may be served, and a number of abiotic parameters may be included in the Data Upload Templates. These include aspects related to sampling method and effort, abundance, habitat/biotope, flow and physico-chemistry. Abiotic data associated with biodiversity data are included in the <a href="#data-upload-templates">48.4.2 Data Upload Templates</a>. Examples are given below. These abiotic factors may need to be adapted depending on the taxonomic group being dealt with – for example bird abiotic data may need different habitat related attributes. These can easily be added in the administration section. See further details in the document: <strong><a href="https://kartoza.github.io/bims-website/administrator/biodiversity-data/manage-admin-tables/">Managing BIMS Admin tables</a></strong>.</p>
+<ul>
+<li>Sampling method</li>
+<li>Sampling effort measure</li>
+<li>Sampling effort value</li>
+<li>Abundance measure</li>
+<li>Abundance value</li>
+<li>Broad biotope</li>
+<li>Specific biotope</li>
+<li>Substratum</li>
+<li>Water Level</li>
+<li>Hydroperiod</li>
+<li>Water Turbidity</li>
+<li>Embeddedness</li>
+<li>Depth</li>
+<li>Near Bed Velocity</li>
+<li>Conductivity</li>
+<li>PH</li>
+<li>Dissolved Oxygen (% saturation)</li>
+<li>Dissolved Oxygen (mg/l)</li>
+<li>Temperature</li>
+<li>Turbidity</li>
+</ul>
+<h3 id="spatial-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.3</span> Spatial data<a class="headerlink" href="#spatial-data" title="Permanent link">¶</a></h3>
+<p>Spatial data often take the form of shapefiles containing geometries representing physical properties or landscape features (e.g. catchments, habitat types etc.) and that have attribute data associated with them. These spatial layers may be hidden/shown for visualisation on the map by a user, while the data in these layers may be used to facilitate spatial filters which are used to select a subset of records based on the filter specified.  Spatial layers and filters may be the same, although not always as it is dependent on the data attributes.</p>
+<h4 id="selection-of-spatial-filters-and-geocontext-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.3.1</span> Selection of spatial filters and geocontext data<a class="headerlink" href="#selection-of-spatial-filters-and-geocontext-data" title="Permanent link">¶</a></h4>
+<p>Geocontext data are contextual data for any geographical point, sourced from relevant spatial layers and aggregated as properties of a site. Often spatial layers are used for generating geocontext data. The examples below are the spatial filters used in FBIS (see <a href="#using-github-for-managing-data-consolidation">48.2.2 Using GitHub for managing data consolidation</a>)</p>
+<p><img alt="spatial filters and geocontext data" src="../img/data%20management-selection%20of%20spatial%20filters.png"/></p>
+<h4 id="selection-of-spatial-layers"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.3.2</span> Selection of spatial layers<a class="headerlink" href="#selection-of-spatial-layers" title="Permanent link">¶</a></h4>
+<p>Spatial layers, which may be turned on and off in the FBIS map, function as background layers upon which biodiversity data are displayed. The examples below are the spatial layers used in FBIS.</p>
+<p><img alt="Layer selector example" src="../img/data%20management-spatial%20layers.png"/></p>
+<h3 id="third-party-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.3.4</span> Third party data<a class="headerlink" href="#third-party-data" title="Permanent link">¶</a></h3>
+<p>Where databases and data platforms already exist, it is recommended that links (APIs) be created to access these data from the platform. Third party databases that BIMS links to includes data from Global Biodiversity Information Facility (GBIF) (taxonomy, occurrence data), and the IUCN Red List of Threatened Species database (global conservation status). In addition, FBIS links to the <a href="https://www.minisass.org/en/map/">MiniSASS database</a>, which provides citizen science river health data, and DWS water quality database accessed via the Integrated Water Resources Decision Support System (InWaRDS 2020). Data from certain biodiversity modules of the Virtual Museum (Fitzpatrick Institute of African Ornithology, University of Cape Town 2021) are also included. GBIF and Virtual Museum data are harvested and served in FBIS, as a separate Data Source that complements collated data. In FBIS, freshwater species occurrence data available for South Africa in GBIF includes periodically-updated data from the South African Institute for Aquatic Biodiversity (SAIAB), as well as 'Research Grade' iNaturalist data (i.e. records from non-captive individuals, with a picture, locality and date, and with two or more IDs in agreement at species level). Invertebrate data includes both aquatic and aerial stages, as there is currently no way to distinguish between freshwater and terrestrial taxa. </p>
+<h2 id="extracting-data-and-preparing-bulk-data-for-uploading-into-bims"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.4</span> Extracting data and preparing bulk data for uploading into BIMS<a class="headerlink" href="#extracting-data-and-preparing-bulk-data-for-uploading-into-bims" title="Permanent link">¶</a></h2>
+<p>BIMS includes data capture forms for adding sites, biodiversity data (fish, invertebrate and algae), as well as associated abiotic data. However, these forms are intended for the capture of individual site visits, and at times, especially during the development phase of an information system, it is useful to be able to upload large amounts of data at a time. To ensure that bulk data are readily ingested into BIMS, a standardised <strong>Data Upload Template</strong> needs to be produced for each group. This will ensure that data are cleaned and provided in a standardised manner so that the data uploading process runs smoothly and so that the resultant BIMS platform serves quality data.</p>
+<h3 id="data-extraction"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.4.1</span> Data Extraction<a class="headerlink" href="#data-extraction" title="Permanent link">¶</a></h3>
+<p>Data extracted from peer-reviewed articles, theses and published reports need to be standardised to allow for comparison of data amongst studies.  Each article/thesis/report needs to be inspected for GPS coordinates. Publications without GPS coordinates cannot be included in the information system. All relevant information, as specified in Table 1, <a href="#data-upload-templates">48.4.2 Data Upload Templates</a>, pertaining to the occurrence record is then extracted from the publication and added to the Date Upload Template for the relevant group.</p>
+<h3 id="data-upload-templates"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.4.2</span> Data Upload Templates<a class="headerlink" href="#data-upload-templates" title="Permanent link">¶</a></h3>
+<p>There is a generic data upload template that includes the compulsory fields necessary for uploading biodiversity occurrence data. It is also possible to customise an upload template for a specific biodiversity group, by adding additional module-specific attributes.  It is critical that all taxa in the Data Upload file for a particular biodiversity group are present in the Master List of Taxa for that group. If not, the upload process will not work. For this reason, it is recommended that where possible dropdown lists are used in the Data Upload files to ensure that all data entered in the sheet is valid. As an example, the Master List of fish species in South Africa has been included as dropdown list for the FBIS Fish Data Upload Template.</p>
+<p>Many of the columns in the Data Upload Template are the same for each group, although some additional columns are included for algae, and the dropdown options (e.g. biotopes) sometimes vary amongst biodiversity groups. The common columns used in each group are given in Table 1. </p>
+<p><strong>Table 1. Column headers with details used in data upload templates. Black text are optional attributes. <span style="color: red;">Red</span> are compulsory. Text shaded in <span style="background-color: #c1ebaa;">green</span> indicate dropdown lists</strong></p>
+<table>
+<thead>
+<tr>
+<th>Column Header</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color: red;">UUID</span></td>
+<td><span style="color: red;">A unique identifier for each record. Drag and copy the formula down</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Latitude</span></td>
+<td><span style="color: red;"> Decimal degrees with "-" in front &amp; "," for decimal point</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Longitude</span></td>
+<td><span style="color: red;">Decimal degrees with "," for decimal point</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Sampling Date</span></td>
+<td><span style="color: red;">yyyy/mm/dd</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Taxon</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;color:red;">Taxon rank</span></td>
+<td><span style="background-color:#c1ebaa;color:red;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Present</span></td>
+<td><span style="color: red;">Fill in with "1"</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Collector/Owner</span></td>
+<td><span style="color: red;">Full name</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Collector/Owner Institute</span></td>
+<td><span style="color: red;">Institute of collector/owner</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Author(s)</span></td>
+<td><span style="color: red;">Surname + Initials</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Year</span></td>
+<td><span style="color: red;">Year of study</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Source</span></td>
+<td><span style="color: red;">Source of data if from thesis or database</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Title</span></td>
+<td><span style="color: red;">Title of data source if thesis or published report or peer-reviewed scientific article</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Reference category</span></td>
+<td><span style="color: red;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">URL</span></td>
+<td><span style="color: red;">Thesis handle, or article link if no DOI available</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">DOI</span></td>
+<td><span style="color: red;">DOI for reference ( e.g. 10.2989/16085914.2018.1491385)</span></td>
+</tr>
+<tr>
+<td><span style="color: red;">Document Upload Link</span></td>
+<td><span style="color: red;">Link to "Documents" page on BIMS after uploading PDF of published report</span></td>
+</tr>
+<tr>
+<td>Ecosystem type</td>
+<td>River, wetland, open waterbody or unspecified</td>
+</tr>
+<tr>
+<td>User River or Wetland name</td>
+<td>Name given in study reference</td>
+</tr>
+<tr>
+<td>User Site Code</td>
+<td>Leave blank (autogenerated)</td>
+</tr>
+<tr>
+<td>Site description</td>
+<td>Description given in study reference</td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">User Geomorphological Zone</span></td>
+<td><span style="background-color:#c1ebaa;">As given in study reference (if available) - select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">User Hydrogeopmorphic Type</span></td>
+<td><span style="background-color:#c1ebaa;">As given in study reference (if available) - select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Sampling method</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Sampling effort measure</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td>Sampling effort value</td>
+<td></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Abundance measure</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td>Abundance value</td>
+<td>Leave blank if only presence data</td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Record type</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Broad biotope</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Specific biotope</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Substratum</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Water Level</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Hydroperiod</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Water Turbidity</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td><span style="background-color:#c1ebaa;">Embeddedness</span></td>
+<td><span style="background-color:#c1ebaa;">Select from dropdown options</span></td>
+</tr>
+<tr>
+<td>Depth</td>
+<td>Depth (m)</td>
+</tr>
+<tr>
+<td>Near Bed Velocity</td>
+<td>Near Bed Velocity (m/s)</td>
+</tr>
+<tr>
+<td>COND</td>
+<td>Conductivity (mS/cm)</td>
+</tr>
+<tr>
+<td>PH</td>
+<td>PH</td>
+</tr>
+<tr>
+<td>DOPER</td>
+<td>Dissolved Oxygen (%)</td>
+</tr>
+<tr>
+<td>DO</td>
+<td>Dissolved Oxygen (mg/L)</td>
+</tr>
+<tr>
+<td>TEMP</td>
+<td>Temperature (deg C)</td>
+</tr>
+<tr>
+<td>TURB</td>
+<td>Turbidity (NTU)</td>
+</tr>
+<tr>
+<td>Notes</td>
+<td>Any details related to sampling, species, life form etc.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="managing-citations-and-documents"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.5</span> Managing citations and documents<a class="headerlink" href="#managing-citations-and-documents" title="Permanent link">¶</a></h2>
+<p>All biodiversity data served on BIMS need to have associated Metadata (Figure 3). A Source Reference Management system have been incorporated in BIMS. This metadata allows the users to establish exactly where the data originated from and to navigate to the study reference if desired. As per <a href="#sources-of-biodiversity-data">Sources of biodiversity data</a>, five types of study references are served, namely peer-reviewed scientific articles, theses, published reports, databases and unpublished data. See further details in the document <strong><a href="https://kartoza.github.io/bims-website/administrator/biodiversity-data/managing-source-references/">Managing Source References</a></strong></p>
+<p><img alt="Data Management 3" src="../img/data-management-3.png"/>
+<strong>Figure 3. Metadata Table</strong></p>
+<h2 id="references"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.6</span> References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<p>Dallas HF, Shelton JM, Sutton T, Tri Ciputra D, Kajee M and Job N.  2022. The Freshwater Biodiversity Information System (FBIS) – mobilising data for evaluating long-term change in South African rivers, African Journal of Aquatic Science 47(3): 291-306, DOI: 10.2989/16085914.2021.1982672</p>
+<!-- comment for formatting -->
+<p>Freshwater Biodiversity Information System (FBIS). 2022. Downloaded from <a href="https://freshwaterbiodiversity.org">https://freshwaterbiodiversity.org</a> on [current date]</p>
+<!-- comment for formatting -->
+<p>Freshwater Biodiversity Information System (FBIS). 2022. FBIS User Manual. Prepared by the Freshwater Research Centre and Kartoza.</p></div>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2025</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Kartoza and FRC
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/kartoza" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/r/kartoza/" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/KartozaGeo" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"></path></svg>
+</a>
+<a class="md-social__link" href="https://kartoza.com" rel="noopener" target="_blank" title="kartoza.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m177.8 63.2 10 17.4c2.8 4.8 4.2 10.3 4.2 15.9v41.4c0 3.9 1.6 7.7 4.3 10.4 6.2 6.2 16.5 5.7 22-1.2l13.6-17c4.7-5.9 12.9-7.7 19.6-4.3l15.2 7.6c3.4 1.7 7.2 2.6 11 2.6 6.5 0 12.8-2.6 17.4-7.2l3.9-3.9c2.9-2.9 7.3-3.6 11-1.8l29.2 14.6c7.8 3.9 12.6 11.8 12.6 20.5 0 10.5-7.1 19.6-17.3 22.2l-35.4 8.8c-7.4 1.8-15.1 1.5-22.4-.9l-32-10.7c-3.3-1.1-6.7-1.7-10.2-1.7-7 0-13.8 2.3-19.4 6.5L176 212c-10.1 7.6-16 19.4-16 32v28c0 26.5 21.5 48 48 48h32c8.8 0 16 7.2 16 16v48c0 17.7 14.3 32 32 32 10.1 0 19.6-4.7 25.6-12.8l25.6-34.1c8.3-11.1 12.8-24.6 12.8-38.4v-12.1c0-3.9 2.6-7.3 6.4-8.2l5.3-1.3c11.9-3 20.3-13.7 20.3-26 0-7.1-2.8-13.9-7.8-18.9l-33.5-33.5c-3.7-3.7-3.7-9.7 0-13.4 5.7-5.7 14.1-7.7 21.8-5.1l14.1 4.7c12.3 4.1 25.7-1.5 31.5-13 3.5-7 11.2-10.8 18.9-9.2l27.4 5.5C432 112.4 351.5 48 256 48c-27.7 0-54 5.4-78.2 15.2M0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.frcsa.org.za/" rel="noopener" target="_blank" title="www.frcsa.org.za">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a6 6 0 0 1-6-6c0-4 6-10.75 6-10.75S18 10 18 14a6 6 0 0 1-6 6"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../../../js/tablesort.js"></script>
+</body>
+</html>
