@@ -6,7 +6,7 @@ summary: Central documentation site for BIMS projects
     - Jeremy Shelton
     - Jeremy Prior
     - Nazley Liddle
-date: 21-07-2025
+date: 10-09-2025
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -32,9 +32,12 @@ Click on your name and select Taxon Management
 
 Click + and Add a New Module, Add Name (Label) and Logo by browsing to a suitable logo already created. A useful website for logos is found here: https://www.phylopic.org.  Click Save.
 
-<img src="img/master list-2-edit module.png" alt="Add a module" width="200"><img src="img/taxon group-3-module popup.png" alt = "Add a module2" width = "300">
+![Add a module](<img/master list-2-edit module.png>)
+
+![Add a module form](<img/taxon group-3-module popup.png>)
 
 **Add a Taxon** that you will be using as a parent. E.g. Tracheophyta as the parent Phylum for Plants. 
+
 ![Add a taxon](<img/taxon group-3-add a taxon.png>)
 ![Add a taxon2](<img/taxon group-3-add a new taxon2.png>)
 
