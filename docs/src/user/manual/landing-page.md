@@ -157,7 +157,7 @@ FBIS collaborates with various organisations to advance its platform and achieve
 
 3. **Map:** The `Map` link navigates to the [map page](./map.md).
 
-4. **Documents & Reports:** `Documents & Reports` link navigates to the [Source References page](./source-references.md).
+4. **Documents & Reports:** `Documents & Reports` link navigates to the [Source References page](./source-reference-page.md).
 
 5. **Contact:** The `CONTACT` navigation link navigates to the [contact page](contact.md) where the BIMS team is ready to assist with any inquiries or issues.
 
@@ -191,7 +191,7 @@ After logging in, the users will see the following window with a notice.
 
 5. **Citation:** The `CITATION` navigation link provides access to the [citation page](citation.md).
 
-6. **Source References:** The `Source References` link navigates to the [source references page](./source-references-page.md).
+6. **Source References:** The `Source References` link navigates to the [source references page](./source-reference-page.md).
 
 7. **User Profile:** The `User Profile` link navigates to the [user profile page](./user-profile.md).
 

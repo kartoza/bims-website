@@ -87,6 +87,10 @@ nav:
                             - Source Reference: user/manual/source-reference-page.md
                             - User Profile: user/manual/user-profile.md
                             - Feedback Form: user/manual/feedback-form.md
+                            - Add Biodiversity Data: user/manual/add-biodiversity-data.md
+                            - Biodiversity Dashboard: user/manual/biodiversity-dashboard.md
+                            - Pesticide Dashboard: user/manual/pesticide-dashboard.md
+                            - Map Interface: user/manual/map.md
         - Administrators:
                   - administrator/index.md
                   - Biodiversity Data:

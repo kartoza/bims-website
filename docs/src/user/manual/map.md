@@ -106,7 +106,7 @@ license: This program is free software; you can redistribute it and/or modify it
 
         - **Add:** This button allows users to add new biodiversity data to the site for the corresponding species. This will redirect the users to the new page where they can add the data. For more information on how to add the biodiversity data click [here](./add-biodiversity-data.md).
 
-        - **Dashboard:** This button provides users with access to the species dashboard for detailed insights. For more information about how to access the dashboard click [here](./dashboard.md).
+        - **Biodiversity Dashboard:** This button provides users with access to the species dashboard for detailed insights. For more information about how to access the dashboard click [here](./biodiversity-dashboard.md).
 
         - **SASS Dashboard:** Allows users to access the sass dashboard.
 
