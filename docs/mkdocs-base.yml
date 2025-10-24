@@ -95,7 +95,7 @@ nav:
                   - administrator/index.md
                   - Biodiversity Data:
                             - administrator/biodiversity-data/index.md
-                            - FBIS Data Management Guidelines: administrator/biodiversity-data/data-management.md
+                            - BIMS Data Management Guidelines: administrator/biodiversity-data/data-management.md
                             - Preparing and checking a Master List of Taxa before uploading: administrator/biodiversity-data/master-list-preparation.md
                             - Uploading a new Taxon Group (Module) and adding a Master List: administrator/biodiversity-data/taxon-group-uploading.md
                             - Harvesting GBIF Data: administrator/biodiversity-data/harvesting-gbif-data.md
@@ -131,9 +131,11 @@ nav:
                             - Harvesting GeoContext Data: administrator/geocontext/harvesting.md
                   - Customisation:
                             - administrator/customisation/index.md
-                            - Adding a Landing Page Section: administrator/customisation/adding-landing-page-section.md
-                            - Embedding Video on the Landing Page: administrator/customisation/embed-video-on-landing-page.md
-                            - Adding Inline Images on the Landing Page: administrator/customisation/add-inline-images.md
+                            - Landing Page Customisation: administrator/customisation/landing-page-customisation.md
+                            - Custom Fonts: administrator/customisation/custom-fonts.md
+                            - Carousel Headers: administrator/customisation/carousel-headers.md
+                            - Partners: administrator/customisation/partners.md
+                            - Custom Themes: administrator/customisation/custom-themes.md
         - Developers:
                   - developer/index.md
                   - Guide:

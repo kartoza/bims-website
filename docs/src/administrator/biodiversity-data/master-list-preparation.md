@@ -100,11 +100,11 @@ An option to harvest all existing taxa from GBIF has been developed, whereby all
 * Open the Taxon Management page.
 * Click **+** to Add a new Module.
 
-<img src="img/master list-2-edit module.png" alt="Add a module" width="200">
+![Add a module](<img/master list-2-edit module.png>)
 
 * Create the label, add the logo icon. 
 
-<img src="img/master list-2-adding a module.png" alt = "Add a module popup" width = "400">
+![Add a module popup](<img/master list-2-adding a module.png>)
 
 * In the new module, **Add a Taxon** that you will be using as a parent. For example, in the Mammals taxon group, first manually add the Class Mammalia taxon. 
 
@@ -116,10 +116,11 @@ An option to harvest all existing taxa from GBIF has been developed, whereby all
 
 *	Click "edit" on the taxon group, by clicking the pencil icon in the taxon group list.
 
-<img src="img/master list-2-edit module2.png" alt = "Add a module popup" width = "250">
+![Add a module popup](<img/master list-2-edit module2.png>)
 
 *	A popup will be displayed. In the bottom field, you can see the GBIF taxonomy; choose the new taxon here. (Type the first few letters to get options).
-<img src="img/master list-2-GBIF taxonomy.png" alt = "Add a module popup" width = "500">
+
+![GBIF Taxonomy](<img/master list-2-GBIF taxonomy.png>)
 
 * Click "Save"
 * To harvest GBIF species / Taxa go to Administration, Harvest Species and select the desired biodiversity module. Now, when you harvest taxa, it will harvest all the taxa related to the parent taxon. If there are more than one GBIF Taxonomy within a module, then repeat the process by adding a second new taxon and third taxon, etc. and harvesting taxa sequentially for each. E.g. Reptiles include three classes:
@@ -135,7 +136,9 @@ Then the csv can be edited in excel and reuploaded with extra attributes as need
 
 It may be desirable to add attributes for specific taxon groups such as “Water dependence” (Highly dependent, Moderately dependent, Minimally dependent, Terrestrial). These additional attributes are assigned to each taxon during the uploading of the master lists as long as the additional attribute is added in Taxon Management before uploading.
 
-This is done in the Edit Module form, "Add attribute +". The attribute needs to match the attribute column header in your Master List for uploading. ![alt text](<img/master list-2-adding attributes.png>)
+This is done in the Edit Module form, "Add attribute +". The attribute needs to match the attribute column header in your Master List for uploading. 
+
+![alt text](<img/master list-2-adding attributes.png>)
 
 ## Checking a Master List for accuracy
 
@@ -162,4 +165,5 @@ GBIF URLs should also be **checked for duplicates** by highlighting the **GBIF U
 ![Master List Preparation 6](img/master-list-preparation-6.png)
 
 Save the excel file as a csv using the following option: 
-![ave as UTF-8](<img/master list-2-save as csv.png>)
+
+![Save as UTF-8](<img/master list-2-save as csv.png>)

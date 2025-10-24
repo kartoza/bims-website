@@ -36,6 +36,7 @@ Several backend tables can be updated and managed by administrators, including t
   - [BIMS: Endemism](#bims-endemism)
   - [BIMS: Hydroperiods](#bims-hydroperiods)
   - [BIMS: IUCN status](#bims-iucn-status)
+  - [BIMS: Layer groups](#bims-layer-groups)
   - [BIMS: Location context filter group orders](#bims-location-context-filter-group-orders)
   - [BIMS: Location context filter](#bims-location-context-filter)
   - [BIMS: Location context groups](#bims-location-context-groups)
@@ -217,6 +218,24 @@ The colour used can also be changed. For example, the colour template codes for 
 | Least Concern – Legacy | #14655C |
 | Conservation Dependent | #0F4D46 |
 | Not evaluated | #39B2A3 |
+
+## BIMS: Layer groups
+
+Here you can manage layer groups that are visualised on the map under the layer selector. Layers can be grouped according to common features. For example, users can create a Catchment group that contains the primary, secondary, tertiary and quaternary catchments layers. 
+
+To add a new group, click Administration and then select Publish Spatial Layer on Map. Click '+ Add layer group'. A layer group form will appear. Populate the fields and click Add. 
+
+![Add layer group](<img/Layer group-1.png>)
+
+All layers that will be assigned to a group must already be published to the map (see [Publish Spatial Layer on Map](https://kartoza.github.io/bims-website/administrator/layer-upload/publish-spatial-layer/)). To assign layers to a group, go to the admin page and select Layer groups. Click the new created group and assign layers to it by selecting the layers under 'Available layers' and pressing the right arrow, click Save. From this page, users can also edit existing groups add group descriptions. 
+
+![Add layer group items](<img/Layer group-2.png>)
+
+If you need to adjust the order of the layers, it can be adjusted by dragging the layers to the desired order under Publish Spatial Layer on Map on the main site.
+
+Layers should now be visible under the group on the map on the main BIMS platform. The group can be opened and closed by clicking the arrow.
+
+![Layer draw](<img/Layer group-3.png>)
 
 ## BIMS: Location context filter group orders
 
