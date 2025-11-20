@@ -6,7 +6,7 @@ summary: Central documentation site for BIMS projects
     - Jeremy Shelton
     - Jeremy Prior
     - Nazley Liddle
-date: 24-07-2025
+date: 20-11-2025
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -23,6 +23,8 @@ Several backend tables can be updated and managed by administrators, including t
 **Managing BIMS Admin tables**
 
 - [Managing BIMS Admin tables](#managing-bims-admin-tables)
+- [Site administration](#site-administration)
+
   - [BIMS: Abundance types](#bims-abundance-types)
   - [BIMS: Base map layers](#bims-base-map-layers)
   - [BIMS: Biological collection records](#bims-biological-collection-records)
@@ -34,6 +36,8 @@ Several backend tables can be updated and managed by administrators, including t
   - [BIMS: Download request purposes](#bims-download-request-purposes)
   - [BIMS: Download requests](#bims-download-requests)
   - [BIMS: Endemism](#bims-endemism)
+  - [BIMS: Harvest schedules](#bims-harvest-schedules)
+  - [BIMS: Harvest sessions](#bims-harvest-sessions)
   - [BIMS: Hydroperiods](#bims-hydroperiods)
   - [BIMS: IUCN status](#bims-iucn-status)
   - [BIMS: Layer groups](#bims-layer-groups)
@@ -49,6 +53,7 @@ Several backend tables can be updated and managed by administrators, including t
   - [BIMS: Sampling methods](#bims-sampling-methods)
   - [BIMS: Site settings](#bims-site-settings)
   - [BIMS: Source references](#bims-source-references)
+  - [BIMS: Tag groups](#bims-tag-groups)
   - [BIMS: Taxa](#bims-taxa)
   - [BIMS: Taxon groups](#bims-taxon-groups)
   - [BIMS: Wetland indicator status](#bims-wetland-indicator-status)
@@ -61,6 +66,30 @@ Several backend tables can be updated and managed by administrators, including t
   - [FBIS user sign up procedure](#fbis-user-sign-up-procedure)
   - [Managing users](#managing-users)
 
+## Site administration
+
+There are five tools to allow administrators to maintain the general integrity of the platform and perform broad admin tasks. These include: 
+
+![site-administration-1](img/site-administration1.png)
+
+**A description of each is provided below:**
+
+**Clear Cache:** This clears the temporary storage area and is useful to clear data that been added or modified. Examples: Clear Cache after harvesting GBIF occurrence records, Clear Cache after renaming a Site Code.
+
+**Delete dangling sites:** This deletes Sites and Surveys (Site Code + Sampling Date) that have no biodiversity occurrence data, physico-chemical data or water temperature associated with them. Admin receives emails confirming the number of Sites and Surveys deleted. 
+
+![site-administration-2](img/site-administration2.png)
+
+**Harvest IUCN Status:** This starts a full harvest of the IUCN global conservation status for all taxa on the platform. 
+
+**Clear taxa not in group:** This allows admin to clean up the BIMS>Taxa table, by deleting all taxa that are not associated with a Taxon Group/Biodiversity Module. If the "Dry run" is ticked, then no taxa will be deleted and admin can check a subset of data before running the delete. It provides a breakdown of the total number of taxa, taxa linked to a group, taxa with ancestors, taxa with occurrences, and candidates to delete. One can then run the "Clear taxa in group", with "Dry run" unchecked, to clean up and delete the candidate taxa. 
+
+![site-administration-3](img/site-administration3.png)
+
+**Remove sites outside boundary:** This allows admin to delete sites that have been harvested from GBIF, but which fall outside of the spatial boundary of the platform.  If the “Dry run” is ticked, then no sites will be deleted and admin can check a subset of sites before running the delete. It provides a breakdown of the sites outside the boundary, GBIF occurrence to be deleted, Surveys and Sites deleted, and sample site codes that admin can then check. One can then run the “Remove sites outside boundary”, with the “Dry run” unchecked, to clean up and delete the candidate taxa. Normally this is only needed if the boundary has been changed. 
+
+![site-administration-4](img/site-administration4.png)
+
 ## BIMS: Abundance types
 
 Here you manage the abundance measure (type) such as number, percentage etc. New abundance measures (type) can be added.
@@ -71,7 +100,7 @@ Here you manage the abundance measure (type) such as number, percentage etc. New
 
 Here you can see and manage the base maps visible on the platform. The defaults base map can be selected. 
 
-![base map layers](img/base-map-layers.png)
+![base map layers](img/base-map-update.png)
 
 ## BIMS: Biological collection records
 
@@ -149,7 +178,7 @@ Details for each dataset can be viewed by clicking the UUID. The dataset Name, d
 
 ![Change dataset](img/datasets-2.png)
 
-## BIMS: Decision Support Tool Names and Descision Support Tools
+## BIMS: Decision Support Tool Names and Decision Support Tools
 
 Here you manage the decision support tools that are added and what they are called. Individual UUIDs are assigned specific decision support name.
 
@@ -180,6 +209,39 @@ Here you manage the endemism categories including the Name (what is shown on the
 Each endemism category can be edited by clicking on the Name
 
 ![Endemism 2](img/endemism-2.png)
+
+## BIMS: Harvest schedules
+
+Here you manage the harvesting of GBIF occurrence records. 
+
+1.	Go to Admin > Bims > Harvest schedule
+2.	Click Add harvest schedule.
+3.	Choose the module group.
+4.	Set the period:
+
+    •	Weekly: specify the day(s) of the week. You can use values like mon, tue or 0-6 (where 0 = Sunday).
+
+    •	Monthly: specify the date (e.g., 15 for the 15th).
+
+    •	Custom (cron): enter a cron expression. This option is mainly for developers, but it allows more flexibility (e.g., hourly, every 30 minutes).
+5.	Add the run time. The task will be triggered at this hour (UTC timezone).
+6.	Configure the defaults from the job section (these are for the harvest session settings).
+7.	Set the boundary.
+8.	Check Is fetching species if you want to harvest species.
+
+Notes:
+
+  •	We can only have 3 harvest sessions running at a time.
+
+ •	If you want to harvest species, make sure the GBIF parent species is added to the module group, just like when a user harvests species.
+
+## BIMS: Harvest sessions
+
+Here you can view and manage the GBIF harvest sessions. The Start time, Status, Harvester, Module group are listed. To view details click on the Start time and a new form is opened up where you can see details such as if the harvest is fetching species or occurrences. 
+
+![harvest-sessions-1](img/harvest-sessions1.png)
+
+![harvest-sessions-2](img/harvest-sessions2.png)
 
 ## BIMS: Hydroperiods
 
@@ -219,6 +281,12 @@ The colour used can also be changed. For example, the colour template codes for 
 | Conservation Dependent | #0F4D46 |
 | Not evaluated | #39B2A3 |
 
+## BIMS: Invasions
+
+Here you can manage the Invasion categories. New categories are added using the "Add invasion" button. The name and description can be updated by clicking on the ID.
+
+![invasions-1](img/invasions1.png)
+
 ## BIMS: Layer groups
 
 Here you can manage layer groups that are visualised on the map under the layer selector. Layers can be grouped according to common features. For example, users can create a Catchment group that contains the primary, secondary, tertiary and quaternary catchments layers. 
@@ -237,7 +305,10 @@ Layers should now be visible under the group on the map on the main BIMS platfor
 
 ![Layer draw](<img/Layer group-3.png>)
 
+
 ## BIMS: Location context filter group orders
+
+This can also be managed in the Layer upload, Styling and Spatial filter> Add Spatial filter section of BIMS.
 
 Here you can manage the spatial layers shown in the side panel and dashboards, as well as the display and filter orders. The side panel dashboard is visible on the right hand side of the map. The detailed dashboard is visible once the user has clicked on the dashboard for a specific biodiversity module.  
 
@@ -251,7 +322,7 @@ Here you can manage the spatial layers shown in the side panel and dashboards, a
 
 Clicking on the ID opens up this form, where one can select the Group and Filter, and change the group display order. One can also add new groups and / or filters. 
 
-By clicking the box “ Show in dashboard” and /or “ show in side panel” the filters and groups are included or excluded in the different dashboards. 
+By clicking the box “ Show in dashboard” and /or “Show in side panel” the filters and groups are included or excluded in the different dashboards. 
 
 ![Location context filter group orders 2](img/location-context-filter-group-orders-2.png)
 
@@ -269,11 +340,9 @@ Here you can change the name and display order of the spatial filters.
 
 ## BIMS: Location context groups
 
-Here you can manage the spatial layers and groups, which relate to geocontext. Each layer can be opened to view detail.
+Here you can manage the spatial layers and groups, which relate to geocontext. Each layer can be opened to view detail. To change what is displayed click the ID Number and check or uncheck the box for each. Note that there are some extra aspects that still need clarifying related to order etc.
 
 ![Location context groups 1](img/location-context-groups-1.png)
-
-To change what is displayed click the ID Number and check or uncheck the box for each. Note that there are some extra aspects that still need clarifying related to order etc.
 
 ## BIMS: Location sites
 
@@ -287,7 +356,7 @@ Here we are also able to update the geocontext data for each site or selection o
 
 ## BIMS: Non-biodiversity layers
 
-Here you manage the order that spatial layers are shown. This includes viewing and/or editing the order, name, Wms url and Wms layer name. By clicking on the order, the details of the layer can be viewed and edited. Only administrators experienced in geocontext and GIS should edit this as it links directly to these components.
+Here you manage the order that spatial layers are shown - it is more easily managed in the Layer upload, Styling and Spatial filter > Add Spatial filter section of BIMS. 
 
 ![Non-biodiversity layers 1](img/non-biodiversity-layers-1.png)
 
@@ -369,69 +438,70 @@ Then you use the select “Merge sampling methods” and click `Go`.
 
 ## BIMS: Site settings
 
-Here you manage several components related to the setting of the site (i.e. webpage, url for the information systems, e.g. FBIS, RBIS, ORBIS etc.). Details of the sections that an administrator can change are provided below.
+Here you manage several components related to the setting of the site (i.e. webpage, url for the information systems, e.g. FBIS, RBIS, ORBIS etc.). Details of the sections that an administrator can change are provided below. It is divided into sections (those in red are not managed by admin).
 
-Site notice can be changed in the Site settings section.
+- General
+- <span style="color: red;">Landing & Docs
+- Map
+- Boundary and Park Layers
+- Upload & Templates
+- <span style="color: red;">GitHub App
+- <span style="color: red;">External Integration & Tokens
+- <span style="color: red;">Pesticide Dashboard
+- GBIF
 
-![Site settings 1](img/site-settings-1.png)
+**General:** Here you can add and edit the Site notice. 
 
-You can specify the `readme` file that is bundled with the downloaded occurrence data.
+![site-settings-1](img/site-settings-general-1.png)
 
-![Site settings 2](img/site-settings-2.png)
+You can view and/or edit the copyright text that is visible at the bottom of the landing page. 
 
-You can specify the taxonomic upload template for the Master lists. This is then downloadable on the Upload – Taxonomic data.
+![site-settings-2](img/site-settings-general-2.png)
 
-![Site settings 3](img/site-settings-3.png)
-
-You can specify the generic occurrence upload template for the occurrence data. This is then downloadable on the Upload – Occurrence data. If different biodiversity groups have customised master and occurrence upload templates then these are added in Taxon Management. [See notes on Taxon Management](taxa-management.md)
-
-![Site settings 4](img/site-settings-4.png)
-
-You can view and/or edit the disclaimer form text and disclaimer doc text.
-
-![Site settings 5](img/site-settings-5.png)
-
-You can enable or disable the third party layer as not all information systems have links to third party data
+**Map:** You can change the default basemap, enable or disable the third part layer as not all information systems have links to third party data. 
 
 ![Site settings 6](img/site-settings-6.png)
 
 ![Site settings 7](img/site-settings-7.png)
 
-You can enable or disable sass as not all information systems have sass data
+**Boundary & Park Layers:** If occurrence data are uploaded for an area/Park or Section that does not have latitude and longitude, then it is possible to upload a csv of the Park Names with latitude and longitudes generated. These are then used to upload occurrence data for a Park or Section. 
 
-![Site settings 8](img/site-settings-8.png)
+![Uploading centroids](img/uploading-centroids.png)
 
-You can enable or disable water temperature data as not all information systems have water temperature data
+**Upload & Templates:** Here you can: 
+- You can specify the `readme` file that is bundled with the downloaded occurrence data.
+- You can specify the taxonomic upload template for the Master lists. This is then downloadable on the Upload – Taxonomic data.
+- You can specify the generic occurrence upload template for the occurrence data. This is then downloadable on the Upload – Occurrence data. If different biodiversity groups have customised master and occurrence upload templates then these are added in Taxon Management. ([See notes on Taxon Management](taxa-management.md))
+- Turn on / off Auto validation of taxa (taxa uploaded using Taxonomic upload are automatically validated if this is clicked).
 
-![Site settings 9](img/site-settings-9.png)
+![uploads-and-templates](img/uploads-and-templates.png)
 
-You can enable or disable download request approval. If this is disabled then the user can download the data without waiting for approval from the administrator.
+**Features / Toggles:** Here you can: 
 
-![Site settings 10](img/site-settings-10.png)
+![features-and-toggles](img/features-toggles.png)
 
-You can enable or disable the module summary on the landing page dashboard. This is not applicable to FBIS, only RBIS and ORBIS, and future platforms.
-
-![Site settings 11](img/site-settings-11.png)
+- Enable or disable SASS as not all information systems have SASS data.
+- Enable or disable water temperature data as not all information systems have water temperature data. 
+- Enable or disable ecosystem type. 
+- Enable or disable download request approval. If this is disabled then the user can download the data without waiting for approval from the administrator.
+- Enable or disable the module summary on the landing page dashboard. This is not applicable to FBIS and other BIMS platforms.
 
 ![Site settings 12](img/site-settings-12.png)
 
-You can enable or disable the remove all occurrence tool in Taxon Management. This should never be activated on the live/production site as clicking the Remove all button, will delete all the occurrence data for the module. It can be enabled on the testing site as this allows administrators to practice the creation of new modules, uploading of taxonomic master lists and the uploading of occurrence data.
-
-![Site settings 13](img/site-settings-13.png)
+- Enable or disable the 'Remove All' occurrence tool in Taxon Management. This should never be activated on the live/production site as clicking the 'Remove All' button, will delete all the occurrence data for the module. It can be enabled on the testing site as this allows administrators to practice the creation of new modules, uploading of taxonomic master lists and the uploading of occurrence data.
 
 ![Site settings 14](img/site-settings-14.png)
 
-You can enable or disable allow edit in admin.
+- Enable or disable allow edit in admin (in Taxon management).
 
-![Edit in Admin](img/allow-edit-in-admin.png)
+![edit-taxon](img/edit-taxon.png)
 
-You can view and/or edit the copyright text that is visible at the bottom of the landing page.
 
-![Site settings 15](img/site-settings-15.png)
+**GBIF:** Here you can specify the GBIF username and GBIF password needed for harvesting taxa and occurrences from GBIF. The admin of each platform need to register on GBIF and then insert the details here for harvesting. 
 
-If occurrence data are uploaded for an area/Park that does not have a latitude and longitude, then it is possible to upload a csv of the Park Names with latitude and longitudes generated. These are then used to upload occurrence data for a Park.
+You can view and/or edit the disclaimer form text and disclaimer doc text.
 
-![Uploading centroids](img/uploading-centroids.png)
+![disclaimer](img/disclaimer.png)
 
 ## BIMS: Source references
 
@@ -439,27 +509,44 @@ Generally it is easiest to manage source references (i.e. the metadata associate
 
 ![Source references 1](img/source-references-1.png)
 
-However, on occasions, issues arise whereby the source reference is duplicated, possibly because of a small typo during data capture.  In the Admin - Source references – section it is possible to merge two source references. One does this by finding the two relevant source reference, opening the correct one and selecting “Verify”, then checking the box next to the two (or more) references to be merged, and using the Merge from the dropdown lists, then `Go`. Note that the Source reference needs to be the same type to be able to merge.
+However, on occasions, issues arise whereby the source reference is duplicated, possibly because of a small typo during data capture.  In the Admin - Source references – section it is possible to merge two source references. One does this by finding the two relevant source reference, opening the correct one and selecting “Verify”, then checking the box next to the two (or more) references to be merged, and using the Merge from the dropdown lists, then `Go`. Note that the Source reference needs to be the same type to be able to merge. If the Mobile box is checked, then this source reference will be available on the mobile App. 
 
 ![Source references 2](img/source-references-2.png)
 
 ![Source references 3](img/source-references-3.png)
 
+## BIMS: Tag groups:
+
+A tag group controls how the TAGS, which are uploaded for each taxon when the master list is uploaded, is visualised, specifically its colour. Click on the ID and change the colour. Tags are visible in Taxon Management as as a filter on the map interface. 
+
+![tag-groups-1](img/tag-groups1.png)
+
+![tag-groups-2](img/tag-groups2.png)
+
+
+![tag-groups-3](img/tag-groups3.png)
+
+![tag-groups-4](img/tag-groups4.png)
+
+
 ## BIMS: Taxa
 
-Here you manage all aspects related to taxa within the information system. Most of this is done easily within Taxon Management, but there are some actions that can only be done within this table, including deleting a taxon (this cannot be done if occurrence data are associated with it), merging taxa and updating taxa (when one taxon is a synonym of another).
+Here you manage all aspects related taxa within the information system. Most of this is done easily within Taxon Management, but there are some actions that can only be done within this table, including delete a taxon (this cannot be done if occurrence data are associated with it), merge taxa, update taxa, fetch common names, fetch cites listing, extract author and harvest synonyms for accepted taxa (GBIF).
 
-The table includes the Canonical Name (also referred to as the "true name”), the Link to GBIF, the Scientific Name, the Taxonomic Rank, the Parent, the Import date, the Taxonomic Status, the Legacy Canonical Name, and whether the taxon has been Verified.  Ultimately all taxa in the information system should be verified.
+![taxa-1](img/taxa-1.1.png)
+
+The table includes the Canonical Name (also referred to as the "true name”), Link to GBIF, Scientific Name, Author, Taxonomic Rank, Parent, the Import date, Taxonomic Status, Accepted taxonomy, Global Red List Status (IUCN), and whether the taxon has been Verified, and the Tag list.  A filter allow admin to select taxa for various criteria including Taxon Group.
 
 ![Taxa 1](img/taxa-1.png)
-
-Clicking on the canonical name opens up the Change Taxonomy form for the selected species. Note that this is the same as that accessed within Taxon Management.
-
-![Taxa 2](img/taxa-2.png)
 
 A search field and filters are also included to assist you to navigate.
 
 ![Taxa 3](img/taxa-3.png)
+
+
+Clicking on the canonical name opens up the Change Taxonomy form for the selected species. Note that this is same as that accessed within Taxon Management.
+
+![Taxa 2](img/taxa-2.png)
 
 To delete a taxon, click the check box, and select Delete selected taxon, and click `Go`.
 
@@ -473,7 +560,7 @@ Sometimes errors are picked up in the taxa, for example there are two taxa that 
 
 ![Taxa 7](img/taxa-6.png)
 
-Updating is used when one wants to update a synonym with the accepted name. Prior to updating, the accepted taxon needs to be checked and the verified button checked. Then to update the synonym, click the check box of both taxa, and select Update taxa, and click `Go`. This functionality is currently being refined.
+Updating is used when one wants to update a synonym with the accepted name. Prior to updating, the accepted taxon needs to be checked and the verified button checked. Then to update the synonym, click the check box of both taxa, and select Update taxa, and click `GO`. This functionality is currently being refined.
 
 ## BIMS: Taxon groups
 
@@ -503,23 +590,21 @@ This is access outside of the BIMS section, in Flat Pages. From here you can upd
 
 ![Flat Pages 1](img/flat-pages-1.png)
 
-### Flat pages: about us
+### Flat pages: About us
 
-Text for the About Us on the menu bar can be modified here by nativigating to the Admin Page - Flat Pages - Flat Pages.
+Text for the About Us on the menu bar can be modified here by nativigating to the Admin Page > Flat Pages > About.
 
 ### Flat pages: citation guidelines
 
 ![Flat Pages 2](img/flat-pages-2.png)
 
-Text for the Citation on the landing page can be modified here:
-https://freshwaterbiodiversity.org/admin/flatpages/flatpage/3/change/
+Text for the Citation on the landing page can be modified from Admin > Flat pages > Citation
 
 ### Flat pages: Help
 
-Text for the Help on the menu bar can be modified here:
-https://freshwaterbiodiversity.org/admin/flatpages/flatpage/2/change/
+Text for the Help on the menu bar can be modified from Admin > Flat pages > Help
 
-Here's how to update the link to the FBIS manual:
+Links to manuals can be added. For example, for FBIS: 
 
 * Open this page https://freshwaterbiodiversity.org/admin/flatpages/flatpage/2/change/
 * Double click the user manual
@@ -574,7 +659,7 @@ Administrators can control which users are able to view different data types by 
 
 **Public or empty data type:** All users will be able to see the data.
 
-**PrivateDataGroup:** All the staff of the tenant site will be able to see the data. For example, Sanparks staff will be able to see Sanparks occurrence data with the data type set to private.
+**PrivateDataGroup:** All the staff of the tenant site will be able to see the data. For example, SANParks staff will be able to see Sanparks occurrence data with the data type set to private.
 
 **SensitiveDataGroup:** Only users able to see sensitive data will be able to see the data.
 
