@@ -219,11 +219,11 @@ Here you manage the harvesting of GBIF occurrence records.
 3.	Choose the module group.
 4.	Set the period:
 
-    •	Weekly: specify the day(s) of the week. You can use values like mon, tue or 0-6 (where 0 = Sunday).
+    *	Weekly: specify the day(s) of the week. You can use values like mon, tue or 0-6 (where 0 = Sunday).
 
-    •	Monthly: specify the date (e.g., 15 for the 15th).
+    *	Monthly: specify the date (e.g., 15 for the 15th).
 
-    •	Custom (cron): enter a cron expression. This option is mainly for developers, but it allows more flexibility (e.g., hourly, every 30 minutes).
+    *	Custom (cron): enter a cron expression. This option is mainly for developers, but it allows more flexibility (e.g., hourly, every 30 minutes).
 5.	Add the run time. The task will be triggered at this hour (UTC timezone).
 6.	Configure the defaults from the job section (these are for the harvest session settings).
 7.	Set the boundary.
@@ -231,9 +231,9 @@ Here you manage the harvesting of GBIF occurrence records.
 
 Notes:
 
-  •	We can only have 3 harvest sessions running at a time.
+*	We can only have 3 harvest sessions running at a time.
 
- •	If you want to harvest species, make sure the GBIF parent species is added to the module group, just like when a user harvests species.
+* If you want to harvest species, make sure the GBIF parent species is added to the module group, just like when a user harvests species.
 
 ## BIMS: Harvest sessions
 
@@ -315,9 +315,7 @@ Here you can manage the spatial layers shown in the side panel and dashboards, a
 ![Side panel dashboard](img/side-panel-dashboard.png)
 
 ![Detailed dashboard](img/detailed-dashboard.png)
-
-**Overview dashboard**    
-
+  
 ![Location context filter group orders 1](img/location-context-filter-group-orders-1.png)
 
 Clicking on the ID opens up this form, where one can select the Group and Filter, and change the group display order. One can also add new groups and / or filters. 
@@ -458,6 +456,10 @@ You can view and/or edit the copyright text that is visible at the bottom of the
 
 ![site-settings-2](img/site-settings-general-2.png)
 
+You can view and/or edit the disclaimer form text and disclaimer doc text. 
+
+![disclaimer](img/disclaimer.png)
+
 **Map:** You can change the default basemap, enable or disable the third part layer as not all information systems have links to third party data. 
 
 ![Site settings 6](img/site-settings-6.png)
@@ -469,9 +471,9 @@ You can view and/or edit the copyright text that is visible at the bottom of the
 ![Uploading centroids](img/uploading-centroids.png)
 
 **Upload & Templates:** Here you can: 
-- You can specify the `readme` file that is bundled with the downloaded occurrence data.
-- You can specify the taxonomic upload template for the Master lists. This is then downloadable on the Upload – Taxonomic data.
-- You can specify the generic occurrence upload template for the occurrence data. This is then downloadable on the Upload – Occurrence data. If different biodiversity groups have customised master and occurrence upload templates then these are added in Taxon Management. ([See notes on Taxon Management](taxa-management.md))
+- Specify the `readme` file that is bundled with the downloaded occurrence data.
+- Specify the taxonomic upload template for the Master lists. This is then downloadable on the Upload – Taxonomic data.
+- Specify the generic occurrence upload template for the occurrence data. This is then downloadable on the Upload – Occurrence data. If different biodiversity groups have customised master and occurrence upload templates then these are added in Taxon Management. ([See notes on Taxon Management](taxa-management.md))
 - Turn on / off Auto validation of taxa (taxa uploaded using Taxonomic upload are automatically validated if this is clicked).
 
 ![uploads-and-templates](img/uploads-and-templates.png)
@@ -499,10 +501,6 @@ You can view and/or edit the copyright text that is visible at the bottom of the
 
 **GBIF:** Here you can specify the GBIF username and GBIF password needed for harvesting taxa and occurrences from GBIF. The admin of each platform need to register on GBIF and then insert the details here for harvesting. 
 
-You can view and/or edit the disclaimer form text and disclaimer doc text.
-
-![disclaimer](img/disclaimer.png)
-
 ## BIMS: Source references
 
 Generally it is easiest to manage source references (i.e. the metadata associated with each occurrence record).
@@ -517,7 +515,7 @@ However, on occasions, issues arise whereby the source reference is duplicated, 
 
 ## BIMS: Tag groups:
 
-A tag group controls how the TAGS, which are uploaded for each taxon when the master list is uploaded, is visualised, specifically its colour. Click on the ID and change the colour. Tags are visible in Taxon Management as as a filter on the map interface. 
+A tag group controls how the TAGS, which are uploaded for each taxon when the master list is uploaded, is visualised, specifically its colour. Click on the ID and change the colour. Tags are visible in Taxon Management and as a filter on the map interface. 
 
 ![tag-groups-1](img/tag-groups1.png)
 
