@@ -12,7 +12,11 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # BIMS: Styling Uploaded Layers
 
->Note: Only admin/super users can style spatial layers:
+>**Note: Only admin/super users can style spatial layers**
+
+## Workflow diagram for styling spatial layers
+
+![style-spatial-layer-schematic](img/1.2%20Style%20Spatial%20Layer.png)
 
 There are two methods to access the styling `Editor` page.
 

@@ -12,7 +12,13 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # BIMS: Upload Spatial Layers
 
->Note: Only admin/super users can upload spatial layers.
+>**Note: Only admin/super users can upload spatial layers.**
+
+## Workflow diagram for uploading spatial layers
+![upload-spatial-layer-schematic](img/1.1%20Upload%20Spatial%20Layer.png)
+
+
+## Form summary: 
 
 Visit `https://[your-bims.site.com]/upload-spatial-layer/` (replace the URL in square brackets with your BIMS instances URL) to access the upload spatial layers page.
 
