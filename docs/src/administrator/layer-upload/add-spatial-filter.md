@@ -14,6 +14,10 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # Add Spatial Filter
 
+## Workflow diagram for adding a spatial filter
+
+![add-spatial-filter-schematic](img/3.%20Add%20Spatial%20Filters%20.png)
+
 Once you have uploaded a spatial layer, you can add it as a spatial filter for BIMS instance.
 
 As an admin/super user, access the `Spatial Filters` page by clicking on 1️⃣ your username in the top right corner of any page and then click on 2️⃣ `Spatial Filters` on the dropdown menu.

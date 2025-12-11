@@ -13,6 +13,10 @@ license: This program is free software; you can redistribute it and/or modify it
 
 # Publish Spatial Layer on Map
 
+## Workflow diagram for publishing spatial layers on the map
+
+![publish-spatial-layer-schematic](img/2.%20Publish%20Spatial%20Layer%20On%20Map_corrected.png)
+
 Once you have uploaded and styled a spatial layer, you need to publish it on the BIMS instance so that it will display on the map.
 
 As an admin/super user, access the `Visualization Layers` page by clicking on 1️⃣ your user name in the top right corner of any page and then click on 2️⃣ `Visualization Layers` on the dropdown menu.
