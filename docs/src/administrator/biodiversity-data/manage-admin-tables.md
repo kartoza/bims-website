@@ -527,15 +527,20 @@ You can view and/or edit the disclaimer form text and disclaimer doc text.
 
 **Features / Toggles:** Here you can: 
 
-![features-and-toggles](img/features-toggles.png)
+![features-and-toggles](img/site-settings-features-toggles.png)
 
 - Enable or disable SASS as not all information systems have SASS data.
 - Enable or disable water temperature data as not all information systems have water temperature data. 
+- Enable or disable climate data and the climate dashboards.
 - Enable or disable ecosystem type. 
 - Enable or disable download request approval. If this is disabled then the user can download the data without waiting for approval from the administrator.
 - Enable or disable the module summary on the landing page dashboard. This is not applicable to FBIS and other BIMS platforms.
 
 ![Site settings 12](img/site-settings-12.png)
+
+- Enable or disable show general summary on landing page that displays the number of occurrence records, taxa, users, uploads and downloads on the platform. 
+
+![General summary](img/site-settings-features-toggles-general-summary.png)
 
 - Enable or disable the 'Remove All' occurrence tool in Taxon Management. This should never be activated on the live/production site as clicking the 'Remove All' button, will delete all the occurrence data for the module. It can be enabled on the testing site as this allows administrators to practice the creation of new modules, uploading of taxonomic master lists and the uploading of occurrence data.
 
