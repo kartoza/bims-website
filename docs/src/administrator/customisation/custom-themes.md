@@ -5,7 +5,7 @@ summary: Central documentation site for BIMS projects
     - Dimas Ciputra
     - Jeremy Prior
     - Nazley Liddle
-date: 17-10-2025
+date: 26-02-2026
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -79,3 +79,19 @@ This can be achieved by clicking on the coloured box and selecting a colour, or 
 
 ![Theme-colors-2](<img/Screenshot 2025-09-22 091131.png>)
 
+### Auth/Misc
+
+This section allows admin to specify other miscellaneous settings for the custom theme. 
+
+![Auth/Misc](<img/custom theme-auth-misc.png>)
+
+Admin are most likely to edit:
+-  **Auth background** where you can upload an image file that will be the background of the login or logout pages
+
+![Auth background](<img/auth-image.png>)
+
+- **Login modal logo** where you can upload an image file that will be visible on the login form. 
+
+![Login modal logo](<img/login-modal-logo.png>)
+
+Users can also specify the title of the login modal in this section. 

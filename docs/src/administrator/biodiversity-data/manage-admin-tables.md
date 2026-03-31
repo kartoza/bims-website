@@ -6,7 +6,7 @@ summary: Central documentation site for BIMS projects
     - Jeremy Shelton
     - Jeremy Prior
     - Nazley Liddle
-date: 20-11-2025
+date: 20-02-2026
 some_url: https://github.com/kartoza/bims-website
 copyright: Copyright 2023, Kartoza
 contact: 
@@ -29,16 +29,20 @@ Several backend tables can be updated and managed by administrators, including t
   - [BIMS: Base map layers](#bims-base-map-layers)
   - [BIMS: Biological collection records](#bims-biological-collection-records)
   - [BIMS: Biotopes](#bims-biotopes)
+  - [BIMS: Certainty hierarchy](#bims-certainty-hierarchy)
   - [BIMS: Chemistry records](#bims-chemistry-records)
   - [BIMS: Chemistry units](#bims-chemistry-units)
+  - [BIMS: Data sources](#bims-data-sources)
   - [BIMS: Datasets](#bims-datasets)
   - [BIMS: Decision Support Tool Names and Decision Support Tools](#bims-decision-support-tool-names-and-descision-support-tools)
   - [BIMS: Download request purposes](#bims-download-request-purposes)
   - [BIMS: Download requests](#bims-download-requests)
   - [BIMS: Endemism](#bims-endemism)
+  - [BIMS: Filter panel descriptions](#bims-filter-panel-descriptions)
   - [BIMS: Harvest schedules](#bims-harvest-schedules)
   - [BIMS: Harvest sessions](#bims-harvest-sessions)
   - [BIMS: Hydroperiods](#bims-hydroperiods)
+  - [BIMS: IUCN Assessments](#bims-iucn-assessments)
   - [BIMS: IUCN status](#bims-iucn-status)
   - [BIMS: Layer groups](#bims-layer-groups)
   - [BIMS: Location context filter group orders](#bims-location-context-filter-group-orders)
@@ -53,6 +57,7 @@ Several backend tables can be updated and managed by administrators, including t
   - [BIMS: Sampling methods](#bims-sampling-methods)
   - [BIMS: Site settings](#bims-site-settings)
   - [BIMS: Source references](#bims-source-references)
+  - [BIMS: Tag descriptions](#bims-tag-descriptions)
   - [BIMS: Tag groups](#bims-tag-groups)
   - [BIMS: Taxa](#bims-taxa)
   - [BIMS: Taxon groups](#bims-taxon-groups)
@@ -80,7 +85,7 @@ There are five tools to allow administrators to maintain the general integrity o
 
 ![site-administration-2](img/site-administration2.png)
 
-**Harvest IUCN Status:** This starts a full harvest of the IUCN global conservation status for all taxa on the platform. 
+**Harvest IUCN Status:** This starts a full harvest of the IUCN global conservation status for all taxa on the platform. This also triggers a harvest of historical IUCN assessments. 
 
 **Clear taxa not in group:** This allows admin to clean up the BIMS>Taxa table, by deleting all taxa that are not associated with a Taxon Group/Biodiversity Module. If the "Dry run" is ticked, then no taxa will be deleted and admin can check a subset of data before running the delete. It provides a breakdown of the total number of taxa, taxa linked to a group, taxa with ancestors, taxa with occurrences, and candidates to delete. One can then run the "Clear taxa in group", with "Dry run" unchecked, to clean up and delete the candidate taxa. 
 
@@ -152,6 +157,16 @@ Here you manage the broad biotope categories, description and order; the specifi
 
 If these have not been included in the data occurrence upload files, then they are blank. New biotopes can be added by clicking the “+ Add biotope”.
 
+## BIMS: Certainty hierarchy
+
+If you would like to apply spatial or identification certainty to uploaded occurrence records, you can define the categories and their hierarchies here. 
+
+These categories and hierarchies feed into the species checklists which aggregate records across multiple source references per taxon in the 'Certainty' field. The highest ranked certainty (order 0, ID 1) uploaded for a taxon is provided in the checklist .csv download. 
+
+![certainty hierarchy](img/certainty-hierarchy-1.png)
+
+To add a new certainty option, click "+ Add Certainty hierarchy", type in the text and give it a number ranking, click Save. 
+
 ## BIMS: Chemistry records
 
 Here you can see all chemical records. Individual sites can be searched for and filters applied. 
@@ -167,6 +182,16 @@ Here you manage the physico-chemical data including the Chem Code (**NB this nee
 Changes can be made to each variable by clicking on the relevant **Chem code** and editing the appropriate field. Here one can also specify the number of decimal places.
 
 ![Chemistry units 2](img/chemistry-units-2.png)
+
+## BIMS: Data sources
+
+Here, you can add and edit the text that is visible for each data source in the Query Data window on the map. The default will be GBIF data (external) and the data mobilised during the project (primary).
+
+![Data sources](img/data-source-bims.png)
+
+To edit the text, click the data source name > edit the description text and click Save. This text will now be visible as a 'i' popup on the map. 
+
+![Data sources](img/data-source-description.png)
 
 ## BIMS: Datasets
 
@@ -210,6 +235,14 @@ Each endemism category can be edited by clicking on the Name
 
 ![Endemism 2](img/endemism-2.png)
 
+## BIMS: Filter panel descriptions
+
+Here, users can add text descriptions to the filter panels on the map in the form of an 'i' pop-up. The text should provide the user with additional information on what the filters are and how to use them. 
+
+To start, click '+ Add Filter panel description'. Provide a title - this must be the same case as the filter panels. Populate the description box and click Save.
+
+![Add a filter description](img/filter-panel-description-1.png)
+
 ## BIMS: Harvest schedules
 
 Here you manage the harvesting of GBIF occurrence records. 
@@ -233,7 +266,11 @@ Notes:
 
 *	We can only have 3 harvest sessions running at a time.
 
-* If you want to harvest species, make sure the GBIF parent species is added to the module group, just like when a user harvests species.
+* If you want to harvest species, make sure the GBIF parent is selected, just like when a user harvests species and the 'Is fetching species' box is ticked. To harvest occurrences only, leave this box unchecked.
+
+* If a biodiversity module has multiple parents, for example Reptiles are made up of Testudines, Crocodilia, Squamata and Sphenodontia a species harvest schedule needs to be made for each parent. 
+
+![Harvest schedules](img/harvest-schedules.png)
 
 ## BIMS: Harvest sessions
 
@@ -248,6 +285,16 @@ Here you can view and manage the GBIF harvest sessions. The Start time, Status, 
 Here you manage the hydroperiods, including display order. New hydroperiods can be added if required. 
 
 ![Hydroperiods](img/hydroperiods.png)
+
+## BIMS: IUCN Assessments
+
+ Here, users can view the IUCN assessments and check that the IUCN assessments are updating correctly. 
+
+ ![IUCN Assessments-1](img/iucn-assessments-1.png)
+
+ These statuses become visible on the taxon dashboard. 
+
+ ![IUCN Assessments-2](img/iucn-assessments-2.png)
 
 ## BIMS: IUCN status
 
@@ -480,15 +527,20 @@ You can view and/or edit the disclaimer form text and disclaimer doc text.
 
 **Features / Toggles:** Here you can: 
 
-![features-and-toggles](img/features-toggles.png)
+![features-and-toggles](img/site-settings-features-toggles.png)
 
 - Enable or disable SASS as not all information systems have SASS data.
 - Enable or disable water temperature data as not all information systems have water temperature data. 
+- Enable or disable climate data and the climate dashboards.
 - Enable or disable ecosystem type. 
 - Enable or disable download request approval. If this is disabled then the user can download the data without waiting for approval from the administrator.
 - Enable or disable the module summary on the landing page dashboard. This is not applicable to FBIS and other BIMS platforms.
 
 ![Site settings 12](img/site-settings-12.png)
+
+- Enable or disable show general summary on landing page that displays the number of occurrence records, taxa, users, uploads and downloads on the platform. 
+
+![General summary](img/site-settings-features-toggles-general-summary.png)
 
 - Enable or disable the 'Remove All' occurrence tool in Taxon Management. This should never be activated on the live/production site as clicking the 'Remove All' button, will delete all the occurrence data for the module. It can be enabled on the testing site as this allows administrators to practice the creation of new modules, uploading of taxonomic master lists and the uploading of occurrence data.
 
@@ -512,6 +564,16 @@ However, on occasions, issues arise whereby the source reference is duplicated, 
 ![Source references 2](img/source-references-2.png)
 
 ![Source references 3](img/source-references-3.png)
+
+## BIMS: Tag Descriptions
+
+On the map under the query data filters, users can add descriptions to each tag under TAXON TAGS. Descriptions can only be added to existing tags in the database.
+
+To do so, go to Admin > Tag descriptions. Click '+ Add Tag description', select the tag from the dropdown list and fill in the description. Click Save. 
+
+When a user filters to a tag on the map, the text description will pop-up when hovering over the 'i'. 
+
+![Tag descriptions](img/tag-descriptions.png)
 
 ## BIMS: Tag groups:
 
