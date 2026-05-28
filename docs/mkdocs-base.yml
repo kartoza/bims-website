@@ -137,6 +137,8 @@ nav:
                             - Carousel Headers: administrator/customisation/carousel-headers.md
                             - Partners: administrator/customisation/partners.md
                             - Custom Themes: administrator/customisation/custom-themes.md
+                  - GitHub App Setup:
+                            - GitHub App Setup: administrator/github-app/github-app-setup.md
         - Developers:
                   - developer/index.md
                   - Guide:
