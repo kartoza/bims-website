@@ -107,6 +107,7 @@ nav:
                             - Adding physico-chemical data: administrator/biodiversity-data/physico-chemical-data.md
                             - Managing BIMS Admin tables: administrator/biodiversity-data/manage-admin-tables.md
                             - Validating records (occurrence data) and new taxa: administrator/biodiversity-data/validate-records.md
+                            - Harvest External Taxonomy from WoRMS: administrator/biodiversity-data/harvest-external-taxonomy-from-worms.md
                   - Working with GeoServer:
                             - administrator/geoserver/index.md
                             - GeoServer Overview: administrator/geoserver/overview.md
