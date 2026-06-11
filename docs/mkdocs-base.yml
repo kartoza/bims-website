@@ -109,6 +109,7 @@ nav:
                             - Validating records (occurrence data) and new taxa: administrator/biodiversity-data/validate-records.md
                             - Harvest External Taxonomy from WoRMS: administrator/biodiversity-data/harvest-external-taxonomy-from-worms.md
                             - Harvest External Taxonomy from TaxonWorks: administrator/biodiversity-data/harvest-external-taxonomy-from-taxonworks.md
+                            - Checklist Version Workflow: administrator/biodiversity-data/checklist-version-workflow.md
                   - Working with GeoServer:
                             - administrator/geoserver/index.md
                             - GeoServer Overview: administrator/geoserver/overview.md
