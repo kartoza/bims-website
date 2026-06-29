@@ -110,6 +110,7 @@ nav:
                             - Harvest External Taxonomy from WoRMS: administrator/biodiversity-data/harvest-external-taxonomy-from-worms.md
                             - Harvest External Taxonomy from TaxonWorks: administrator/biodiversity-data/harvest-external-taxonomy-from-taxonworks.md
                             - Checklist Version Workflow: administrator/biodiversity-data/checklist-version-workflow.md
+                            - Meta Groups: administrator/biodiversity-data/meta-groups.md
                   - Working with GeoServer:
                             - administrator/geoserver/index.md
                             - GeoServer Overview: administrator/geoserver/overview.md
