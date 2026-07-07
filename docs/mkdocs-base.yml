@@ -109,6 +109,7 @@ nav:
                             - Validating records (occurrence data) and new taxa: administrator/biodiversity-data/validate-records.md
                             - Harvest External Taxonomy from WoRMS: administrator/biodiversity-data/harvest-external-taxonomy-from-worms.md
                             - Harvest External Taxonomy from TaxonWorks: administrator/biodiversity-data/harvest-external-taxonomy-from-taxonworks.md
+                            - Sharing Biodiversity Modules Across BIMS Instances: administrator/biodiversity-data/shared-modules-readonly.md
                             - Checklist Version Workflow: administrator/biodiversity-data/checklist-version-workflow.md
                             - Meta Groups: administrator/biodiversity-data/meta-groups.md
                   - Working with GeoServer:
