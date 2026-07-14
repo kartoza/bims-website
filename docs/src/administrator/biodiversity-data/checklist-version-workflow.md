@@ -120,6 +120,31 @@ Both routes require you to confirm. After confirmation:
 
 ---
 
+## Updating a DOI on a Published Version
+
+After a version is published, its DOI can be updated without re-publishing the version. This is useful when a DOI is reserved before publishing but only registered (activated) with the DOI provider afterward, or when a DOI needs to be corrected.
+
+### Who can update a DOI
+
+| Role | Can update DOI |
+|------|----------------|
+| **Superuser** | Any published version |
+| **Taxon group expert** | Versions for their assigned modules |
+
+### Steps
+
+1. Locate the published version in the checklist table.
+2. Click the version string to open the version detail panel.
+3. Click the **Edit DOI** button (pencil icon) next to the DOI field.
+4. Enter or paste the new DOI value (e.g. `https://doi.org/10.XXXX/YYYY`).
+5. Click **Save**. The DOI is updated immediately on the version record and will be reflected in any subsequent ColDP ZIP exports.
+
+![Edit DOI field on the version detail panel](./img/checklist_edit_doi.png)
+
+> **Note:** Updating a DOI does not alter the immutable taxa snapshot or changelog counts. It only updates the metadata field on the `ChecklistVersion` record.
+
+---
+
 ## Understanding the Changelog
 
 The **Changes** column shows how this version differs from its `previous_version`:
@@ -138,11 +163,22 @@ A dash (`—`) means no previous version was set, or all counts are zero.
 
 ---
 
-## Downloading a ColDP ZIP
+## Downloading a Checklist Export
 
-Click the download icon in the Actions column of any published version to export a ColDP ZIP package.
+Each published version has a download dropdown in the Actions column. Click the download icon to open the menu and choose one of the four export formats.
 
-The ZIP contains:
+![Download dropdown on a published version row](./img/checklist_download_dropdown.png)
+
+### Available formats
+
+| Format | Menu item | Description |
+|--------|-----------|-------------|
+| **ColDP ZIP** | ColDP ZIP | Catalogue of Life Data Package archive for submission to ChecklistBank or external citation. |
+| **CSV Taxa List** | CSV Taxa List | Flat CSV of all taxa in the snapshot, ordered by scientific name. |
+| **CSV Taxa List by Family** | CSV Taxa List by Family | Same CSV content but grouped and ordered by family name. |
+| **PDF** | PDF | Formatted species list document with taxa organised by genus/family, including synonyms and authorship. |
+
+### ColDP ZIP contents
 
 | File | Contents |
 |------|----------|
@@ -152,7 +188,9 @@ The ZIP contains:
 | `Distribution.tsv` | Biogeographic distributions |
 | `Reference.tsv` | Source references |
 
-The export runs as a background task. When complete, a download dialog appears. Large modules may take a minute or two.
+### Receiving the file
+
+When the export task completes you will receive an email with a download link. Large modules may take a few minutes. You can also re-open the download dialog from the same dropdown and use the link in the status popup once it appears.
 
 ---
 
@@ -220,6 +258,7 @@ Generated:            2025-04-01
 | `POST` | `/api/checklist-version/<uuid>/delete/` | Remove a published version (superuser or taxon group expert) |
 | `POST` | `/api/checklist-version/<uuid>/export/` | Enqueue a ColDP ZIP export; returns `download_request_id` |
 | `GET` | `/api/checklist-version/<uuid>/export/?download_request_id=<id>` | Stream the completed ZIP |
+| `GET` | `/download-checklist-snapshot/` | Download CSV or PDF snapshot; params: `checklistVersion`, `output` (`csv`/`pdf`), `orderBy` (`family`/`genus`), `downloadRequestId` |
 
 ### List endpoint filters
 
