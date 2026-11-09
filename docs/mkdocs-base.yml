@@ -125,6 +125,8 @@ nav:
                             - Style Spatial Layer: administrator/layer-upload/style-editor.md
                             - Publish Spatial Layer: administrator/layer-upload/publish-spatial-layer.md
                             - Add Spatial Filter: administrator/layer-upload/add-spatial-filter.md
+                  - Live Layers for GIS (OGC API):
+                            - administrator/ogc-live-layers/index.md
                   - Park Layers:
                             - administrator/park-layer/index.md
                             - Adding a Park layer: administrator/park-layer/add-park-layer.md
@@ -154,6 +156,7 @@ nav:
                             - IDE Setup: developer/guide/ide-setup.md
                             - Building: developer/guide/building.md
                             - Workflows: developer/guide/workflows.md
+                            - Live Layers (OGC API): developer/guide/ogc-live-layers.md
                             - "": developer/guide/key-development.md #unsure where this needs to fit in
                   - Documentation:
                             - developer/documentation/index.md
