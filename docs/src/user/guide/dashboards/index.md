@@ -16,7 +16,7 @@ license: This program is free software; you can redistribute it and/or modify it
 
 Dashboards are a key component of FBIS - they provide tabular and graphical (via charts and maps) breakdowns and visualisations of taxa encountered at sites. Beyond simply enumerating taxa, the dashboards also show aggregate information such as trends over time, conservation status, site sensitivity etc.
 
-FBIS has seven dashboard visualisations:
+FBIS has eight dashboard visualisations:
 
 1. Taxon dashboard
 2. Single-site biodiversity dashboards
@@ -25,6 +25,7 @@ FBIS has seven dashboard visualisations:
 5. Multi-site SASS dashboard
 6. Water temperature dashboard
 7. Physico-chemical dashboard
+8. Groundwater dashboard
 
 In the following sections we provide a brief overview of the key dashboard components and then of the different dashboards:
 
