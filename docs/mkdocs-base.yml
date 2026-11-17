@@ -70,6 +70,7 @@ nav:
                                       - Multi-site SASS dashboard: user/guide/dashboards/multi-site-sass.md
                                       - Water temperature dashboard: user/guide/dashboards/water-temperature.md
                                       - Physico-chemical dashboard: user/guide/dashboards/physico-chemical.md
+                                      - Climate dashboard - rainfall-only stations: user/guide/dashboards/climate-rainfall-only.md
                             - Data Upload: user/guide/data-upload.md
                             - References: user/guide/references.md
                             - Mobile Application Tutorials: user/guide/mobile-app-videos.md
